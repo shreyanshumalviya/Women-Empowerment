@@ -12,7 +12,6 @@ ul{
 
 .content{
     align-content: center;
-    margin-inline: 100px;
 }
 
 h1 {
@@ -28,4 +27,9 @@ h1 {
 .title-container{
     border-bottom: 3px blue solid;
     margin-bottom: 10px;
+}
+.container{
+    margin: auto;
+    align-self: center;
+    width: 70%;
 }
