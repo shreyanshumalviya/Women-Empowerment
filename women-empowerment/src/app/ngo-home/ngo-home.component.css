@@ -1,0 +1,31 @@
+.list-group-item{
+    border: 1px gray solid;
+    padding: 10px;
+    list-style: none
+}
+
+ul{
+    margin: 0px;
+    margin-block-start: 0px;
+    padding-inline-start: 1px;
+}
+
+.content{
+    align-content: center;
+    margin-inline: 100px;
+}
+
+h1 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.title-container{
+    border-bottom: 3px blue solid;
+    margin-bottom: 10px;
+}
