@@ -30,6 +30,16 @@ h1 {
 }
 .container{
     margin: auto;
-    align-self: center;
+    /* align-self: center; */
     width: 70%;
+    padding-bottom: 2em;
+}
+.login{
+    margin: auto;
+    align-content: center;
+}
+.switchButton{
+    width: fit-content;
+    margin: auto;
+    align-content: center;
 }
