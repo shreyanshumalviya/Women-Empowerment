@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgoLoginComponent implements OnInit {
 
+  errorMessage:string = ""
+  ngo:any={}
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  public login():void{}
 
 }

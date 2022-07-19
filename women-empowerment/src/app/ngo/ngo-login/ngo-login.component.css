@@ -1,0 +1,9 @@
+.elevated-container{
+    height: 100px;
+    width: 100%;
+    color: black;
+}
+.title-container{
+    border-bottom: 3px blue solid;
+    margin-bottom: 10px;
+}
