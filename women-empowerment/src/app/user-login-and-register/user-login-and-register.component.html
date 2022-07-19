@@ -1,0 +1,79 @@
+<div class="user-body-container">
+  <div class="user-body">
+    <div *ngIf="isLoginForm; else elseBlock">
+      <div class="login-form">
+        <h2>Login</h2>
+        <hr />
+        <form action="" class="form-style">
+          <label for="">Email</label>
+          <input type="text" />
+
+          <label for="">Password</label>
+          <input type="text" />
+
+          <button>Login</button>
+        </form>
+        <span>Not a member?</span
+        ><button (click)="showRegisterPage()">Register</button>
+      </div>
+    </div>
+    <ng-template #elseBlock>
+      <div class="register-form">
+        <h2>Register</h2>
+        <hr />
+        <form action="" class="form-style">
+          <label for="">First Name</label>
+          <input type="text" />
+
+          <label for="">Middle Name</label>
+          <input type="text" />
+
+          <label for="">Last Name</label>
+          <input type="text" />
+
+          <label for="">Gender</label>
+          <input type="text" />
+
+          <label for="">Contact Number</label>
+          <input type="text" />
+
+          <label for="">Email</label>
+          <input type="text" />
+
+          <label for="">Password</label>
+          <input type="password" />
+
+          <label for="">Confirm Password</label>
+          <input type="password" />
+
+          <label for="">AADHAAR Number</label>
+          <input type="text" />
+
+          <label for="">Date of Birth</label>
+          <input type="text" />
+
+          <label for="">Job Status</label>
+          <input type="text" />
+
+          <label for="">Job Title</label>
+          <input type="text" />
+
+          <label for="">Salary</label>
+          <input type="text" />
+
+          <label for="">Type of Residence Area</label>
+          <input type="text" />
+
+          <label for="">Marital Status</label>
+          <input type="text" />
+
+          <label for="">Disabled</label>
+          <input type="text" />
+          <button>Login</button>
+        </form>
+        <span>Already a member?</span
+        ><button (click)="showLoginPage()">Login</button>
+      </div>
+    </ng-template>
+  </div>
+</div>

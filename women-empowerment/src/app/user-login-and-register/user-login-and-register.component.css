@@ -1,0 +1,34 @@
+.user-body-container {
+  height: 100%;
+  width: 100%;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-body {
+  width: 60%;
+  height: 70%;
+  background-color: white;
+  padding: 3rem;
+}
+
+.form-style {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.register-form::-webkit-scrollbar {
+  display: none;
+}
+
+.register-form {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

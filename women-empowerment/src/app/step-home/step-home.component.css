@@ -1,0 +1,36 @@
+.step-body-container {
+  height: 100%;
+  width: 100%;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+}
+
+.step-body {
+  width: 70%;
+}
+
+.body-heading-line {
+  margin: 0.5rem 0;
+  border: none;
+  border-top-color: blue;
+  border-top-style: solid;
+  border-top-width: 3px;
+}
+
+.step-info {
+  margin: 1rem 0;
+}
+
+.info-heading {
+  margin: 0.2rem 0;
+}
+
+.info-content {
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.pia-eligibility-list {
+  margin-left: 1rem;
+}
