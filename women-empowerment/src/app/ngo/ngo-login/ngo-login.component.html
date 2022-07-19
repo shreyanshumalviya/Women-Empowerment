@@ -1,5 +1,5 @@
-<div class="elevated-container">
-    <div class="row">
+<div class="container">
+    <div class="elevated-container">
         <div class="main">
             <div class="card">
                 <div class="title-container">
@@ -8,14 +8,14 @@
                 <form #loginForm="ngForm" (ngSubmit)="login()">
 
                     <div class="container">
-                        <div *ngIf="errorMessage">
+                        <div *ngIf="errorMessage" style="color: red;">
                             {{errorMessage}}
                         </div>
                         <div>
                             <label for="uname"><b>Username</b></label>
                         </div>
                         <div>
-                        <input type="text" placeholder="Enter Username" name="userName" required name="userName"
+                        <input type="text" class = "loginInput"  placeholder="Enter Username" name="userName" required name="userName"
                             [(ngModel)]="ngo.username" #uname=ngModel pattern="[a-zA-Z]*$">
                         <div *ngIf="uname.invalid && (uname.dirty || uname.touched)">
                             <div *ngIf="uname.errors?.['required']" style="color:red">Enter name</div>
@@ -26,13 +26,13 @@
                         <label for="psw"><b>Password</b></label>
                     </div>
                     <div>
-                        <input type="password" placeholder="Enter Password" name="password" required name="password"
+                        <input class = "loginInput" type="password" placeholder="Enter Password" name="password" required name="password"
                             [(ngModel)]="ngo.password" #upass=ngModel>
                         <div *ngIf="upass.invalid && (upass.dirty || upass.touched)">
                             <div *ngIf="upass.errors?.['required']" style="color:red">Enter password</div>
                         </div>
                     </div>
-                        <button type="submit">Login</button>
+                        <button type="submit" class="loginButton">Login</button>
                     </div>
 
                 </form>
