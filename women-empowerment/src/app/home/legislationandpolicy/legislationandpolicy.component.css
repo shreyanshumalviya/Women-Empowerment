@@ -1,0 +1,53 @@
+body {
+    font-family: 'Open Sans', sans-serif
+}
+
+#container {
+    width: 80vw;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #e4e4e4;
+    text-align: left;
+    line-height: 145%;
+    font-weight: 400;
+}
+
+th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.odd {
+    background: #f8f8f8;
+}
+
+.easy-breadcrumb {
+    font-size: 400;
+}
+
+hr {
+    border: none;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 2px;
+    background: #f9ab15;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    text-decoration: none;
+    outline: none;
+}
