@@ -5,18 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     StepHomeComponent,
-    UserLoginAndRegisterComponent
+    UserLoginAndRegisterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, MatButtonModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
