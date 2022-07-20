@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background-color: #f2f2f2;
+  background-color: #F9F7F7;
   font-size: 1rem;
   font-family: 'Open Sans', sans-serif;
   color: #000;
@@ -53,8 +53,8 @@ header h1 {
   letter-spacing: .8px;
   padding: 0 1.25rem;
   color: #fff;
-  background-color: #0e325d;
-  border-bottom: 1px solid #53af57;
+  background-color: #112D4E;
+  border-bottom: 1px solid #3F72AF;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -66,12 +66,12 @@ li:last-child .faq-category {
 }
 
 .faq-category:hover {
-  background-color: #53af57;
+  background-color: #3F72AF;
 }
 
 .faq-category:active,
 .faq-category:focus {
-  background-color: #a8a8a8;
+  background-color: #DBE2EF;
   color: #000;
 }
 
@@ -150,7 +150,7 @@ html:not(.js) .faq-group,
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #53af57;
+  color: #3F72AF;
 }
 
 @media (min-width: 780px) {
@@ -176,7 +176,7 @@ html:not(.js) .faq-group,
   display: block;
   position: relative;
   margin: 1.25rem 0 .5rem;
-  color: #0e325d;
+  color: #112D4E;
   font-weight: 400;
 }
 
