@@ -35,10 +35,10 @@
             </div>
         </div>
         <div class="login">
-            <div *ngIf="!logging">
+            <div *ngIf="logging">
                 <app-ngo-login></app-ngo-login>
             </div>
-            <div *ngIf="logging">
+            <div *ngIf="!logging">
                 <app-ngo-register></app-ngo-register>
             </div>
             <div class="switchButton" >
