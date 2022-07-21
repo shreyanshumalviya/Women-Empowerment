@@ -9,10 +9,23 @@ import { AdminAboutUsComponent } from './Admin/admin-aboutUs/admin-about-us.comp
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { AdminHomeComponent } from './Admin/admin-home/admin-home/admin-home.component';
+import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+import { AdminNgoComponent } from './Admin/admin-ngo/admin-ngo.component';
+import { AdminSukayaYojanaComponent } from './Admin/admin-sukaya-yojana/admin-sukaya-yojana.component';
+import { AdminStepComponent } from './Admin/admin-step/admin-step.component';
+import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-accomodations.component';
 
 @NgModule({
-  declarations: [AppComponent, AdminAboutUsComponent, AdminLoginComponent, AdminHomeComponent],
+  declarations: [
+    AppComponent,
+    AdminAboutUsComponent,
+    AdminLoginComponent,
+    AdminDashboardComponent,
+    AdminNgoComponent,
+    AdminSukayaYojanaComponent,
+    AdminStepComponent,
+    AdminAccomodationsComponent,
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

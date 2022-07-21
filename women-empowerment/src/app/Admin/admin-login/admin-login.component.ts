@@ -16,7 +16,7 @@ export class AdminLoginComponent implements OnInit {
   login(): void {
     if (this.admin.adminname == 'Nidhish' && this.admin.password == '123456') {
       sessionStorage.setItem('un', this.admin.adminname);
-      this.router.navigate(['/adminHomeLink']);
+      this.router.navigate(['/adminDashboardLink']);
     } else {
       this.errorMessage = 'Username or password is invalid';
     }
