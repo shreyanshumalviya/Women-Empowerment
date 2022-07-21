@@ -1,0 +1,31 @@
+<div class="title">
+  <h1>Admin Dashboard</h1>
+</div>
+<div>
+  <div class="Para">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <p>Admin Dashboard includes sections : NGOs, Trainees.</p>
+        <p>
+          Admin needs to login with valid credentials in NGOs and Trainnes
+          section.
+        </p>
+        <p>
+          On Successful login admin will be able to see the list of ngo or
+          trainees.
+        </p>
+        <p>
+          Admin will be able to add new record, update the existing record or
+          delete a record.
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div class="btn">
+    <button [routerLink]="'/adminLoginLink'">Login</button>
+    <button [routerLink]="['/adminRegisterLink']">Register</button>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
