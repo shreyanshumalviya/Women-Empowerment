@@ -10,6 +10,7 @@ import { RouterModule, Routes, Router, Route } from '@angular/router';
 import { FaqComponent } from './home/faq/faq.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
+import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'AboutAdmin', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
     path: 'AboutAdmin',
     component: AdminAboutUsComponent,
   },
+  { path: 'ngo', component: NgoHomeComponent },
   { path: 'adminLoginLink', component: AdminLoginComponent },
   {
     path: 'adminDashboardLink',
