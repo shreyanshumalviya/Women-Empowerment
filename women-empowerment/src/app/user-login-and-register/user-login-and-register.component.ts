@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserLoginAndRegisterComponent implements OnInit {
   isLoginForm: boolean = true;
+  showLoginPassword: boolean = false;
+  showRegisterPassword: boolean = false;
+  showRegisterConfirmPassword: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}
@@ -16,5 +19,14 @@ export class UserLoginAndRegisterComponent implements OnInit {
   }
   showRegisterPage() {
     this.isLoginForm = false;
+  }
+  toggleLoginPasswordVisibility(): void {
+    this.showLoginPassword = !this.showLoginPassword;
+  }
+  toggleRegisterPasswordVisibility(): void {
+    this.showRegisterPassword = !this.showRegisterPassword;
+  }
+  toggleRegisterConfirmPasswordVisibility(): void {
+    this.showRegisterConfirmPassword = !this.showRegisterConfirmPassword;
   }
 }

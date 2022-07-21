@@ -1,79 +1,204 @@
 <div class="user-body-container">
-  <div class="user-body">
+  <mat-card class="user-body">
     <div *ngIf="isLoginForm; else elseBlock">
       <div class="login-form">
         <h2>Login</h2>
-        <hr />
+        <hr class="headig-underline" />
         <form action="" class="form-style">
-          <label for="">Email</label>
-          <input type="text" />
+          <mat-form-field appearance="standard">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" name="email" />
+          </mat-form-field>
 
-          <label for="">Password</label>
-          <input type="text" />
+          <mat-form-field appearance="standard">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="showLoginPassword ? 'text' : 'password'"
+              name="password"
+            />
+            <mat-icon matSuffix (click)="toggleLoginPasswordVisibility()">
+              {{ showLoginPassword ? "visibility_off" : "visibility" }}
+            </mat-icon>
+          </mat-form-field>
 
-          <button>Login</button>
+          <button class="form-submit-button" mat-raised-button color="primary">
+            Login
+          </button>
         </form>
         <span>Not a member?</span
-        ><button (click)="showRegisterPage()">Register</button>
+        ><button
+          class="form-switch-button"
+          mat-raised-button
+          color="accent"
+          (click)="showRegisterPage()"
+        >
+          Register
+        </button>
       </div>
     </div>
     <ng-template #elseBlock>
+      <h2>Register</h2>
+      <hr class="headig-underline" />
       <div class="register-form">
-        <h2>Register</h2>
-        <hr />
         <form action="" class="form-style">
-          <label for="">First Name</label>
-          <input type="text" />
+          <span class="fields-row">
+            <mat-form-field appearance="standard">
+              <mat-label>First Name</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <span class="form-field-space"></span>
+            <mat-form-field appearance="standard">
+              <mat-label>Middle Name</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <span class="form-field-space"></span>
+            <mat-form-field appearance="standard">
+              <mat-label>Last Name</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </span>
 
-          <label for="">Middle Name</label>
-          <input type="text" />
+          <span class="fields-row">
+            <!-- <mat-form-field appearance="standard">
+              <mat-label>Gender</mat-label>
+              <input matInput />
+            </mat-form-field> -->
+            <span class="radio-btn-group">
+              <label id="example-radio-group-label">Gender: </label>
+              <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+                class="radio-btn-group"
+              >
+                <mat-radio-button value="Male"> Male </mat-radio-button>
+                <mat-radio-button value="Female"> Female </mat-radio-button>
+              </mat-radio-group>
+            </span>
 
-          <label for="">Last Name</label>
-          <input type="text" />
+            <span class="form-field-space"></span>
+            <mat-form-field appearance="standard">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker" />
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </span>
+          <span class="fields-row">
+            <mat-form-field appearance="standard">
+              <mat-label>Email</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <span class="form-field-space"></span>
+            <mat-form-field appearance="standard">
+              <mat-label>Contact Number</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </span>
+          <span class="fields-row">
+            <mat-form-field appearance="standard">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                [type]="showRegisterPassword ? 'text' : 'password'"
+                name="password"
+              />
+              <mat-icon matSuffix (click)="toggleRegisterPasswordVisibility()">
+                {{ showRegisterPassword ? "visibility_off" : "visibility" }}
+              </mat-icon>
+            </mat-form-field>
+            <span class="form-field-space"></span>
+            <mat-form-field appearance="standard">
+              <mat-label>Confirm Password</mat-label>
+              <input
+                matInput
+                [type]="showRegisterConfirmPassword ? 'text' : 'password'"
+                name="confirmPassword"
+              />
+              <mat-icon
+                matSuffix
+                (click)="toggleRegisterConfirmPasswordVisibility()"
+              >
+                {{
+                  showRegisterConfirmPassword ? "visibility_off" : "visibility"
+                }}
+              </mat-icon>
+            </mat-form-field>
+          </span>
+          <span class="fields-row">
+            <mat-form-field appearance="standard">
+              <mat-label>AADHAAR Number</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <span class="form-field-space"></span>
+            <span class="radio-btn-group">
+              <label id="example-radio-group-label">Disability: </label>
+              <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+                class="radio-btn-group"
+              >
+                <mat-radio-button value="Yes"> Yes </mat-radio-button>
+                <mat-radio-button value="No"> No </mat-radio-button>
+              </mat-radio-group>
+            </span>
+          </span>
+          <span class="fields-row">
+            <mat-form-field appearance="standard">
+              <mat-label>Job Status</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <span class="form-field-space"></span>
+            <mat-form-field appearance="standard">
+              <mat-label>Job Title</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <span class="form-field-space"></span>
+            <mat-form-field appearance="standard">
+              <mat-label>Salary</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </span>
+          <span class="radio-btn-group">
+            <label id="example-radio-group-label">Type of Residence: </label>
+            <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="radio-btn-group"
+            >
+              <mat-radio-button value="Urban"> Urban </mat-radio-button>
+              <mat-radio-button value="Rural"> Rural </mat-radio-button>
+            </mat-radio-group>
+          </span>
 
-          <label for="">Gender</label>
-          <input type="text" />
+          <span class="radio-btn-group">
+            <label id="example-radio-group-label">Marital Status: </label>
+            <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="radio-btn-group"
+            >
+              <mat-radio-button value="Married"> Married </mat-radio-button>
+              <mat-radio-button value="Unmarried"> Unmarried </mat-radio-button>
+              <mat-radio-button value="Widowed"> Widowed </mat-radio-button>
+              <mat-radio-button value="Separated"> Separated </mat-radio-button>
+            </mat-radio-group>
+          </span>
 
-          <label for="">Contact Number</label>
-          <input type="text" />
-
-          <label for="">Email</label>
-          <input type="text" />
-
-          <label for="">Password</label>
-          <input type="password" />
-
-          <label for="">Confirm Password</label>
-          <input type="password" />
-
-          <label for="">AADHAAR Number</label>
-          <input type="text" />
-
-          <label for="">Date of Birth</label>
-          <input type="text" />
-
-          <label for="">Job Status</label>
-          <input type="text" />
-
-          <label for="">Job Title</label>
-          <input type="text" />
-
-          <label for="">Salary</label>
-          <input type="text" />
-
-          <label for="">Type of Residence Area</label>
-          <input type="text" />
-
-          <label for="">Marital Status</label>
-          <input type="text" />
-
-          <label for="">Disabled</label>
-          <input type="text" />
-          <button>Login</button>
+          <button class="form-submit-button" mat-raised-button color="primary">
+            Register
+          </button>
         </form>
         <span>Already a member?</span
-        ><button (click)="showLoginPage()">Login</button>
+        ><button
+          class="form-switch-button"
+          mat-raised-button
+          color="accent"
+          (click)="showLoginPage()"
+        >
+          Login
+        </button>
       </div>
     </ng-template>
-  </div>
+  </mat-card>
 </div>

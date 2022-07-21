@@ -8,4 +8,6 @@ body {
   height: 100vh;
   width: 100vw;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  --primary-color: #112d4e;
+  --accent-color: #3f72af;
 }

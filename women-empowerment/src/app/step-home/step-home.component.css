@@ -8,12 +8,13 @@
 
 .step-body {
   width: 70%;
+  margin: 2rem;
 }
 
-.body-heading-line {
+.headig-underline {
   margin: 0.5rem 0;
   border: none;
-  border-top-color: blue;
+  border-top-color: var(--primary-color);
   border-top-style: solid;
   border-top-width: 3px;
 }
