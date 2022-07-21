@@ -9,7 +9,12 @@ import { NgoService } from '../ngo.service';
 export class NgoLoginComponent implements OnInit {
 
   errorMessage: string = ""
+  showLoginPassword: Boolean = false;
+  isLoginForm: Boolean = true;
   ngo: any = {}
+  regngo: any = {}
+  showRegisterPassword: Boolean = false;
+  showRegisterConfirmPassword: Boolean = false;
 
   constructor() { }
 
@@ -25,4 +30,26 @@ export class NgoLoginComponent implements OnInit {
     }
   }
 
+  public toggleLoginPasswordVisibility(){
+    this.showLoginPassword=!this.showLoginPassword;
+  }
+
+  public showRegisterPage(){
+    this.isLoginForm=!this.isLoginForm
+  }
+
+  public toggleRegisterPasswordVisibility(){
+    this.showRegisterPassword=!this.showRegisterPassword
+  }
+
+  public toggleRegisterConfirmPasswordVisibility(){
+    this.showRegisterConfirmPassword=!this.showRegisterConfirmPassword;
+  }
+
+  
+  public register(): void {
+    console.log("register");
+
+    new NgoService().registerNGO(this.regngo);
+  }
 }

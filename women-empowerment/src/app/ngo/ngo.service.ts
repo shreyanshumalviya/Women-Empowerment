@@ -38,6 +38,8 @@ export class NgoService {
   public login(username: string, password: string): boolean {
     for (const ngo of NgoService.ngos) {
       if (ngo.email === username && ngo.password === password) {
+        console.log(ngo);
+        
         return true;
       }
     }
