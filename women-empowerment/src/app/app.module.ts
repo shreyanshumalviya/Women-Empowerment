@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+
+import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
+import { NgoLoginComponent } from './ngo/ngo-login/ngo-login.component';
+import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +33,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
+    NgoHomeComponent,
+    NgoLoginComponent,
+    NgoRegisterComponent,
     StepHomeComponent,
     UserLoginAndRegisterComponent,
     AdminAboutUsComponent,
@@ -45,8 +53,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatButtonModule,
     FormsModule,
     MatInputModule,
-    AppRoutingModule,
-    BrowserModule,
     AppRoutingModule,
     HomeModule,
     BrowserAnimationsModule,
