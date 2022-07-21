@@ -3,29 +3,46 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
+
 import { HomeModule } from './home/home.module';
 import { FaqComponent } from './home/faq/faq.component';
-=======
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MatButtonModule } from '@angular/material/button';
+import { MainNavComponent } from './main-nav/main-nav.component';
+// import { LayoutModule } from '@angular/cdk/layout';
+// import { MatToolbarModule } from '@angular/material/toolbar';
+// import { MatSidenavModule } from '@angular/material/sidenav';
+// import { MatIconModule } from '@angular/material/icon';
+// import { MatListModule } from '@angular/material/list';
+import { LayoutModule } from '@angular/cdk/layout';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
->>>>>>> ad246e66d5a05c181e419ffd9de0541aecfa7f56
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MainNavComponent,
+    FooterComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    HomeModule
-=======
-    BrowserAnimationsModule,
-    MatButtonModule
->>>>>>> ad246e66d5a05c181e419ffd9de0541aecfa7f56
-  ],
+    HomeModule,
+BrowserAnimationsModule,
+MatButtonModule,
+LayoutModule,
+MatToolbarModule,
+MatSidenavModule,
+MatIconModule,
+MatListModule
+],
   providers: [],
   bootstrap: [AppComponent]
 })
