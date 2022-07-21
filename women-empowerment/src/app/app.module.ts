@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
+import { HomeModule } from './home/home.module';
+import { FaqComponent } from './home/faq/faq.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -18,12 +20,14 @@ import { MatNativeDateModule } from '@angular/material/core';
   declarations: [
     AppComponent,
     StepHomeComponent,
-    UserLoginAndRegisterComponent,
+    UserLoginAndRegisterComponent
+    
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
+    HomeModule,
+    BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
