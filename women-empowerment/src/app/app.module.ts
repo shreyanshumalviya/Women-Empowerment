@@ -14,10 +14,22 @@ import { AdminNgoComponent } from './Admin/admin-ngo/admin-ngo.component';
 import { AdminSukayaYojanaComponent } from './Admin/admin-sukaya-yojana/admin-sukaya-yojana.component';
 import { AdminStepComponent } from './Admin/admin-step/admin-step.component';
 import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-accomodations.component';
+import { StepHomeComponent } from './step-home/step-home.component';
+import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
+import { HomeModule } from './home/home.module';
+import { FaqComponent } from './home/faq/faq.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
     AppComponent,
+    StepHomeComponent,
+    UserLoginAndRegisterComponent,
     AdminAboutUsComponent,
     AdminLoginComponent,
     AdminDashboardComponent,
@@ -27,6 +39,25 @@ import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-a
     AdminAccomodationsComponent,
   ],
   imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    FormsModule,
+    MatInputModule,
+    AppRoutingModule,
+    BrowserModule,
+    AppRoutingModule,
+    HomeModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatIconModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
