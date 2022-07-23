@@ -1,0 +1,49 @@
+    <div class="container">
+        <form method="POST" action="./submissionPage.html">
+            <h2 class="form-heading">Registration Form</h2>
+
+            <!-- Beneficiary Name -->
+            <div class="form-element">
+                <label for="bfc-name">Benificiary Name</label>
+                <input type="text" id="bfc-name" name="bfc-name" placeholder="Beneficiary Name...">
+            </div>
+
+            <!-- Girl Child Name -->
+            <div class="form-element">
+                <label for="gc-name">Girl Child Name</label>
+                <input type="text" id="gc-name" name="gc-name" placeholder="Girl Child Name">
+            </div>
+
+            <!-- Nationality -->
+            <div class="form-element">
+                <label for="nationality">Nationality</label>
+                <select id="nationality" name="nationality">
+                    <option value="india">India</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            
+            <!-- Date Of Birth -->
+            <div class="form-element">
+                <label for="dob">Date Of Birth</label><br>
+                <input type="date" id="dob" name="dob">
+            </div>
+
+            <!-- Aadhar Number -->
+            <div class="form-element">
+                <label for="aadhar">Aadhar Number</label>
+                <input type="text" id="aadhar" name="aadhar" pattern="[0-9]{12}" placeholder="Aadhar Number">
+            </div>
+
+            <!-- Upload Proof (Girl Child) -->
+            <div class="form-element">
+                <label for="proof">Document Proof (Girl Child)</label><br>
+                <input type="file" id="proof" name="proof">
+            </div>
+
+            <!-- Register Button -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    

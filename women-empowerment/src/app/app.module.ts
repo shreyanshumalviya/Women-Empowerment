@@ -29,6 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SukanyaYojanaComponent } from './sukanya-yojana/sukanya-yojana.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     AdminSukayaYojanaComponent,
     AdminStepComponent,
     AdminAccomodationsComponent,
+    SukanyaYojanaComponent,
   ],
   imports: [
     BrowserModule,

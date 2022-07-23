@@ -11,6 +11,7 @@ import { FaqComponent } from './home/faq/faq.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
 import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
+import { SukanyaYojanaComponent } from './sukanya-yojana/sukanya-yojana.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'AboutAdmin', pathMatch: 'full' },
@@ -46,6 +47,8 @@ const routes: Routes = [
   { path: 'stepHome', component: StepHomeComponent },
   { path: 'userLoginAndRegister', component: UserLoginAndRegisterComponent },
   { path: 'faq', component: FaqComponent },
+  { path: 'sukanya-yojana', component: SukanyaYojanaComponent },
+
 ];
 
 @NgModule({
