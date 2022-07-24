@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Course } from '../models/course';
 import { NGO } from '../models/NGO';
 
 @Injectable({
@@ -6,9 +7,10 @@ import { NGO } from '../models/NGO';
 })
 export class NgoService {
   static ngos: NGO[] = [];
+  static courses: Course[] = [];
   constructor() {
     console.log("constructor", NgoService.ngos.length);
-    
+
     let ngo = new NGO();
     ngo.name = "";
     ngo.address = ""
@@ -22,10 +24,11 @@ export class NgoService {
 
     NgoService.ngos.push(ngo);
     console.log("constructor", NgoService.ngos.length);
-    
+
   }
 
   public registerNGO(ngo: NGO): void {
+    // make a call to java spring server app
     try {
       NgoService.ngos.push(ngo); console.log("pushed");
       console.log(ngo);
@@ -36,13 +39,21 @@ export class NgoService {
   }
 
   public login(username: string, password: string): boolean {
+
+    // make a call to java spring server app
     for (const ngo of NgoService.ngos) {
       if (ngo.email === username && ngo.password === password) {
         console.log(ngo);
-        
+
         return true;
       }
     }
     return false;
+  }
+
+  public createCourse(course: Course) {
+    console.log(course);
+    
+    NgoService.courses.push(course);
   }
 }

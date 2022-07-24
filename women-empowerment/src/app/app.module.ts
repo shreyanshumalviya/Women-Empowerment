@@ -25,10 +25,12 @@ import { HomeModule } from './home/home.module';
 import { FaqComponent } from './home/faq/faq.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { CreateCourseComponent } from './ngo/create-course/create-course.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     AdminSukayaYojanaComponent,
     AdminStepComponent,
     AdminAccomodationsComponent,
+    CreateCourseComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatChipsModule,
     MatInputModule,
     MatCardModule,
     MatIconModule,
@@ -71,6 +75,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormsModule,
     MatInputModule,
     AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
