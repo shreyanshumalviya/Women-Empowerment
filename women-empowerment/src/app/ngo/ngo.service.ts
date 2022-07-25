@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Course } from '../models/course';
 import { EnrolledUsers } from '../models/enrolled-users';
 import { NGO } from '../models/NGO';
+import { ResidingUser } from '../models/residing-user';
 
 @Injectable({
   providedIn: 'root'
@@ -77,4 +78,32 @@ export class NgoService {
 
     return enrolledUsers;
   }
+  
+  getResidingUser(accomodationId: number): ResidingUser[] {
+    let residingUsers: ResidingUser[] = [];
+    let residingUser: ResidingUser = new ResidingUser();
+    residingUser.srNo=1;
+    residingUser.first_name="Jonho";
+    residingUser.last_name="Josh";
+    residingUser.from_date= new Date();
+    residingUser.documents_array=["https://content3.jdmagicbox.com/comp/tonk/z1/9999p1432.1432.140520202818.x3z1/catalogue/adhar-card-enrollment-centers-peeplu-tonk-aadhaar-card-agents-iqphud9ifj.jpg?clr=273f27","asdf"]
+    residingUser.email="email@email.com";
+    residingUser.contact="4312423412";
+    residingUser.day_care_availed = true;
+    residingUsers.push(residingUser);
+    
+    residingUser = new ResidingUser();
+    residingUser.srNo=2;
+    residingUser.first_name="yesha";
+    residingUser.last_name="yash";
+    residingUser.from_date= new Date();
+    residingUser.documents_array=["asdf","asdf"]
+    residingUser.day_care_availed = false
+    residingUser.email="email@email.com";
+    residingUser.contact="4312423412";
+    residingUsers.push(residingUser);
+
+    return residingUsers;
+  }
+
 }

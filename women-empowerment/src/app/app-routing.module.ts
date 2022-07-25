@@ -13,6 +13,7 @@ import { UserLoginAndRegisterComponent } from './user-login-and-register/user-lo
 import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
 import { ListUsersComponent } from './ngo/list-users/list-users.component';
+import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'AboutAdmin', pathMatch: 'full' },
@@ -23,7 +24,8 @@ const routes: Routes = [
   {
     children: [
       { path: "create_course", component: CreateCourseComponent },
-      { path: "users", component: ListUsersComponent },
+      { path: "enrolled_users", component: ListUsersComponent },
+      { path: "residing_users", component: ListResidentsComponent },
       { path: "home", component: NgoHomeComponent }],
     path: 'ngo'
   },
