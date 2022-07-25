@@ -1,0 +1,15 @@
+<div>
+  <div class="topnav">
+    <ul>
+      <li><a [routerLink]="['/AboutAdmin']">Home</a></li>
+      <li><a [routerLink]="['./adminNgoLink']">NGO</a></li>
+      <li><a [routerLink]="['./adminStepLink']">STEP</a></li>
+      <li><a [routerLink]="['./adminSukayaYojanaLink']">Sukaya Yojana</a></li>
+      <li><a [routerLink]="['./adminAccomodationsLink']">Accomodations</a></li>
+    </ul>
+    <div class="text">Welcome, {{ username }}</div>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
