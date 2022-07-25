@@ -26,11 +26,13 @@ import { FaqComponent } from './home/faq/faq.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatTableModule } from '@angular/material/table'
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
+import { ListUsersComponent } from './ngo/list-users/list-users.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { CreateCourseComponent } from './ngo/create-course/create-course.compone
     AdminStepComponent,
     AdminAccomodationsComponent,
     CreateCourseComponent,
+    ListUsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ import { CreateCourseComponent } from './ngo/create-course/create-course.compone
     MatInputModule,
     MatCardModule,
     MatIconModule,
+    MatTableModule,
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,

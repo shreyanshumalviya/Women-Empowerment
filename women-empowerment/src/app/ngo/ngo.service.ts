@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Course } from '../models/course';
+import { EnrolledUsers } from '../models/enrolled-users';
 import { NGO } from '../models/NGO';
 
 @Injectable({
@@ -53,7 +54,27 @@ export class NgoService {
 
   public createCourse(course: Course) {
     console.log(course);
-    
+
     NgoService.courses.push(course);
+  }
+  getEnrolledUsers(courseId: number): EnrolledUsers[] {
+    let enrolledUsers: EnrolledUsers[] = [];
+    let enrolledUser: EnrolledUsers = new EnrolledUsers();
+    enrolledUser.srNo=1;
+    enrolledUser.first_name="Jonho";
+    enrolledUser.last_name="Josh";
+    enrolledUser.email="email@email.com";
+    enrolledUser.contact="4312423412";
+    enrolledUsers.push(enrolledUser);
+    
+    enrolledUser = new EnrolledUsers();
+    enrolledUser.srNo=2;
+    enrolledUser.first_name="yesha";
+    enrolledUser.last_name="yash";
+    enrolledUser.email="email@email.com";
+    enrolledUser.contact="4312423412";
+    enrolledUsers.push(enrolledUser);
+
+    return enrolledUsers;
   }
 }
