@@ -15,13 +15,23 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { UpdateUserDetailsComponent } from './user-dashboard/update-user-details/update-user-details.component';
+import { UpdateUserPasswordComponent } from './user-dashboard/update-user-password/update-user-password.component';
+import { AddFamilyDetailsComponent } from './user-dashboard/add-family-details/add-family-details.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
     StepHomeComponent,
-    UserLoginAndRegisterComponent
-    
+    UserLoginAndRegisterComponent,
+    UserDashboardComponent,
+    UpdateUserDetailsComponent,
+    UpdateUserPasswordComponent,
+    AddFamilyDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +46,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

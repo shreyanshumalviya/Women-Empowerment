@@ -1,0 +1,140 @@
+<div>
+  <form action="" class="form-style">
+    <span class="fields-row">
+      <mat-form-field appearance="standard">
+        <mat-label>First Name</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>Middle Name</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>Last Name</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </span>
+
+    <span class="fields-row">
+      <span class="radio-btn-group">
+        <label id="example-radio-group-label">Gender: </label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="radio-btn-group"
+        >
+          <mat-radio-button value="Male"> Male </mat-radio-button>
+          <mat-radio-button value="Female"> Female </mat-radio-button>
+        </mat-radio-group>
+      </span>
+      <span class="form-field-space"></span>
+      <span class="radio-btn-group">
+        <label id="example-radio-group-label">Disability: </label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="radio-btn-group"
+        >
+          <mat-radio-button value="Yes"> Yes </mat-radio-button>
+          <mat-radio-button value="No"> No </mat-radio-button>
+        </mat-radio-group>
+      </span>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </span>
+
+    <span class="fields-row">
+      <mat-form-field appearance="standard">
+        <mat-label>Job Status</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>Job Title</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>Salary</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </span>
+
+    <span class="fields-row">
+      <mat-form-field appearance="standard">
+        <mat-label>Email</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>Contact Number</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>AADHAAR Number</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </span>
+    <span class="fields-row">
+      <mat-form-field appearance="standard">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="showRegisterPassword ? 'text' : 'password'"
+          name="password"
+        />
+        <mat-icon matSuffix (click)="toggleRegisterPasswordVisibility()">
+          {{ showRegisterPassword ? "visibility_off" : "visibility" }}
+        </mat-icon>
+      </mat-form-field>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>Confirm Password</mat-label>
+        <input
+          matInput
+          [type]="showRegisterConfirmPassword ? 'text' : 'password'"
+          name="confirmPassword"
+        />
+        <mat-icon matSuffix (click)="toggleRegisterConfirmPasswordVisibility()">
+          {{ showRegisterConfirmPassword ? "visibility_off" : "visibility" }}
+        </mat-icon>
+      </mat-form-field>
+    </span>
+
+    <span class="fields-row">
+      <span class="radio-btn-group">
+        <label id="example-radio-group-label">Type of Residence: </label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="radio-btn-group"
+        >
+          <mat-radio-button value="Urban"> Urban </mat-radio-button>
+          <mat-radio-button value="Rural"> Rural </mat-radio-button>
+        </mat-radio-group>
+      </span>
+      <span class="form-field-space"></span>
+      <span class="radio-btn-group">
+        <label id="example-radio-group-label">Marital Status: </label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="radio-btn-group"
+        >
+          <mat-radio-button value="Married"> Married </mat-radio-button>
+          <mat-radio-button value="Unmarried"> Unmarried </mat-radio-button>
+          <mat-radio-button value="Widowed"> Widowed </mat-radio-button>
+          <mat-radio-button value="Separated"> Separated </mat-radio-button>
+        </mat-radio-group>
+      </span>
+    </span>
+    <button class="update-detail-button" mat-raised-button color="primary">
+      Update
+    </button>
+  </form>
+</div>

@@ -17,6 +17,7 @@
 .form-style {
   display: flex;
   flex-direction: column;
+  margin-right: 1rem;
 }
 
 .headig-underline {
@@ -62,14 +63,5 @@ mat-radio-button {
 .register-form {
   height: 85%;
   width: 100%;
-  overflow-y: scroll;
-}
-
-.register-form::-webkit-scrollbar {
-  display: none;
-}
-
-.register-form {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  overflow-y: auto;
 }

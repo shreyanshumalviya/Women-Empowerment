@@ -11,3 +11,15 @@ body {
   --primary-color: #112d4e;
   --accent-color: #3f72af;
 }
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
