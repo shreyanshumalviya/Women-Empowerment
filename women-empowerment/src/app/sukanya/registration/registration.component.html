@@ -1,0 +1,48 @@
+
+    <div class="container">
+        <form method="POST" (ngSubmit)="register()" action="./submissionPage.html">
+            <h2 class="form-heading">Registration Form</h2>
+
+            <!-- First Name -->
+            <div class="form-element">
+                <label for="bfc-name">First Name</label>
+                <input type="text"[(ngModel)]="sukanyaRegistration.firstName" id="bfc-name" name="bfc-name" placeholder="First Name.">
+            </div>
+
+            <!-- Last Name-->
+            <div class="form-element">
+                <label for="gc-name">Last Name</label>
+                <input type="text" [(ngModel)]="sukanyaRegistration.lastName" id="gc-name" name="gc-name" placeholder="Last Name.">
+            </div>
+
+            <!-- Nationality -->
+            <!-- <div class="form-element">
+                <label for="nationality">Nationality</label>
+                <select id="nationality" name="nationality">
+                    <option value="india">India</option>
+                    <option value="others">Others</option>
+                </select>
+            </div> -->
+            
+            <!-- Date Of Birth -->
+             <div class="form-element">
+                <label for="dob">Date Of Birth</label><br>
+                <input type="date"[(ngModel)]="sukanyaRegistration.dateOfBirth" id="dob" name="dob">
+            </div> 
+
+            <!-- Aadhar Number -->
+            <div class="form-element">
+                <label for="aadhar">Aadhar Number (Girl Child)</label>
+                <input type="text"[(ngModel)]="sukanyaRegistration.aadharNumber" id="aadhar" name="aadhar" pattern="[0-9]{12}" placeholder="Aadhar Number">
+            </div>
+
+            <!-- Upload Proof (Girl Child) -->
+            <div class="form-element">
+                <label for="proof">Document Proof (Girl Child)</label><br>
+                <input type="file" id="proof" name="proof">
+            </div>
+
+            <!-- Register Button -->
+            <button type="submit" value="Submit">Submit</button>
+        </form>
+    </div>
