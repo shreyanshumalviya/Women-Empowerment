@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/models/course';
 import { NgoService } from '../ngo.service';
-import {MatChipInputEvent} from '@angular/material/chips';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { Router } from '@angular/router';
+import { NGO } from 'src/app/models/ngo';
 @Component({
   selector: 'app-create-course',
   templateUrl: './create-course.component.html',
@@ -11,15 +13,20 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 export class CreateCourseComponent implements OnInit {
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
-  fruits: string[] = ['Lemon', 'Lime',  'Apple'];
-  course:Course= new Course();
+  course: Course = new Course();
   minDate = new Date();
-  ngoService: NgoService = new NgoService();
-  constructor() { 
-  }
+  constructor(private ngoService: NgoService, private router: Router) {}
 
   ngOnInit(): void {
-    this.course.tags=[]
+    this.course.tags = []
+    let ngoString = sessionStorage.getItem("loggedInNgo");
+    console.log(ngoString);
+    
+    if (ngoString === null) {
+      this.router.navigate(['/ngo/home'])
+    }
+    let ngo: NGO = JSON.parse(ngoString);
+    this.course.ngo_id=ngo.ngoId;
   }
 
   add(event: MatChipInputEvent): void {
@@ -31,11 +38,11 @@ export class CreateCourseComponent implements OnInit {
     }
 
     // Clear the input value
-    
+
     event.chipInput!.clear();
   }
 
-  remove(fruit:string ): void {
+  remove(fruit: string): void {
     const index = this.course.tags.indexOf(fruit);
 
     if (index >= 0) {
@@ -43,10 +50,12 @@ export class CreateCourseComponent implements OnInit {
     }
   }
 
-  public createCourse(){
-    console.log(typeof(this.course.job_offered));
-    this.ngoService.createCourse(this.course)
+  public createCourse() {
+    console.log(typeof (this.course.jobOffered));
+    this.ngoService.createCourse(this.course).subscribe(course => {
+      console.log(course);
+
+    })
   }
- 
 
 }

@@ -1,0 +1,31 @@
+<div class="user-body-container" style="padding: 1em;">
+    <mat-card class="user-body">
+      <div class="div" *ngIf="courses.length===0">
+        No courses found. Click <a href="/ngo/create_course">here</a> to create one.
+      </div>
+        <div class="div" *ngFor="let course of courses; let i = index">
+        <mat-accordion>
+            <mat-expansion-panel (opened)="openArray[i] = true"
+                                 (closed)="openArray[i] = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{course.courseId}} {{course.courseTitle}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{dateToReadable(course.startDate)}}
+  
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              Duration - {{course.durationMonth}} months<br/>
+              {{course.description}}<br/>
+              <a routerLink="/ngo/enrolled_users/{{course.courseId}}">See registered Users</a>
+              <br/><br/>
+              <div class="div" *ngIf="course.courseMode==='Online'">Online</div>
+              <div class="div" *ngIf="course.courseMode!=='Online'">Location - {{course.location}}</div>
+              <div class="div" *ngIf="course.courseMode">Vacancies - {{course.vacancy}}</div>
+              
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+    </mat-card>
+</div>

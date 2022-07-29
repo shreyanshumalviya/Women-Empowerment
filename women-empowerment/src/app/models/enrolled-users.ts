@@ -6,6 +6,4 @@ export class EnrolledUsers {
     public email: string;
     public contact: string;
 
-    // no more than 30% of valacies can enroll for course
-
 }

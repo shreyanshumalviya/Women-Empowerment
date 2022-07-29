@@ -6,7 +6,7 @@
             <form action="" class="form-style" (ngSubmit)="createCourse()">
                 <mat-form-field appearance="standard">
                     <mat-label>Course Title</mat-label>
-                    <input matInput type="email" name="email" [(ngModel)]="course.title" />
+                    <input matInput type="email" name="email" [(ngModel)]="course.courseTitle" />
                 </mat-form-field>
 
                 <mat-form-field appearance="standard">
@@ -17,7 +17,7 @@
                 <span class="fields-row">
                     <mat-form-field style="width: 200px;">
                         <input matInput [matDatepicker]="picker" [min]="minDate" placeholder="Choose a date"
-                            name="start_date" [(ngModel)]="course.start_date">
+                            name="start_date" [(ngModel)]="course.startDate">
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field>
@@ -25,7 +25,7 @@
                     <span class="form-field-space"></span>
                     <mat-form-field appearance="standard" style="width: 300px; margin-top: 0;">
                         <mat-label>Duration</mat-label>
-                        <input matInput type="number" name="text" max="10000" min="1" [(ngModel)]="course.duration" />
+                        <input matInput type="number" name="text" max="10000" min="1" [(ngModel)]="course.durationMonth" />
 
                     </mat-form-field>
                 </span>
@@ -33,12 +33,12 @@
                 <span class="fields-row">
                     <mat-radio-group aria-label="getMultipleChoiceAnswer()">
                         <mat-radio-button type="boolean" value="true" ngDefaultControl name="job_is_offerred"
-                            [(ngModel)]="course.job_offered">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-radio-button>
+                            [(ngModel)]="course.jobOffered">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-radio-button>
                         <mat-radio-button value="false" ngDefaultControl name="job_is_not_offerred"
-                            [(ngModel)]="course.job_offered">No&nbsp;  </mat-radio-button>
+                            [(ngModel)]="course.jobOffered">No&nbsp;  </mat-radio-button>
                     </mat-radio-group>
 
-                    <mat-form-field appearance="standard" style="width: 250px; margin-top: 0;" *ngIf="course.job_offered!=null && course.job_offered.toString()==='true'">
+                    <mat-form-field appearance="standard" style="width: 250px; margin-top: 0;" *ngIf="course.jobOffered!=null && course.jobOffered.toString()==='true'">
                         <mat-label>Vacancies</mat-label>
                         <input matInput type="number" name="text" max="10000" min="1" [(ngModel)]="course.vacancy" />
 
@@ -47,13 +47,13 @@
                 <mat-label>Mode Of Course</mat-label>
                 <span class="fields-row">
                     <mat-radio-group aria-label="getMultipleChoiceAnswer()">
-                        <mat-radio-button type="boolean" value="online" ngDefaultControl name="job_is_offerred"
-                            [(ngModel)]="course.mode_of_course">Online</mat-radio-button>
+                        <mat-radio-button type="boolean" value="Online" ngDefaultControl name="job_is_offerred"
+                            [(ngModel)]="course.courseMode">Online</mat-radio-button>
                         <mat-radio-button value="Offline" ngDefaultControl name="job_is_not_offerred"
-                            [(ngModel)]="course.mode_of_course">Offline</mat-radio-button>
+                            [(ngModel)]="course.courseMode">Offline</mat-radio-button>
                     </mat-radio-group>
 
-                    <mat-form-field appearance="standard" style="width: 250px; margin-top: 0;" *ngIf="course.mode_of_course!=null && course.mode_of_course.toString()==='Offline'">
+                    <mat-form-field appearance="standard" style="width: 250px; margin-top: 0;" *ngIf="course.courseMode!=null && course.courseMode.toString()==='Offline'">
                         <mat-label>Locations</mat-label>
                         <input matInput type="text" name="text" max="10000" min="1" [(ngModel)]="course.location" />
 

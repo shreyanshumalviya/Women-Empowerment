@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NGO } from 'src/app/models/ngo';
 import { NgoService } from '../ngo.service';
 
 @Component({
@@ -11,45 +13,53 @@ export class NgoLoginComponent implements OnInit {
   errorMessage: string = ""
   showLoginPassword: Boolean = false;
   isLoginForm: Boolean = true;
-  ngo: any = {}
-  regngo: any = {}
+  ngo: NGO = new NGO();
+  regngo: NGO = new NGO();
   showRegisterPassword: Boolean = false;
   showRegisterConfirmPassword: Boolean = false;
 
-  constructor() { }
+  constructor(private ngoService: NgoService,private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public login(): void {
-    let successfulLogin: Boolean = new NgoService().login(this.ngo.username, this.ngo.password);
-    console.log(successfulLogin);
-    if (!successfulLogin) { this.errorMessage = "Incorrect username or password" }
-    else {
+    console.log("login");
+
+    this.ngoService.login(this.ngo).subscribe(ngo => {
+      console.log(JSON.stringify(ngo));
+      if (ngo === null) {
+        this.errorMessage = "Incorrect username or password"
+        return;
+      }
+      sessionStorage.setItem("loggedInNgo", JSON.stringify(ngo));
       this.errorMessage = ""
-    }
+    });
   }
 
-  public toggleLoginPasswordVisibility(){
-    this.showLoginPassword=!this.showLoginPassword;
+  public toggleLoginPasswordVisibility() {
+    this.showLoginPassword = !this.showLoginPassword;
   }
 
-  public showRegisterPage(){
-    this.isLoginForm=!this.isLoginForm
+  public showRegisterPage() {
+    this.isLoginForm = !this.isLoginForm
   }
 
-  public toggleRegisterPasswordVisibility(){
-    this.showRegisterPassword=!this.showRegisterPassword
+  public toggleRegisterPasswordVisibility() {
+    this.showRegisterPassword = !this.showRegisterPassword
   }
 
-  public toggleRegisterConfirmPasswordVisibility(){
-    this.showRegisterConfirmPassword=!this.showRegisterConfirmPassword;
+  public toggleRegisterConfirmPasswordVisibility() {
+    this.showRegisterConfirmPassword = !this.showRegisterConfirmPassword;
   }
 
-  
+
   public register(): void {
     console.log("register");
 
-    new NgoService().registerNGO(this.regngo);
+    this.ngoService.registerNGO(this.regngo).subscribe(ngo => {
+      console.log(JSON.stringify(ngo));
+
+    });
   }
 }

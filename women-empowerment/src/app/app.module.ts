@@ -31,8 +31,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatExpansionModule } from "@angular/material/expansion";
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
 import { ListUsersComponent } from './ngo/list-users/list-users.component';
+import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
+import { ListCoursesComponent } from './ngo/list-courses/list-courses.component';
+import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -51,6 +56,9 @@ import { ListUsersComponent } from './ngo/list-users/list-users.component';
     AdminAccomodationsComponent,
     CreateCourseComponent,
     ListUsersComponent,
+    ListResidentsComponent,
+    ListCoursesComponent,
+    ListAccomodationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +73,7 @@ import { ListUsersComponent } from './ngo/list-users/list-users.component';
     MatButtonModule,
     MatFormFieldModule,
     MatChipsModule,
+    MatExpansionModule,
     MatInputModule,
     MatCardModule,
     MatIconModule,
@@ -79,7 +88,7 @@ import { ListUsersComponent } from './ngo/list-users/list-users.component';
     FormsModule,
     MatInputModule,
     AppRoutingModule,
-    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
