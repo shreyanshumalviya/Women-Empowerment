@@ -1,28 +1,25 @@
-<!-- <div class="user-body-container" style="padding: 1em;">
+ <div class="user-body-container" style="padding: 1em;">
     <mat-card class="user-body">
-        <div class="div" *ngFor="let accommodation of accommodations; let i = index">
+        <div class="div" *ngFor="let accomodation of accommodations; let i = index">
         <mat-accordion>
             <mat-expansion-panel (opened)="openArray[i] = true"
                                  (closed)="openArray[i] = false">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  {{accommodation.id}} {{accommodation.title}}
+                  {{accomodation.accomodationId}}-{{accomodation.name}}
                 </mat-panel-title>
                 <mat-panel-description>
-                  {{("0" + course.start_date.getDate()).slice(-2) + "-" + ("0"+(course.start_date.getMonth()+1)).slice(-2) + "-" +
-                  course.start_date.getFullYear() + " " + ("0" + course.start_date.getHours()).slice(-2) + ":" + ("0" + course.start_date.getMinutes()).slice(-2)}}
+                  {{accomodation.roomAvailable}}
                 </mat-panel-description>
               </mat-expansion-panel-header>
-              Duration - {{course.duration}} months<br/>
-              {{course.description}}<br/>
-              <a routerLink="/ngo/enrolled_users/{{course.id}}">See registered Users</a>
+              Rooms Available - {{accomodation.roomAvailable}}/{{accomodation.totalRoom}}<br/>
+              Day Care Center - {{accomodation.dayCareCentre?"Yes":"No"}} Capacity - {{accomodation.capacity}}<br/>
+              <a routerLink="/ngo/enrolled_users/{{accomodation.accomodationId}}">See registered Users</a>
               <br/><br/>
-              <div class="div" *ngIf="course.mode_of_course==='online'">Online</div>
-              <div class="div" *ngIf="course.mode_of_course!=='online'">Location - {{course.location}}</div>
-              <div class="div" *ngIf="course.job_offered">Vacancies - {{course.vacancy}}</div>
-              
+              Address - {{accomodation.landmark}}, {{accomodation.addressLine1}}<br/>
+              {{accomodation.addressLine2}}, {{accomodation.city}},  {{accomodation.state}}
             </mat-expansion-panel>
           </mat-accordion>
         </div>
     </mat-card>
-</div> -->
+</div> 

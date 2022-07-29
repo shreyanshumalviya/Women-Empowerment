@@ -45,6 +45,12 @@ export class NgoService {
     
   }
 
+  public createAccomodation(accomodation: Accommodation):Observable<Accommodation>{
+    console.log(JSON.stringify(accomodation));
+    
+    return this.httpClient.post<Accommodation>("http://localhost:9091/accomodation/register", accomodation);
+  }
+
   public createCourse(course: Course):Observable<Course> {
     console.log(JSON.stringify(course));
 
@@ -98,44 +104,16 @@ export class NgoService {
     return residingUsers;
   }
 
-  getAccomodationsByNgoId(ngoId: number): Accommodation[] {
-    let accommodations: Accommodation[] = [];
-    let accommodation = new Accommodation();
-    accommodation.id = 1;
-    accommodation.ngo_id = ngoId;
-    accommodation.state = "Madhya Pradesh"
-    accommodation.city = "Narmadapuram"
-    accommodation.address_line_1 = "Address is address and aredds s"
-    accommodation.address_line_2 = "Address is address and aredds s"
-    accommodation.pincode = "461001"
-    accommodation.landmark = "This Building"
-    accommodation.total_rooms = 24
-    accommodation.rooms_available = 20
-    accommodation.capacity = 3
-    accommodation.day_care_center = false
+  getAccomodationsByNgoId(ngoId: number): Observable<Accommodation[]>{
+    
+    return this.httpClient.get<Accommodation[]>("http://localhost:9091/accomodation/list-accomodations-of-ngo/"+ngoId);
 
-    accommodations.push(accommodation);
-
-    accommodation.id = 2;
-    accommodation.ngo_id = ngoId;
-    accommodation.state = "Madhya Pradesh"
-    accommodation.city = "Narmadapuram"
-    accommodation.address_line_1 = "Address is address and aredds s"
-    accommodation.address_line_2 = "Address is address and aredds s"
-    accommodation.pincode = "461001"
-    accommodation.landmark = "This Building"
-    accommodation.total_rooms = 24
-    accommodation.rooms_available = 20
-    accommodation.capacity = 3
-    accommodation.day_care_center = false
-
-    accommodations.push(accommodation);
-
-    return accommodations;
   }
 
   getCoursesByNgoId(ngoId: number): Observable<Course[]> {
     return this.httpClient.get<Course[]>("http://localhost:9090/course/list-course-by-ngo/"+ngoId);
 
   }
+
+
 }

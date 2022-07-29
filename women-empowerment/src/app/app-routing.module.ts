@@ -16,6 +16,7 @@ import { ListUsersComponent } from './ngo/list-users/list-users.component';
 import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
 import { ListCoursesComponent } from './ngo/list-courses/list-courses.component';
 import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
+import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'AboutAdmin', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
   {
     children: [
       { path: "create_course", component: CreateCourseComponent },
+      { path: "create_accomodation", component: CreateAccomodationComponent },
       { path: "enrolled_users/:courseId", component: ListUsersComponent },
       { path: "residing_users/:accomodationId", component: ListResidentsComponent },
       { path: "home", component: NgoHomeComponent },

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Accommodation } from 'src/app/models/accomodation';
 import { Course } from 'src/app/models/course';
+import { NGO } from 'src/app/models/ngo';
 import { NgoService } from '../ngo.service';
 
 @Component({
@@ -11,13 +12,25 @@ import { NgoService } from '../ngo.service';
 export class ListAccomodationsComponent implements OnInit {
   accommodations: Accommodation[];
   openArray: boolean[] = [];
+  loggedInNgo:NGO ;
   constructor(private ngoService: NgoService) { }
 
   ngOnInit(): void {
-    this.accommodations = this.ngoService.getAccomodationsByNgoId(1);
 
-    for (let accommodation of this.accommodations) {
-      this.openArray.push(false)
-    }
+    let ngoString = sessionStorage.getItem("loggedInNgo");
+
+    console.log(ngoString);
+    
+    this.loggedInNgo = JSON.parse(ngoString);
+
+    this.ngoService.getAccomodationsByNgoId(this.loggedInNgo.ngoId).subscribe(accommodations => {
+      this.accommodations = accommodations;
+      console.log(accommodations);
+      
+      for (let accommodation of this.accommodations) {
+        this.openArray.push(false)
+      }
+    });
+
   }
 }

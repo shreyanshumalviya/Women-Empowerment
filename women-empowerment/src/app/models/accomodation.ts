@@ -1,16 +1,15 @@
 export class Accommodation {
-    public id: number;
-    public title:string;
+    public accomodationId: number;
+    public name: string;
     public ngo_id: number;
-    public name:string; // implement this
     public state: string;
     public city: string;
-    public address_line_1: string;
-    public address_line_2: string;
+    public addressLine1: string;
+    public addressLine2: string;
     public pincode: string;
     public landmark: string;
-    public total_rooms: number;
-    public rooms_available: number;
+    public totalRoom: number;
+    public roomAvailable: number;
     public capacity: number;
-    public day_care_center: boolean;
+    public dayCareCentre: boolean;
 }
