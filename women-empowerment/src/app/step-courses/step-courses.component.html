@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Steps Courses</h2>
+
+  <div class="checkbox-container">
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="agriculture" onchange="filter()"
+              name="agriculture" id="agriculture">
+          <label class="form-check-label" for="agriculture">
+              agriculture
+          </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" onchange="filter()" name="fishing" value="fishing"
+              id="fishing">
+          <label class="form-check-label" for="fishing">
+              fishing
+          </label>
+      </div>
+  </div>
+
+  <div class="courses-container" >
+      <!-- copy this element to repeat course items -->
+      <div class="card" *ngFor="let course of courses">
+          <!-- <img src="assets/Images/agriculture-image.jpg" alt="agriculture-image"> -->
+          <div class="card-details">
+              <h4><b>{{course.courseTitle}}</b></h4>
+              <p>
+                  {{course.description}}
+              </p>
+              <button class="card-button">Register</button>
+          </div>
+      </div>
+      <!-- copy element ends here -->
+
+  </div>
+
+
+  <div id="row">
+
+  </div>
+</div>
