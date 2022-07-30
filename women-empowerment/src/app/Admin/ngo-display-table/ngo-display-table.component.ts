@@ -1,17 +1,18 @@
-import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import {
   NgoDisplayTableDataSource,
   NgoDisplayTableItem,
-} from '../ngo-display-table/ngo-display-table-datasource';
+} from './ngo-display-table-datasource';
+
 @Component({
-  selector: 'app-admin-step',
-  templateUrl: './admin-step.component.html',
-  styleUrls: ['./admin-step.component.css'],
+  selector: 'app-ngo-display-table',
+  templateUrl: './ngo-display-table.component.html',
+  styleUrls: ['./ngo-display-table.component.css'],
 })
-export class AdminStepComponent implements AfterViewInit {
+export class NgoDisplayTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<NgoDisplayTableItem>;
@@ -25,8 +26,8 @@ export class AdminStepComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.table.dataSource = this.dataSource;
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
   }
 }
