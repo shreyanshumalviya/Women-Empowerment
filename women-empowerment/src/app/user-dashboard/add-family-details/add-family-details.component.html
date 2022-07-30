@@ -1,0 +1,76 @@
+<div class="family-datails-container">
+  <div class="family-members">
+    <div class="family-member">
+      <button mat-raised-button color="primary">Add Member</button>
+    </div>
+    <div class="family-member">
+      <button mat-button color="primary">Member 1</button>
+    </div>
+    <div class="family-member">
+      <button mat-button color="primary">Member 2</button>
+    </div>
+    <div class="family-member">
+      <button mat-button color="primary">Member 3</button>
+    </div>
+  </div>
+  <mat-divider [vertical]="true" class="divider-spacing"></mat-divider>
+  <div class="member-details">
+    <form action="" class="form-style">
+      <span class="fields-row three-fields">
+        <mat-form-field appearance="standard">
+          <mat-label>First Name</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Middle Name</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Last Name</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </span>
+
+      <span class="fields-row">
+        <span class="radio-btn-group">
+          <label id="example-radio-group-label">Gender: </label>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="radio-btn-group"
+          >
+            <mat-radio-button value="Male"> Male </mat-radio-button>
+            <mat-radio-button value="Female"> Female </mat-radio-button>
+          </mat-radio-group>
+        </span>
+
+        <span class="form-field-space"></span>
+        <mat-form-field appearance="standard">
+          <mat-label>Date of Birth</mat-label>
+          <input matInput [matDatepicker]="picker" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </span>
+
+      <span class="fields-row">
+        <mat-form-field appearance="standard">
+          <mat-label>AADHAAR Number</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <span class="form-field-space"></span>
+        <mat-form-field appearance="standard">
+          <mat-label>Relation</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </span>
+
+      <button class="update-detail-button" mat-raised-button color="primary">
+        Update
+      </button>
+    </form>
+  </div>
+</div>

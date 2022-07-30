@@ -52,8 +52,15 @@ import { ListUsersComponent } from './ngo/list-users/list-users.component';
 import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
 import { ListCoursesComponent } from './ngo/list-courses/list-courses.component';
 import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
-import { HttpClientModule } from "@angular/common/http";
 import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { UpdateUserDetailsComponent } from './user-dashboard/update-user-details/update-user-details.component';
+import { UpdateUserPasswordComponent } from './user-dashboard/update-user-password/update-user-password.component';
+import { AddFamilyDetailsComponent } from './user-dashboard/add-family-details/add-family-details.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -78,6 +85,10 @@ import { CreateAccomodationComponent } from './ngo/create-accomodation/create-ac
     ListCoursesComponent,
     ListAccomodationsComponent,
     CreateAccomodationComponent,
+    UserDashboardComponent,
+    UpdateUserDetailsComponent,
+    UpdateUserPasswordComponent,
+    AddFamilyDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -111,10 +122,14 @@ import { CreateAccomodationComponent } from './ngo/create-accomodation/create-ac
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    FormsModule,
     MatInputModule,
     AppRoutingModule,
-    HttpClientModule
+    MatToolbarModule,
+    MatTooltipModule,
+    MatDividerModule,
+    MatSnackBarModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

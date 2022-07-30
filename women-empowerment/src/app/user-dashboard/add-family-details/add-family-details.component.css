@@ -1,0 +1,81 @@
+.family-datails-container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.family-members {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 2rem 0;
+}
+
+/* ::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+} */
+
+.family-member {
+  padding: 0.5rem 0;
+}
+
+.divider-spacing {
+  margin: 2rem;
+}
+
+.member-details {
+  height: 100%;
+  display: flex;
+}
+
+.form-style {
+  display: flex;
+  flex-direction: column;
+}
+
+.update-detail-button {
+  margin: 1rem 0;
+  width: 6rem;
+  align-self: flex-end;
+}
+
+.fields-row {
+  display: flex;
+  width: 100%;
+}
+
+.three-fields {
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+  gap: 1rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.form-field-space {
+  margin: 2%;
+}
+
+.radio-btn-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+mat-radio-button {
+  margin: 1rem;
+}

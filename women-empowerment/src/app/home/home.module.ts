@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FaqComponent } from './faq/faq.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-
-
 @NgModule({
   declarations: [
     FaqComponent
@@ -14,4 +12,4 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatExpansionModule
   ]
 })
-export class HomeModule { }
+export class HomeModule {}

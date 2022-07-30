@@ -9,6 +9,7 @@ import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-a
 import { RouterModule, Routes, Router, Route } from '@angular/router';
 import { FaqComponent } from './home/faq/faq.component';
 import { StepHomeComponent } from './step-home/step-home.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
 import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
@@ -63,6 +64,7 @@ const routes: Routes = [
   { path: 'userLoginAndRegister', component: UserLoginAndRegisterComponent },
   { path: 'faq/Admin', component: FaqComponent },
   { path: 'faq', component: FaqComponent },
+  { path: 'userDashboard', component: UserDashboardComponent },
 ];
 
 @NgModule({
