@@ -21,6 +21,7 @@ import { ListResidentsComponent } from './ngo/list-residents/list-residents.comp
 import { ListCoursesComponent } from './ngo/list-courses/list-courses.component';
 import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
 import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
+import { LegislationComponent } from './home/legislation/legislation.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,7 @@ const routes: Routes = [
   { path: 'userLoginAndRegister', component: UserLoginAndRegisterComponent },
   { path: 'faq/Admin', component: FaqComponent },
   { path: 'faq', component: FaqComponent },
+  {path:'legislation',component:LegislationComponent},
   { path: 'step-courses', component: StepCoursesComponent },
   { path: 'userDashboard', component: UserDashboardComponent },
 ];
