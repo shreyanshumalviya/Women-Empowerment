@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NGO } from 'src/app/models/NGO';
+import { NGO } from 'src/app/models/ngo';
 import { NgoService } from '../ngo.service';
 
 @Component({
@@ -10,14 +10,14 @@ import { NgoService } from '../ngo.service';
 export class NgoRegisterComponent implements OnInit {
 
   public ngo: any = new NGO();
-  constructor() { }
+  constructor(private ngoService: NgoService) { }
   ngOnInit(): void {
   }
 
   public register(): void {
     console.log("register");
 
-    new NgoService().registerNGO(this.ngo);
+    this.ngoService.registerNGO(this.ngo);
   }
 
 }

@@ -1,13 +1,23 @@
 <div class="user-body-container">
-  <mat-card class="user-body">
-    <div *ngIf="isLoginForm; else elseBlock">
+  <mat-card class="user-body" [ngSwitch]="pageState">
+    <div *ngSwitchCase="'login'">
       <div class="login-form">
         <h2>Login</h2>
         <hr class="headig-underline" />
-        <form action="" class="form-style">
+        <form
+          class="form-style"
+          #userLoginForm="ngForm"
+          action=""
+          (ngSubmit)="userLogin()"
+        >
           <mat-form-field appearance="standard">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" name="email" />
+            <mat-label>User ID</mat-label>
+            <input
+              matInput
+              type="number"
+              name="userId"
+              [(ngModel)]="userLoginData.userId"
+            />
           </mat-form-field>
 
           <mat-form-field appearance="standard">
@@ -16,69 +26,121 @@
               matInput
               [type]="showLoginPassword ? 'text' : 'password'"
               name="password"
+              [(ngModel)]="userLoginData.password"
             />
             <mat-icon matSuffix (click)="toggleLoginPasswordVisibility()">
               {{ showLoginPassword ? "visibility_off" : "visibility" }}
             </mat-icon>
           </mat-form-field>
 
-          <button class="form-submit-button" mat-raised-button color="primary">
+          <button
+            type="submit"
+            class="form-submit-button"
+            mat-raised-button
+            color="primary"
+          >
             Login
           </button>
         </form>
-        <span>Not a member?</span
-        ><button
-          class="form-switch-button"
-          mat-raised-button
-          color="accent"
-          (click)="showRegisterPage()"
-        >
-          Register
-        </button>
+        <br /><br />
+        <div class="register-and-reset-buttons">
+          <span>
+            <span>Not a member?</span
+            ><button
+              class="reset-password-button"
+              mat-raised-button
+              color="accent"
+              (click)="showRegisterPage()"
+            >
+              Register
+            </button></span
+          >
+          <button
+            class="form-switch-button"
+            mat-button
+            color="accent"
+            (click)="showResetPasswordPage()"
+          >
+            Reset Password
+          </button>
+        </div>
       </div>
     </div>
-    <ng-template #elseBlock>
+    <div *ngSwitchCase="'register'" class="register-form">
       <h2>Register</h2>
       <hr class="headig-underline" />
       <div class="register-form">
-        <form action="" class="form-style">
+        <form
+          action=""
+          class="form-style"
+          #registerUserForm="ngForm"
+          (ngSubmit)="registerUser()"
+        >
           <span class="fields-row">
             <mat-form-field appearance="standard">
               <mat-label>First Name</mat-label>
-              <input matInput />
+              <input
+                matInput
+                name="firstName"
+                [(ngModel)]="userProfile.firstName"
+              />
             </mat-form-field>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
               <mat-label>Middle Name</mat-label>
-              <input matInput />
+              <input
+                matInput
+                name="middleName"
+                [(ngModel)]="userProfile.middleName"
+              />
             </mat-form-field>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
               <mat-label>Last Name</mat-label>
-              <input matInput />
+              <input
+                matInput
+                name="lastName"
+                [(ngModel)]="userProfile.lastName"
+              />
             </mat-form-field>
           </span>
 
           <span class="fields-row">
-            <!-- <mat-form-field appearance="standard">
-              <mat-label>Gender</mat-label>
-              <input matInput />
-            </mat-form-field> -->
             <span class="radio-btn-group">
               <label id="example-radio-group-label">Gender: </label>
               <mat-radio-group
                 aria-labelledby="example-radio-group-label"
                 class="radio-btn-group"
+                name="gender"
+                [(ngModel)]="userProfile.gender"
               >
-                <mat-radio-button value="Male"> Male </mat-radio-button>
-                <mat-radio-button value="Female"> Female </mat-radio-button>
+                <mat-radio-button [value]="'MALE'"> Male </mat-radio-button>
+                <mat-radio-button [value]="'FEMALE'"> Female </mat-radio-button>
               </mat-radio-group>
             </span>
 
             <span class="form-field-space"></span>
+            <span class="radio-btn-group">
+              <label id="example-radio-group-label">Disability: </label>
+              <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+                class="radio-btn-group"
+                name="disabled"
+                [(ngModel)]="userProfile.disabled"
+              >
+                <mat-radio-button [value]="'YES'"> Yes </mat-radio-button>
+                <mat-radio-button [value]="'NO'"> No </mat-radio-button>
+              </mat-radio-group>
+            </span>
+            <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
               <mat-label>Date of Birth</mat-label>
-              <input matInput [matDatepicker]="picker" />
+              <input
+                matInput
+                [matDatepicker]="picker"
+                name="dob"
+                [(ngModel)]="userProfile.dob"
+              />
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle
                 matSuffix
@@ -90,12 +152,16 @@
           <span class="fields-row">
             <mat-form-field appearance="standard">
               <mat-label>Email</mat-label>
-              <input matInput />
+              <input matInput name="email" [(ngModel)]="userProfile.email" />
             </mat-form-field>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
               <mat-label>Contact Number</mat-label>
-              <input matInput />
+              <input
+                matInput
+                name="contactNo"
+                [(ngModel)]="userProfile.contactNo"
+              />
             </mat-form-field>
           </span>
           <span class="fields-row">
@@ -105,6 +171,7 @@
                 matInput
                 [type]="showRegisterPassword ? 'text' : 'password'"
                 name="password"
+                [(ngModel)]="userProfile.password"
               />
               <mat-icon matSuffix (click)="toggleRegisterPasswordVisibility()">
                 {{ showRegisterPassword ? "visibility_off" : "visibility" }}
@@ -117,6 +184,7 @@
                 matInput
                 [type]="showRegisterConfirmPassword ? 'text' : 'password'"
                 name="confirmPassword"
+                [(ngModel)]="confirmPassword"
               />
               <mat-icon
                 matSuffix
@@ -131,34 +199,48 @@
           <span class="fields-row">
             <mat-form-field appearance="standard">
               <mat-label>AADHAAR Number</mat-label>
-              <input matInput />
+              <input
+                matInput
+                name="aadhaarNo"
+                [(ngModel)]="userProfile.aadhaarNo"
+              />
             </mat-form-field>
             <span class="form-field-space"></span>
+            <mat-form-field appearance="standard">
+              <mat-label>PAN Number</mat-label>
+              <input matInput name="panNo" [(ngModel)]="userProfile.panNo" />
+            </mat-form-field>
+          </span>
+          <span class="fields-row">
             <span class="radio-btn-group">
-              <label id="example-radio-group-label">Disability: </label>
+              <label id="example-radio-group-label">Job Status: </label>
               <mat-radio-group
                 aria-labelledby="example-radio-group-label"
                 class="radio-btn-group"
+                name="jobStatus"
+                [(ngModel)]="userProfile.jobStatus"
               >
-                <mat-radio-button value="Yes"> Yes </mat-radio-button>
-                <mat-radio-button value="No"> No </mat-radio-button>
+                <mat-radio-button [value]="'EMPLOYED'">
+                  Employed
+                </mat-radio-button>
+                <mat-radio-button [value]="'UNEMPLOYED'">
+                  Unemployed
+                </mat-radio-button>
               </mat-radio-group>
             </span>
-          </span>
-          <span class="fields-row">
-            <mat-form-field appearance="standard">
-              <mat-label>Job Status</mat-label>
-              <input matInput />
-            </mat-form-field>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
               <mat-label>Job Title</mat-label>
-              <input matInput />
+              <input
+                matInput
+                name="jobTitle"
+                [(ngModel)]="userProfile.jobTitle"
+              />
             </mat-form-field>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
               <mat-label>Salary</mat-label>
-              <input matInput />
+              <input matInput name="salary" [(ngModel)]="userProfile.salary" />
             </mat-form-field>
           </span>
           <span class="radio-btn-group">
@@ -166,9 +248,11 @@
             <mat-radio-group
               aria-labelledby="example-radio-group-label"
               class="radio-btn-group"
+              name="residenceArea"
+              [(ngModel)]="userProfile.residenceArea"
             >
-              <mat-radio-button value="Urban"> Urban </mat-radio-button>
-              <mat-radio-button value="Rural"> Rural </mat-radio-button>
+              <mat-radio-button [value]="'URBAN'"> Urban </mat-radio-button>
+              <mat-radio-button [value]="'RURAL'"> Rural </mat-radio-button>
             </mat-radio-group>
           </span>
 
@@ -177,11 +261,17 @@
             <mat-radio-group
               aria-labelledby="example-radio-group-label"
               class="radio-btn-group"
+              name="maritalStatus"
+              [(ngModel)]="userProfile.maritalStatus"
             >
-              <mat-radio-button value="Married"> Married </mat-radio-button>
-              <mat-radio-button value="Unmarried"> Unmarried </mat-radio-button>
-              <mat-radio-button value="Widowed"> Widowed </mat-radio-button>
-              <mat-radio-button value="Separated"> Separated </mat-radio-button>
+              <mat-radio-button [value]="'MARRIED'"> Married </mat-radio-button>
+              <mat-radio-button [value]="'UNMARRIED'">
+                Unmarried
+              </mat-radio-button>
+              <mat-radio-button [value]="'WIDOWED'"> Widowed </mat-radio-button>
+              <mat-radio-button [value]="'SEPARATED'">
+                Separated
+              </mat-radio-button>
             </mat-radio-group>
           </span>
 
@@ -199,6 +289,48 @@
           Login
         </button>
       </div>
-    </ng-template>
+    </div>
+    <div *ngSwitchCase="'updatePassword'">
+      <div class="login-form">
+        <h2>Reset Password</h2>
+        <hr class="headig-underline" />
+        <form
+          class="form-style"
+          #userLoginForm="ngForm"
+          action=""
+          (ngSubmit)="passwordReset()"
+        >
+          <mat-form-field appearance="standard">
+            <mat-label>User ID</mat-label>
+            <input
+              matInput
+              type="number"
+              name="userId"
+              [(ngModel)]="userId.userId"
+            />
+          </mat-form-field>
+          <br /><br /><br />
+          <button
+            type="submit"
+            class="form-submit-button"
+            mat-raised-button
+            color="primary"
+          >
+            Request Reset Password
+          </button>
+        </form>
+        <br /><br />
+        <div class="register-and-reset-buttons">
+          <button
+            class="reset-password-button"
+            mat-raised-button
+            color="accent"
+            (click)="showLoginPage()"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
   </mat-card>
 </div>

@@ -1,0 +1,52 @@
+<mat-toolbar color="primary" class="navigation-bar">
+  <span class="left-btns">
+    <button mat-button>STEP</button>
+    <button mat-button>Accomodation</button>
+    <button mat-button>Sukanya Samriddhi</button>
+  </span>
+  <p>{{ "Welcome user: " + userDetails.userId }}</p>
+  <span class="right-btns">
+    <button mat-icon-button matTooltip="Home" (click)="toDashboardHome()">
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Profile" (click)="toProfilePage()">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Logout" (click)="logoutUser()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </span>
+</mat-toolbar>
+<div class="body-container" [ngSwitch]="dashboardState">
+  <div class="profile-container" *ngSwitchCase="'profile'">
+    <mat-card class="profile-navigation">
+      <button mat-stroked-button color="primary" (click)="toUpdateDetails()">
+        Update Details
+      </button>
+      <button mat-stroked-button color="primary" (click)="toChangePassword()">
+        Change Password
+      </button>
+      <button mat-stroked-button color="primary" (click)="toFamilyDetails()">
+        Family Details
+      </button>
+    </mat-card>
+    <mat-card class="profile-body" [ngSwitch]="profileState">
+      <app-update-user-details
+        *ngSwitchCase="'details'"
+      ></app-update-user-details>
+
+      <app-update-user-password
+        *ngSwitchCase="'password'"
+      ></app-update-user-password>
+
+      <app-add-family-details *ngSwitchCase="'family'"></app-add-family-details>
+    </mat-card>
+  </div>
+  <div class="dashboard-default" *ngSwitchDefault>
+    <mat-card><h3>Application Status</h3></mat-card>
+    <mat-card><h3>2</h3></mat-card>
+    <mat-card>3</mat-card>
+    <mat-card>4</mat-card>
+    <mat-card class="span-entire">5</mat-card>
+  </div>
+</div>

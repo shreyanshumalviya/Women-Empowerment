@@ -12,5 +12,14 @@ body {
   --accent-color: #3f72af;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}

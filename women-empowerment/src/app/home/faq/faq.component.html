@@ -1,255 +1,658 @@
 <!Doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FAQ </title>
-  <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  <link rel="stylesheet" href="faq.component.css">  
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FAQ </title>
+	<script>document.getElementsByTagName("html")[0].className += " js";</script>
+	<link rel="stylesheet" href="faq.component.css">
 </head>
 
 <body>
-<header>
-  <div><h1>FAQ </h1></div>
-</header>
+	<header>
+		<div>
+			<h1>FAQ </h1>
+		</div>
+	</header>
 
-<section class="ib-faq js-ib-faq">
-	<ul class="faq-categories">
-		<li><a class="faq-category" href="admin">ADMIN<i class="mob"></i></a></li>
-		<li><a class="faq-category" href="#registration">REGISTRATION<i class="mob"></i></a></li>
-		<li><a class="faq-category" href="#user">Sukanya Samridhhi Yojana<i class="mob"></i></a></li>
-		<li><a class="faq-category" href="#ngo">NGO<i class="mob"></i></a></li>
-		<li><a class="faq-category" href="#step">STEP<i class="mob"></i></a></li>
+	<section class="ib-faq js-ib-faq">
+		<ul class="faq-categories">
+			<li><a class="faq-category" (click)="scroll(admin)">ADMIN<i class="mob"></i></a></li>
+			<li><a class="faq-category" (click)="scroll(registration)">REGISTRATION<i class="mob"></i></a></li>
+			<li><a class="faq-category" (click)="scroll(user)">Sukanya Samridhhi Yojana<i class="mob"></i></a></li>
+			<li><a class="faq-category" (click)="scroll(ngo)">NGO<i class="mob"></i></a></li>
+			<li><a class="faq-category" (click)="scroll(step)">STEP<i class="mob"></i></a></li>
 
 		</ul> <!-- faq-categories -->
 
-	<div class="faq-items">
-		<ul id="admin" class="faq-group">
-			<li class="faq-title"><h2>ADMIN</h2></li>
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>Who can be ADMIN?
-				</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>An admin will be qualified if you have valid government id and is approved  to become ADMIN.An email will be sent with the credential details if approved as admin. </p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
+		<div class="faq-items">
 
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>What documents are required to become ADMIN?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>Those who registered for admin should have unique government employee id,government verified documents,adhar number,pan number.After succeessful registration admin 
-				will get mail if approved their documents .The will have confirmation mail.
-			</p>
-		</div>
-				</div> <!-- faq-response -->
-			</li>
+			<ul id="faq/admin" #admin class="faq-group">
+				<li class="faq-title">
+					<h2>ADMIN</h2>
+				</li>
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[0] = true"
+										 (closed)="openArray[0] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							Who can be ADMIN?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+					  An admin will be qualified if you have valid government id and is approved to become
+								ADMIN.An email will be sent with the credential details if approved as admin.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>Who can be ADMIN?
+						</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>An admin will be qualified if you have valid government id and is approved to become
+								ADMIN.An email will be sent with the credential details if approved as admin. </p>
+						</div>
+					</div> <!-- faq-response 
+				</li>-->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[1] = true"
+										 (closed)="openArray[1] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What documents are required to become ADMIN?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							Those who registered for admin should have unique government employee id,government
+							verified documents,adhar number,pan number.After succeessful registration admin
+							will get mail if approved their documents .The will have confirmation mail.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+				
 
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>Where will I find ADMIN manual?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>If you are approved as admin,all the login credential ,user manual will be provided by mail.</p>
-		 </div>
-				</div> <!-- faq-response -->
-			</li>
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span></span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>Those who registered for admin should have unique government employee id,government
+								verified documents,adhar number,pan number.After succeessful registration admin
+								will get mail if approved their documents .The will have confirmation mail.
+							</p>
+						</div>
+					</div> 
+				</li>  -->
 
-		</ul> <!-- faq-group -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[2] = true"
+										 (closed)="openArray[2] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What documents are required to become ADMIN?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							Those who registered for admin should have unique government employee id,government
+							verified documents,adhar number,pan number.After succeessful registration admin
+							will get mail if approved their documents .The will have confirmation mail.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
 
-		
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>Where will I find ADMIN manual?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>If you are approved as admin,all the login credential ,user manual will be provided by
+								mail.</p>
+						</div>
+					</div> 
+				</li> -->
 
-		<ul id="registration" class="faq-group">
-			<li class="faq-title"><h2>REGISTRATION</h2></li>
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>I forgot my password. How do I obtain it?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>Click here to have your password e-mailed to you. If you experience difficulty, you may also use contact.</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
+			</ul> 
 
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>I forgot my Username. How do I obtain it?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>Click here to have your password e-mailed to you. If you experience difficulty, you may also use contact.</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
 
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>What will happen after registration?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>The new user will register himself/herself into the application using the registration 
-				page. The credentials  will be validated. The successful registration into application directs 
-				user to Login Page</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
 
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>What happens in Login page?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>The user will enter the username and password to login into the system. The credentials 
-				provided by the user will be validated in order to authorize the user. The successful login into the 
-				application directs the user to the dashboard of the welfare scheme. </p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
-		</ul> <!-- faq-group -->
-		<ul id="user" class="faq-group">
-			<li class="faq-title"><h2>Sukanya Samridhi Yojana</h2></li>
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>What is SUKANYA SAMRIDHI YOJANA ?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>It provides a saving scheme targeted at the parents of the girl child.To encourage parents to build 
-				a fund for the future education and marriage expenses for their girl child.It is a small deposit 
-				scheme for the girl child launched as a part of the ‘BetiBachaoBetiPadhao’ campaign.A Sukanya 
-				Samridhi Account can be opened any time after the birth if the girl till she turns 10, with a 
-				minimum deposit of Rs 1,000.
-				The account can be opened in any post office or authorized branches of commercial banks.</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
+			<ul id="faq/registration" #registration class="faq-group">
+				<li class="faq-title">
+					<h2>REGISTRATION</h2>
+				</li>
 
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>What is the eligibilty?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>The girl child strictly has to be an Indian resident throughout the tenure of the scheme. Incase if the 
-				residency status of the girl child changes in the interim, no interest shall be payable from the date of change 
-				and the account will be closed prematurely.
-				</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
 
-		
-		</ul> <!-- faq-group -->
-
-		<ul id="ngo" class="faq-group">
-			<li class="faq-title"><h2>NGO</h2></li>
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>Who can register under NGO?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>
-				<ul>
-			    <li>Any Organisation registered under the Societies Registration Act, 1860 or Indian Trusts Act,1882 (Not for Profit) or other statutes.</li>
-				<li>Any Voluntary Organisations or Non-Government Organisations enrolled under the Societies Registration Act or Indian Trust Act, and which undergoes activities related to the objectives of the STEP scheme.</li>
-				<li>Any co-operative Societies registered under the co-operative societies Act.</li>
-			</ul>
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[0] = true"
+										 (closed)="openArray[0] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							I forgot my password. How do I obtain it?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							Click here to have your password e-mailed to you. If you experience difficulty, you may
+								also use contact
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>I forgot my password. How do I obtain it?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>Click here to have your password e-mailed to you. If you experience difficulty, you may
+								also use contact.</p>
+						</div>
+					</div> 
+				</li> -->
 			
-          </div>
-				</div> <!-- faq-response -->
-			</li>
-
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>How to register for NGO?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>To start with, the concerned organization has to sign an application in the NGO-Partnership Portal of the NITI Aayog along with the self-declared details and obtain a Unique ID. The NGO should compulsorily specify the Unique ID at the time of applying for grants</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
-
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>What to do every year by NGO  after registration?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>The NGOs should update their database in the Portal every year.	</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
-
-
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>What is the minimum requirement to become registered NGO?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>The organisation should have been in existence for a minimum of 3 years 
-				and must have carried out activities for implementing skills related to employment and entrepreneurship during the last 3 years.
-				 Also, the organisation should have had good financial health for at least the previous 2 years.
-			</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
-		</ul> <!-- faq-group -->
-
-		<ul id="step" class="faq-group">
-			<li class="faq-title"><h2>STEP</h2></li>
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>What is Support to Training and Employment Programme for Women (STEP)?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>The Department of Women and Child Development (WCD), which is regulated under the Government of India, has introduced the Support to Training and Employment Programme for Women (STEP) Scheme. The scheme intends to provide training in skills development to ensure employment opportunities to women and enable them to become self-employed entrepreneurs. Under this scheme, grants are provided to institutions and organisations (including NGOs) to impart training programme. In this article, we look at the Support to Training and Employment Programme for Women (STEP) in detail.</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
-
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>Why are these schemes necessary for Women in India? 
-				</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>The principle of gender equality is enshrined in the Indian Constitution in its Preamble, Fundamental Rights, Fundamental Duties and Directive Principles. The Constitution not only grants equality to women, but also empowers the state to adopt measures of positive discrimination in favour of women. ‘Empowerment’ may be described as a process which helps people to assert their control over the factors which affect their lives. Empowerment of women means developing them as more aware individuals, who are politically active, economically productive and independent and are able to make intelligent discussion in matters that affect them. Present article discusses about various initiatives taken by Government of India for empowering women by analysing position of India in Gender Inequality Index and Global Gender Gap Index of United Nations. Article concludes with the note that due recognition must be given to women and society should come forward to ensure equal status for women in all spheres of life.
-			</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
-
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>What is Naari Shakti Foundation? 
-				</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>The broad mandate of Ministry is to have holistic development of Women and Children. As a nodal Ministry for the advancement of women and children, the Ministry formulates plans, policies and programmes; enacts/ amends legislation, guides and coordinates the efforts of both governmental and non-governmental organisations working in the field of Women and Child Development. Besides, playing its nodal role, the Ministry implements certain innovative programmes for women and children. These programmes cover welfare and support services, training for employment and income generation, awareness generation and gender sensitization. These programmes play a supplementary and complementary role to the other general developmental programmes in the sectors of health, education, rural development etc. All these efforts are directed to ensure that women are empowered both economically and socially and thus become equal partners in national development along with men.
-			</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
-			
-		
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>Who are eligible for Support to Training and Employment Programme for Women (STEP)?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>	 All Women who are in the age group of 16 years and above.</p>
-          </div>
-				</div> <!-- faq-response -->
-			</li>
-		
-			<li class="faq-item">
-				<a class="faq-question" href="#0"><span>What are the objectives of STEP?</span></a>
-				<div class="faq-response">
-          <div class="text-block">
-            <p>The objectives of the STEP scheme are as given below:</p>
-
-				<ul>
-					<li>To provide training in skill development that provides employment to women.</li>
-					<li>To enable women to become self-employed or entrepreneurs through quality training.</li>
-					<li>The scheme seeks to provide these benefits to women who are aged 16 and above.</li>
-				</ul>   
-          </div>
-				</div> <!-- faq-response -->
-			</li>
-		</ul> <!-- faq-group -->
-
-      </div> <!-- faq-items -->
-
-	<a href="#0" class="faq-close-item text-replace">Close</a>
-  
-  <div class="faq-overlay" aria-hidden="true"></div>
-</section> <!-- ib-faq -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[1] = true"
+										 (closed)="openArray[1] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							I forgot my Username. How do I obtain it?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							Click here to have your password e-mailed to you. If you experience difficulty, you may
+								also use contact.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>I forgot my Username. How do I obtain it?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>Click here to have your password e-mailed to you. If you experience difficulty, you may
+								also use contact.</p>
+						</div>
+					</div> 
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[2] = true"
+										 (closed)="openArray[2] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What will happen after registration?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							The new user will register himself/herself into the application using the registration
+								page. The credentials will be validated. The successful registration into application
+								directs
+								user to Login Page
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>What will happen after registration?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>The new user will register himself/herself into the application using the registration
+								page. The credentials will be validated. The successful registration into application
+								directs
+								user to Login Page</p>
+						</div>
+					</div> 
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[3] = true"
+										 (closed)="openArray[3] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What happens in Login page?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							The user will enter the username and password to login into the system. The credentials
+								provided by the user will be validated in order to authorize the user. The successful
+								login into the
+								application directs the user to the dashboard of the welfare scheme. 
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>What happens in Login page?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>The user will enter the username and password to login into the system. The credentials
+								provided by the user will be validated in order to authorize the user. The successful
+								login into the
+								application directs the user to the dashboard of the welfare scheme. </p>
+						</div>
+					</div> 
+				</li> -->
+			</ul> <!-- faq-group -->
 
 
-<script src="faq.component.js"></script> 
+
+
+			<ul id="faq/user" #user class="faq-group">
+				<li class="faq-title">
+					<h2>Sukanya Samridhi Yojana</h2>
+				</li>
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[0] = true"
+										 (closed)="openArray[0] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What is SUKANYA SAMRIDHI YOJANA ?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							It provides a saving scheme targeted at the parents of the girl child.To encourage
+								parents to build
+								a fund for the future education and marriage expenses for their girl child.It is a small
+								deposit
+								scheme for the girl child launched as a part of the ‘BetiBachaoBetiPadhao’ campaign.A
+								Sukanya
+								Samridhi Account can be opened any time after the birth if the girl till she turns 10,
+								with a
+								minimum deposit of Rs 1,000.
+								The account can be opened in any post office or authorized branches of commercial banks.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+
+
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>What is SUKANYA SAMRIDHI YOJANA ?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>It provides a saving scheme targeted at the parents of the girl child.To encourage
+								parents to build
+								a fund for the future education and marriage expenses for their girl child.It is a small
+								deposit
+								scheme for the girl child launched as a part of the ‘BetiBachaoBetiPadhao’ campaign.A
+								Sukanya
+								Samridhi Account can be opened any time after the birth if the girl till she turns 10,
+								with a
+								minimum deposit of Rs 1,000.
+								The account can be opened in any post office or authorized branches of commercial banks.
+							</p>
+						</div>
+					</div> 
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[1] = true"
+										 (closed)="openArray[1] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What is the eligibilty?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							The girl child strictly has to be an Indian resident throughout the tenure of the scheme.
+								Incase if the
+								residency status of the girl child changes in the interim, no interest shall be payable
+								from the date of change
+								and the account will be closed prematurely.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>What is the eligibilty?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>The girl child strictly has to be an Indian resident throughout the tenure of the scheme.
+								Incase if the
+								residency status of the girl child changes in the interim, no interest shall be payable
+								from the date of change
+								and the account will be closed prematurely.
+							</p>
+						</div>
+					</div> 
+				</li> -->
+
+
+			</ul> <!-- faq-group -->
+
+			<ul id="faq/ngo" #ngo class="faq-group">
+				<li class="faq-title">
+					<h2>NGO</h2>
+				</li>
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[0] = true"
+										 (closed)="openArray[0] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							Who can register under NGO?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							<li>Any Organisation registered under the Societies Registration Act, 1860 or Indian
+									Trusts Act,1882 (Not for Profit) or other statutes.</li>
+								<li>Any Voluntary Organisations or Non-Government Organisations enrolled under the
+									Societies Registration Act or Indian Trust Act, and which undergoes activities
+									related to the objectives of the STEP scheme.</li>
+								<li>Any co-operative Societies registered under the co-operative societies Act.</li>
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>Who can register under NGO?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>
+							<ul>
+								<li>Any Organisation registered under the Societies Registration Act, 1860 or Indian
+									Trusts Act,1882 (Not for Profit) or other statutes.</li>
+								<li>Any Voluntary Organisations or Non-Government Organisations enrolled under the
+									Societies Registration Act or Indian Trust Act, and which undergoes activities
+									related to the objectives of the STEP scheme.</li>
+								<li>Any co-operative Societies registered under the co-operative societies Act.</li>
+							</ul>
+
+						</div>
+					</div> 
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[1] = true"
+										 (closed)="openArray[1] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							How to register for NGO?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							To start with, the concerned organization has to sign an application in the
+								NGO-Partnership Portal of the NITI Aayog along with the self-declared details and obtain
+								a Unique ID. The NGO should compulsorily specify the Unique ID at the time of applying
+								for grants
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>How to register for NGO?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>To start with, the concerned organization has to sign an application in the
+								NGO-Partnership Portal of the NITI Aayog along with the self-declared details and obtain
+								a Unique ID. The NGO should compulsorily specify the Unique ID at the time of applying
+								for grants</p>
+						</div>
+					</div>
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[2] = true"
+										 (closed)="openArray[2] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What to do every year by NGO after registration?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							The NGOs should update their database in the Portal every year.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>What to do every year by NGO after registration?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>The NGOs should update their database in the Portal every year. </p>
+						</div>
+					</div> 
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[3] = true"
+										 (closed)="openArray[3] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What is the minimum requirement to become registered
+							NGO?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							The organisation should have been in existence for a minimum of 3 years
+								and must have carried out activities for implementing skills related to employment and
+								entrepreneurship during the last 3 years.
+								Also, the organisation should have had good financial health for at least the previous 2
+								years.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+
+<!-- 
+				<li class="faq-item">
+					<a class="faq-question" href="#0"><span>What is the minimum requirement to become registered
+							NGO?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>The organisation should have been in existence for a minimum of 3 years
+								and must have carried out activities for implementing skills related to employment and
+								entrepreneurship during the last 3 years.
+								Also, the organisation should have had good financial health for at least the previous 2
+								years.
+							</p>
+						</div>
+					</div> 
+				</li> -->
+			</ul> <!-- faq-group -->
+
+			<ul id="faq/step" #step class="faq-group">
+				<li class="faq-title">
+					<h2>STEP</h2>
+				<!-- </li>
+				<li class="faq-item">
+					<a class="faq-question" href="#0"><span>What is Support to Training and Employment Programme for
+							Women (STEP)?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>The Department of Women and Child Development (WCD), which is regulated under the
+								Government of India, has introduced the Support to Training and Employment Programme for
+								Women (STEP) Scheme. The scheme intends to provide training in skills development to
+								ensure employment opportunities to women and enable them to become self-employed
+								entrepreneurs. Under this scheme, grants are provided to institutions and organisations
+								(including NGOs) to impart training programme. In this article, we look at the Support
+								to Training and Employment Programme for Women (STEP) in detail.</p>
+						</div>
+					</div> 
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[0] = true"
+										 (closed)="openArray[0] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What is Support to Training and Employment Programme for
+							Women (STEP)?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							The Department of Women and Child Development (WCD), which is regulated under the
+								Government of India, has introduced the Support to Training and Employment Programme for
+								Women (STEP) Scheme. The scheme intends to provide training in skills development to
+								ensure employment opportunities to women and enable them to become self-employed
+								entrepreneurs. Under this scheme, grants are provided to institutions and organisations
+								(including NGOs) to impart training programme. In this article, we look at the Support
+								to Training and Employment Programme for Women (STEP) in detail.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>Why are these schemes necessary for Women in India?
+						</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>The principle of gender equality is enshrined in the Indian Constitution in its Preamble,
+								Fundamental Rights, Fundamental Duties and Directive Principles. The Constitution not
+								only grants equality to women, but also empowers the state to adopt measures of positive
+								discrimination in favour of women. ‘Empowerment’ may be described as a process which
+								helps people to assert their control over the factors which affect their lives.
+								Empowerment of women means developing them as more aware individuals, who are
+								politically active, economically productive and independent and are able to make
+								intelligent discussion in matters that affect them. Present article discusses about
+								various initiatives taken by Government of India for empowering women by analysing
+								position of India in Gender Inequality Index and Global Gender Gap Index of United
+								Nations. Article concludes with the note that due recognition must be given to women and
+								society should come forward to ensure equal status for women in all spheres of life.
+							</p>
+						</div>
+					</div>
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[1] = true"
+										 (closed)="openArray[1] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							Why are these schemes necessary for Women in India?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							The principle of gender equality is enshrined in the Indian Constitution in its Preamble,
+								Fundamental Rights, Fundamental Duties and Directive Principles. The Constitution not
+								only grants equality to women, but also empowers the state to adopt measures of positive
+								discrimination in favour of women. ‘Empowerment’ may be described as a process which
+								helps people to assert their control over the factors which affect their lives.
+								Empowerment of women means developing them as more aware individuals, who are
+								politically active, economically productive and independent and are able to make
+								intelligent discussion in matters that affect them. Present article discusses about
+								various initiatives taken by Government of India for empowering women by analysing
+								position of India in Gender Inequality Index and Global Gender Gap Index of United
+								Nations. Article concludes with the note that due recognition must be given to women and
+								society should come forward to ensure equal status for women in all spheres of life.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+
+
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>What is Naari Shakti Foundation?
+						</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>The broad mandate of Ministry is to have holistic development of Women and Children. As a
+								nodal Ministry for the advancement of women and children, the Ministry formulates plans,
+								policies and programmes; enacts/ amends legislation, guides and coordinates the efforts
+								of both governmental and non-governmental organisations working in the field of Women
+								and Child Development. Besides, playing its nodal role, the Ministry implements certain
+								innovative programmes for women and children. These programmes cover welfare and support
+								services, training for employment and income generation, awareness generation and gender
+								sensitization. These programmes play a supplementary and complementary role to the other
+								general developmental programmes in the sectors of health, education, rural development
+								etc. All these efforts are directed to ensure that women are empowered both economically
+								and socially and thus become equal partners in national development along with men.
+							</p>
+						</div>
+					</div> 
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[2] = true"
+										 (closed)="openArray[2] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							Who are eligible for Support to Training and Employment
+							Programme for Women (STEP)?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							All Women who are in the age group of 16 years and above.
+						</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>Who are eligible for Support to Training and Employment
+							Programme for Women (STEP)?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p> All Women who are in the age group of 16 years and above.</p>
+						</div>
+					</div> 
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[3] = true"
+										 (closed)="openArray[3] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What are the objectives of STEP?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							<p>The objectives of the STEP scheme are as given below:</p>
+
+							<ul>
+								<li>To provide training in skill development that provides employment to women.</li>
+								<li>To enable women to become self-employed or entrepreneurs through quality training.
+								</li>
+								<li>The scheme seeks to provide these benefits to women who are aged 16 and above.</li>
+							</ul>
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+
+				<!-- <li class="faq-item">
+					<a class="faq-question" href="#0"><span>What are the objectives of STEP?</span></a>
+					<div class="faq-response">
+						<div class="text-block">
+							<p>The objectives of the STEP scheme are as given below:</p>
+
+							<ul>
+								<li>To provide training in skill development that provides employment to women.</li>
+								<li>To enable women to become self-employed or entrepreneurs through quality training.
+								</li>
+								<li>The scheme seeks to provide these benefits to women who are aged 16 and above.</li>
+							</ul>
+						</div>
+					</div> 
+				</li> -->
+				<mat-accordion>
+					<mat-expansion-panel (opened)="openArray[2] = true"
+										 (closed)="openArray[2] = false">
+					  <mat-expansion-panel-header>
+						<mat-panel-title class="faq-question">
+							What is Naari Shakti Foundation?
+						</mat-panel-title>
+					  </mat-expansion-panel-header>
+					  <div class="faq-response">
+						<div class="text-block">
+							The broad mandate of Ministry is to have holistic development of Women and Children. As a
+								nodal Ministry for the advancement of women and children, the Ministry formulates plans,
+								policies and programmes; enacts/ amends legislation, guides and coordinates the efforts
+								of both governmental and non-governmental organisations working in the field of Women
+								and Child Development. Besides, playing its nodal role, the Ministry implements certain
+								innovative programmes for women and children. These programmes cover welfare and support
+								services, training for employment and income generation, awareness generation and gender
+								sensitization. These programmes play a supplementary and complementary role to the other
+								general developmental programmes in the sectors of health, education, rural development
+								etc. All these efforts are directed to ensure that women are empowered both economically
+								and socially and thus become equal partners in national development along with men.
+							</div></div>
+					</mat-expansion-panel>
+				  </mat-accordion>
+			</ul> <!-- faq-group -->
+
+		</div> <!-- faq-items -->
+
+		<a href="#0" class="faq-close-item text-replace">Close</a>
+
+		<div class="faq-overlay" aria-hidden="true"></div>
+	</section> <!-- ib-faq -->
+
+
+	<script src="faq.component.js"></script>
 </body>
-</html>
 
+</html>
