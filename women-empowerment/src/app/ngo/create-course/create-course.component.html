@@ -1,0 +1,90 @@
+<div class="user-body-container" style="padding: 1em;">
+    <mat-card class="user-body">
+        <div class="div" *ngIf="errorMessage!==''|| errorMessage!==null || errorMessage!==undefined " style="color: red;">
+            {{errorMessage}}
+        </div>
+        <div class="login-form">
+            <h2>Create Course</h2>
+            <hr class="headig-underline" />
+            <form action="" class="form-style" (ngSubmit)="createCourse()">
+                <mat-form-field appearance="standard">
+                    <mat-label>Course Title</mat-label>
+                    <input matInput type="email" name="email" [(ngModel)]="course.courseTitle" />
+                </mat-form-field>
+
+                <mat-form-field appearance="standard">
+                    <mat-label>Description</mat-label>
+                    <input matInput type="text" name="password" [(ngModel)]="course.description" />
+
+                </mat-form-field>
+                <span class="fields-row">
+                    <mat-form-field style="width: 200px;">
+                        <input matInput [matDatepicker]="picker" [min]="minDate" placeholder="Choose a date"
+                            name="start_date" [(ngModel)]="course.startDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <span class="form-field-space"></span>
+                    <mat-form-field appearance="standard" style="width: 300px; margin-top: 0;">
+                        <mat-label>Duration</mat-label>
+                        <input matInput type="number" name="text" max="10000" min="1" [(ngModel)]="course.durationMonth" />
+
+                    </mat-form-field>
+                </span>
+                <mat-label>Offers Job</mat-label>
+                <span class="fields-row">
+                    <mat-radio-group aria-label="getMultipleChoiceAnswer()">
+                        <mat-radio-button type="boolean" value="true" ngDefaultControl name="job_is_offerred"
+                            [(ngModel)]="course.jobOffered">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-radio-button>
+                        <mat-radio-button value="false" ngDefaultControl name="job_is_not_offerred"
+                            [(ngModel)]="course.jobOffered">No&nbsp;  </mat-radio-button>
+                    </mat-radio-group>
+
+                    <mat-form-field appearance="standard" style="width: 250px; margin-top: 0;" *ngIf="course.jobOffered!=null && course.jobOffered.toString()==='true'">
+                        <mat-label>Vacancies</mat-label>
+                        <input matInput type="number" name="text" max="10000" min="1" [(ngModel)]="course.vacancy" />
+
+                    </mat-form-field>
+                </span>
+                <mat-label>Mode Of Course</mat-label>
+                <span class="fields-row">
+                    <mat-radio-group aria-label="getMultipleChoiceAnswer()">
+                        <mat-radio-button type="boolean" value="Online" ngDefaultControl name="job_is_offerred"
+                            [(ngModel)]="course.courseMode">Online</mat-radio-button>
+                        <mat-radio-button value="Offline" ngDefaultControl name="job_is_not_offerred"
+                            [(ngModel)]="course.courseMode">Offline</mat-radio-button>
+                    </mat-radio-group>
+
+                    <mat-form-field appearance="standard" style="width: 250px; margin-top: 0;" *ngIf="course.courseMode!=null && course.courseMode.toString()==='Offline'">
+                        <mat-label>Locations</mat-label>
+                        <input matInput type="text" name="text" max="10000" min="1" [(ngModel)]="course.location" />
+
+                    </mat-form-field>
+
+                </span>
+                
+                <mat-form-field class="example-chip-list" appearance="fill">
+                    <mat-label>Tags</mat-label>
+                    <mat-chip-list #chipList aria-label="Fruit selection">
+                      <mat-chip *ngFor="let tag of course.tags" (removed)="remove(tag)">
+                        {{tag}}
+                        <button matChipRemove>
+                          <mat-icon>cancel</mat-icon>
+                        </button>
+                      </mat-chip>
+                      <input placeholder="New tag..."
+                             [matChipInputFor]="chipList"
+                             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                             [matChipInputAddOnBlur]="addOnBlur"
+                             (matChipInputTokenEnd)="add($event)">
+                    </mat-chip-list>
+                  </mat-form-field>
+                  
+                <button class="form-submit-button" mat-raised-button color="primary">
+                    Create Course
+                </button>
+            </form>
+        </div>
+    </mat-card>
+</div>

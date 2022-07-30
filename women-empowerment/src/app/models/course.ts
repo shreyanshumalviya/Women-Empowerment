@@ -1,11 +1,10 @@
 export class Course {
-    public id:number;
-    public class:string;
+    public courseId:number;
     public ngo_id:number;
     public courseTitle: string;
     public description: string;
     public startDate: Date;
-    public duration: number; 
+    public durationMonth: number; 
     public courseMode: string; // online or offline
     public tags: string[]; // field in which the course trains
     public location: string;
