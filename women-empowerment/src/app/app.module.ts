@@ -55,6 +55,7 @@ import { ListCoursesComponent } from './ngo/list-courses/list-courses.component'
 import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
+import { StepCoursesComponent } from './step-courses/step-courses.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { CreateAccomodationComponent } from './ngo/create-accomodation/create-ac
     ListCoursesComponent,
     ListAccomodationsComponent,
     CreateAccomodationComponent,
+    StepCoursesComponent,
   ],
   imports: [
     BrowserModule,
