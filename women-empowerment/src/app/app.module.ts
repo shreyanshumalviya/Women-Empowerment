@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-
 import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
 import { NgoLoginComponent } from './ngo/ngo-login/ngo-login.component';
 import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component';
@@ -28,8 +26,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
 import { AdminAboutUsComponent } from './Admin/admin-aboutUs/admin-about-us.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { AdminNgoComponent } from './Admin/admin-ngo/admin-ngo.component';
 import { AdminSukayaYojanaComponent } from './Admin/admin-sukaya-yojana/admin-sukaya-yojana.component';
@@ -41,6 +38,11 @@ import { HomeModule } from './home/home.module';
 import { FaqComponent } from './home/faq/faq.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { NgoDisplayTableComponent } from './Admin/ngo-display-table/ngo-display-table.component';
+import { AdminLandingPComponent } from './Admin/admin-landing-p/admin-landing-p.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
@@ -80,6 +82,8 @@ import { HttpClientModule } from '@angular/common/http';
     AdminSukayaYojanaComponent,
     AdminStepComponent,
     AdminAccomodationsComponent,
+    NgoDisplayTableComponent,
+    AdminLandingPComponent,
     StepCoursesComponent,
     CreateCourseComponent,
     ListUsersComponent,
@@ -93,45 +97,34 @@ import { HttpClientModule } from '@angular/common/http';
     AddFamilyDetailsComponent,
   ],
   imports: [
-    BrowserModule,
-    ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    FormsModule,
-    MatInputModule,
-    AppRoutingModule,
     HomeModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
     LayoutModule,
-    MatToolbarModule,
     MatSidenavModule,
-    MatIconModule,
     MatListModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
     MatFormFieldModule,
     MatChipsModule,
     MatExpansionModule,
-    MatInputModule,
     MatCardModule,
     MatIconModule,
-    MatTableModule,
+    MatSlideToggleModule,
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
     BrowserModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     MatInputModule,
     AppRoutingModule,
     MatToolbarModule,
     MatTooltipModule,
     MatDividerModule,
     MatSnackBarModule,
-    FormsModule,
-    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
