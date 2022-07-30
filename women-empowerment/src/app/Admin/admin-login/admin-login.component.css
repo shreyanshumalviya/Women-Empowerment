@@ -1,0 +1,71 @@
+.user-body-container {
+  height: 100%;
+  width: 100%;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.user-body {
+  margin-top: 5%;
+  width: 90%;
+  height: 70%;
+  padding: 2rem 3rem;
+}
+.form-style {
+  display: flex;
+  flex-direction: column;
+}
+
+.headig-underline {
+  margin: 0.5rem 0;
+  border: none;
+  border-top-color: var(--primary-color);
+  border-top-style: solid;
+  border-top-width: 3px;
+}
+
+.form-submit-button {
+  margin: 1rem 0;
+}
+
+.form-switch-button {
+  margin: 0 1rem;
+}
+
+.fields-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.form-field-space {
+  margin: 2%;
+}
+
+.radio-btn-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+mat-radio-button {
+  margin: 1rem;
+}
+.psw {
+  align-items: center;
+  height: 50px;
+  text-align: center;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  padding-right: 25px;
+  padding-left: 25px;
+  justify-content: space-between;
+  font-size: 17px;
+}
