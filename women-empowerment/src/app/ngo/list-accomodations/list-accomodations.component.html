@@ -1,0 +1,28 @@
+ <div class="user-body-container" style="padding: 1em;">
+    <mat-card class="user-body">
+      <div class="div" *ngIf="accommodations.length===0">
+        No accomodations found. Click <a href="/ngo/create_accomodation">here</a> to create one.
+      </div>
+        <div class="div" *ngFor="let accomodation of accommodations; let i = index">
+        <mat-accordion>
+            <mat-expansion-panel (opened)="openArray[i] = true"
+                                 (closed)="openArray[i] = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{accomodation.accomodationId}}-{{accomodation.name}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{accomodation.roomAvailable}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              Rooms Available - {{accomodation.roomAvailable}}/{{accomodation.totalRoom}}<br/>
+              Day Care Center - {{accomodation.dayCareCentre?"Yes":"No"}} Capacity - {{accomodation.capacity}}<br/>
+              <a routerLink="/ngo/enrolled_users/{{accomodation.accomodationId}}">See registered Users</a>
+              <br/><br/>
+              Address - {{accomodation.landmark}}, {{accomodation.addressLine1}}<br/>
+              {{accomodation.addressLine2}}, {{accomodation.city}},  {{accomodation.state}}
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+    </mat-card>
+</div> 

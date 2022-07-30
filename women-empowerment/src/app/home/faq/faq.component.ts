@@ -5,12 +5,16 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-faq',
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.css']
-  
-})
-export class FaqComponent 
-  {}
 
-    
+})
+export class FaqComponent {
+  openArray: boolean[] = [false, false, false]
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
+}
+
+
 
 
 
