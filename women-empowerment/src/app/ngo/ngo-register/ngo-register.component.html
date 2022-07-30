@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="title-container">
+        <h2>NGO Register</h2>
+    </div>
+    <form #loginForm="ngForm" (ngSubmit)="register()">
+        <input type="text" class="loginInput" placeholder="Enter Name" required name="name"
+            [(ngModel)]="ngo.name" #uname=ngModel pattern="[a-zA-Z]*$">
+        <input type="text" class="loginInput" placeholder="Enter Email" required name="email"
+            [(ngModel)]="ngo.email" #uname=ngModel pattern="[a-zA-Z]*$">
+        <input type="password" class="loginInput" placeholder="Enter Password" required name="password"
+            [(ngModel)]="ngo.password" #uname=ngModel pattern="[a-zA-Z]*$">
+        <input type="password" class="loginInput" placeholder="Confirm Password" required name="confirmPassword"
+            [(ngModel)]="ngo.confirmPassword" #uname=ngModel pattern="[a-zA-Z]*$">
+        <input type="text" class="loginInput" placeholder="Enter Description" required name="Description"
+            [(ngModel)]="ngo.description" #uname=ngModel pattern="[a-zA-Z]*$">
+        <input type="text" class="loginInput" placeholder="Enter Address" required name="Address"
+            [(ngModel)]="ngo.address" #uname=ngModel pattern="[a-zA-Z]*$">
+        <input type="text" class="loginInput" placeholder="Enter Contact" required name="contact"
+            [(ngModel)]="ngo.contact" #uname=ngModel pattern="[a-zA-Z]*$">
+        <div class= "formSubmitButton">
+            <button type="submit" class="loginButton">Register</button>
+        </div>
+    </form>
+</div>
