@@ -1,19 +1,28 @@
 <div>
-  <form action="" class="form-style">
+  <form
+    action=""
+    #updateUserForm="ngForm"
+    class="form-style"
+    (ngSubmit)="updateUserProfileDetails()"
+  >
     <span class="fields-row">
       <mat-form-field appearance="standard">
         <mat-label>First Name</mat-label>
-        <input matInput />
+        <input matInput name="firstName" [(ngModel)]="userDetails.firstName" />
       </mat-form-field>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
         <mat-label>Middle Name</mat-label>
-        <input matInput />
+        <input
+          matInput
+          name="middleName"
+          [(ngModel)]="userDetails.middleName"
+        />
       </mat-form-field>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
         <mat-label>Last Name</mat-label>
-        <input matInput />
+        <input matInput name="lastName" [(ngModel)]="userDetails.lastName" />
       </mat-form-field>
     </span>
 
@@ -23,9 +32,11 @@
         <mat-radio-group
           aria-labelledby="example-radio-group-label"
           class="radio-btn-group"
+          name="gender"
+          [(ngModel)]="userDetails.gender"
         >
-          <mat-radio-button value="Male"> Male </mat-radio-button>
-          <mat-radio-button value="Female"> Female </mat-radio-button>
+          <mat-radio-button [value]="'MALE'"> Male </mat-radio-button>
+          <mat-radio-button [value]="'FEMALE'"> Female </mat-radio-button>
         </mat-radio-group>
       </span>
       <span class="form-field-space"></span>
@@ -35,14 +46,19 @@
           aria-labelledby="example-radio-group-label"
           class="radio-btn-group"
         >
-          <mat-radio-button value="Yes"> Yes </mat-radio-button>
-          <mat-radio-button value="No"> No </mat-radio-button>
+          <mat-radio-button [value]="'YES'"> Yes </mat-radio-button>
+          <mat-radio-button [value]="'NO'"> No </mat-radio-button>
         </mat-radio-group>
       </span>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
         <mat-label>Date of Birth</mat-label>
-        <input matInput [matDatepicker]="picker" />
+        <input
+          matInput
+          [matDatepicker]="picker"
+          name="dob"
+          [(ngModel)]="userDetails.dob"
+        />
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -51,60 +67,64 @@
 
     <span class="fields-row">
       <mat-form-field appearance="standard">
-        <mat-label>Job Status</mat-label>
-        <input matInput />
-      </mat-form-field>
-      <span class="form-field-space"></span>
-      <mat-form-field appearance="standard">
-        <mat-label>Job Title</mat-label>
-        <input matInput />
-      </mat-form-field>
-      <span class="form-field-space"></span>
-      <mat-form-field appearance="standard">
-        <mat-label>Salary</mat-label>
-        <input matInput />
-      </mat-form-field>
-    </span>
-
-    <span class="fields-row">
-      <mat-form-field appearance="standard">
-        <mat-label>Email</mat-label>
-        <input matInput />
-      </mat-form-field>
-      <span class="form-field-space"></span>
-      <mat-form-field appearance="standard">
         <mat-label>Contact Number</mat-label>
-        <input matInput />
+        <input matInput name="contactNo" [(ngModel)]="userDetails.contactNo" />
       </mat-form-field>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
         <mat-label>AADHAAR Number</mat-label>
-        <input matInput />
+        <input matInput name="aadhaarNo" [(ngModel)]="userDetails.aadhaarNo" />
+      </mat-form-field>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>PAN Number</mat-label>
+        <input matInput name="panNo" [(ngModel)]="userDetails.panNo" />
       </mat-form-field>
     </span>
     <span class="fields-row">
       <mat-form-field appearance="standard">
-        <mat-label>Password</mat-label>
+        <mat-label>Email</mat-label>
+        <input matInput name="email" [(ngModel)]="userDetails.email" />
+      </mat-form-field>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>Password (Required to request change in details)</mat-label>
         <input
           matInput
           [type]="showRegisterPassword ? 'text' : 'password'"
           name="password"
+          [(ngModel)]="userLoginDetails.password"
         />
         <mat-icon matSuffix (click)="toggleRegisterPasswordVisibility()">
           {{ showRegisterPassword ? "visibility_off" : "visibility" }}
         </mat-icon>
       </mat-form-field>
+    </span>
+
+    <span class="fields-row">
+      <span class="radio-btn-group">
+        <label id="example-radio-group-label">Job Status: </label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="radio-btn-group"
+          name="jobStatus"
+          [(ngModel)]="userDetails.jobStatus"
+        >
+          <mat-radio-button [value]="'EMPLOYED'"> Employed </mat-radio-button>
+          <mat-radio-button [value]="'UNEMPLOYED'">
+            Unemployed
+          </mat-radio-button>
+        </mat-radio-group>
+      </span>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
-        <mat-label>Confirm Password</mat-label>
-        <input
-          matInput
-          [type]="showRegisterConfirmPassword ? 'text' : 'password'"
-          name="confirmPassword"
-        />
-        <mat-icon matSuffix (click)="toggleRegisterConfirmPasswordVisibility()">
-          {{ showRegisterConfirmPassword ? "visibility_off" : "visibility" }}
-        </mat-icon>
+        <mat-label>Job Title</mat-label>
+        <input matInput name="jobTitle" [(ngModel)]="userDetails.jobTitle" />
+      </mat-form-field>
+      <span class="form-field-space"></span>
+      <mat-form-field appearance="standard">
+        <mat-label>Salary</mat-label>
+        <input matInput name="salary" [(ngModel)]="userDetails.salary" />
       </mat-form-field>
     </span>
 
@@ -114,9 +134,11 @@
         <mat-radio-group
           aria-labelledby="example-radio-group-label"
           class="radio-btn-group"
+          name="residenceArea"
+          [(ngModel)]="userDetails.residenceArea"
         >
-          <mat-radio-button value="Urban"> Urban </mat-radio-button>
-          <mat-radio-button value="Rural"> Rural </mat-radio-button>
+          <mat-radio-button [value]="'URBAN'"> Urban </mat-radio-button>
+          <mat-radio-button [value]="'RURAL'"> Rural </mat-radio-button>
         </mat-radio-group>
       </span>
       <span class="form-field-space"></span>
@@ -125,11 +147,13 @@
         <mat-radio-group
           aria-labelledby="example-radio-group-label"
           class="radio-btn-group"
+          name="maritalStatus"
+          [(ngModel)]="userDetails.maritalStatus"
         >
-          <mat-radio-button value="Married"> Married </mat-radio-button>
-          <mat-radio-button value="Unmarried"> Unmarried </mat-radio-button>
-          <mat-radio-button value="Widowed"> Widowed </mat-radio-button>
-          <mat-radio-button value="Separated"> Separated </mat-radio-button>
+          <mat-radio-button [value]="'MARRIED'"> Married </mat-radio-button>
+          <mat-radio-button [value]="'UNMARRIED'"> Unmarried </mat-radio-button>
+          <mat-radio-button [value]="'WIDOWED'"> Widowed </mat-radio-button>
+          <mat-radio-button [value]="'SEPARATED'"> Separated </mat-radio-button>
         </mat-radio-group>
       </span>
     </span>

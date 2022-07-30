@@ -28,11 +28,20 @@
   border-top-width: 3px;
 }
 
+.register-and-reset-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .form-submit-button {
   margin: 1rem 0;
 }
 
 .form-switch-button {
+  margin: 0 1rem;
+}
+
+.reset-password-button {
   margin: 0 1rem;
 }
 

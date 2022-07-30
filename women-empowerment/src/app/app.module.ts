@@ -18,10 +18,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { UpdateUserDetailsComponent } from './user-dashboard/update-user-details/update-user-details.component';
 import { UpdateUserPasswordComponent } from './user-dashboard/update-user-password/update-user-password.component';
 import { AddFamilyDetailsComponent } from './user-dashboard/add-family-details/add-family-details.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatToolbarModule,
     MatTooltipModule,
     MatDividerModule,
+    MatSnackBarModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
