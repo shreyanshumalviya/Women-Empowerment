@@ -11,6 +11,12 @@ import { FaqComponent } from './home/faq/faq.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
 import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
+import { CreateCourseComponent } from './ngo/create-course/create-course.component';
+import { ListUsersComponent } from './ngo/list-users/list-users.component';
+import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
+import { ListCoursesComponent } from './ngo/list-courses/list-courses.component';
+import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
+import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'AboutAdmin', pathMatch: 'full' },
@@ -18,7 +24,18 @@ const routes: Routes = [
     path: 'AboutAdmin',
     component: AdminAboutUsComponent,
   },
-  { path: 'ngo', component: NgoHomeComponent },
+  {
+    children: [
+      { path: "create_course", component: CreateCourseComponent },
+      { path: "create_accomodation", component: CreateAccomodationComponent },
+      { path: "enrolled_users/:courseId", component: ListUsersComponent },
+      { path: "residing_users/:accomodationId", component: ListResidentsComponent },
+      { path: "home", component: NgoHomeComponent },
+      { path: "courses", component: ListCoursesComponent },
+      { path: "accomodations", component: ListAccomodationsComponent }
+    ],
+    path: 'ngo'
+  },
   { path: 'adminLoginLink', component: AdminLoginComponent },
   {
     path: 'adminDashboardLink',

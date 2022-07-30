@@ -25,10 +25,20 @@ import { HomeModule } from './home/home.module';
 import { FaqComponent } from './home/faq/faq.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatTableModule } from '@angular/material/table'
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatExpansionModule } from "@angular/material/expansion";
+import { CreateCourseComponent } from './ngo/create-course/create-course.component';
+import { ListUsersComponent } from './ngo/list-users/list-users.component';
+import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
+import { ListCoursesComponent } from './ngo/list-courses/list-courses.component';
+import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
+import { HttpClientModule } from "@angular/common/http";
+import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +55,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     AdminSukayaYojanaComponent,
     AdminStepComponent,
     AdminAccomodationsComponent,
+    CreateCourseComponent,
+    ListUsersComponent,
+    ListResidentsComponent,
+    ListCoursesComponent,
+    ListAccomodationsComponent,
+    CreateAccomodationComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,9 +74,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatChipsModule,
+    MatExpansionModule,
     MatInputModule,
     MatCardModule,
     MatIconModule,
+    MatTableModule,
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -71,6 +90,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormsModule,
     MatInputModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
