@@ -1,5 +1,8 @@
 <div class="user-body-container" style="padding: 1em;">
     <mat-card class="user-body">
+        <div class="div" *ngIf="errorMessage!==''|| errorMessage!==null || errorMessage!==undefined " style="color: red;">
+            {{errorMessage}}
+        </div>
         <div class="login-form">
             <h2>Create Course</h2>
             <hr class="headig-underline" />
@@ -59,7 +62,7 @@
                     <span class="form-field-space"></span>
                     <mat-form-field appearance="standard">
                         <mat-label>Pincode</mat-label>
-                        <input matInput type="text" maxlength="6" name="number" [(ngModel)]="accomodation.pincode" />
+                        <input matInput type="number" maxlength="6" name="number" [(ngModel)]="accomodation.pincode" />
 
                     </mat-form-field>
 

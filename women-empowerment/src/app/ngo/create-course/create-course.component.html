@@ -1,5 +1,8 @@
 <div class="user-body-container" style="padding: 1em;">
     <mat-card class="user-body">
+        <div class="div" *ngIf="errorMessage!==''|| errorMessage!==null || errorMessage!==undefined " style="color: red;">
+            {{errorMessage}}
+        </div>
         <div class="login-form">
             <h2>Create Course</h2>
             <hr class="headig-underline" />
@@ -82,9 +85,6 @@
                     Create Course
                 </button>
             </form>
-            <span>Not a member?</span><button class="form-switch-button" mat-raised-button color="accent">
-                Register
-            </button>
         </div>
     </mat-card>
 </div>

@@ -5,6 +5,9 @@
                 <h2>Login</h2>
                 <hr class="headig-underline" />
                 <form action="" class="form-style" (ngSubmit)="login()">
+                    <div class="div" *ngIf="errorMessage!==''|| errorMessage!==null || errorMessage!==undefined " style="color: red;">
+                        {{errorMessage}}
+                    </div>
                     <mat-form-field appearance="standard">
                         <mat-label>Username</mat-label>
                         <input matInput type="email" name="email" [(ngModel)]="ngo.email" />
@@ -34,6 +37,9 @@
             <hr class="headig-underline" />
             <div class="register-form">
                 <form action="" class="form-style" (ngSubmit)="register()">
+                    <div class="div" *ngIf="errorMessage!==''|| errorMessage!==null || errorMessage!==undefined " style="color: red;">
+                        {{errorMessage}}
+                    </div>
                     <span class="fields-row">
                         <mat-form-field appearance="standard">
                             <mat-label>Name</mat-label>
@@ -66,7 +72,7 @@
                         <mat-form-field appearance="standard">
                             <mat-label>Confirm Password</mat-label>
                             <input matInput [type]="showRegisterConfirmPassword ? 'text' : 'password'"
-                                name="confirmPassword" />
+                                name="confirmPassword"  [(ngModel)]="confirmPassword"/>
                             <mat-icon matSuffix (click)="toggleRegisterConfirmPasswordVisibility()">
                                 {{
                                 showRegisterConfirmPassword ? "visibility_off" : "visibility"

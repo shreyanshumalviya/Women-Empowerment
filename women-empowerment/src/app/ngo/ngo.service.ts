@@ -48,7 +48,7 @@ export class NgoService {
   public createAccomodation(accomodation: Accommodation):Observable<Accommodation>{
     console.log(JSON.stringify(accomodation));
     
-    return this.httpClient.post<Accommodation>("http://localhost:9091/accomodation/register", accomodation);
+    return this.httpClient.post<Accommodation>("http://localhost:9090/accomodation/register", accomodation);
   }
 
   public createCourse(course: Course):Observable<Course> {
@@ -106,7 +106,7 @@ export class NgoService {
 
   getAccomodationsByNgoId(ngoId: number): Observable<Accommodation[]>{
     
-    return this.httpClient.get<Accommodation[]>("http://localhost:9091/accomodation/list-accomodations-of-ngo/"+ngoId);
+    return this.httpClient.get<Accommodation[]>("http://localhost:9090/accomodation/list-accomodations-of-ngo/"+ngoId);
 
   }
 

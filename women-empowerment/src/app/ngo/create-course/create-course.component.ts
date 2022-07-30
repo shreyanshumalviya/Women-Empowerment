@@ -11,22 +11,23 @@ import { NGO } from 'src/app/models/ngo';
   styleUrls: ['./create-course.component.css']
 })
 export class CreateCourseComponent implements OnInit {
+  errorMessage: string = ""
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   course: Course = new Course();
   minDate = new Date();
-  constructor(private ngoService: NgoService, private router: Router) {}
+  constructor(private ngoService: NgoService, private router: Router) { }
 
   ngOnInit(): void {
     this.course.tags = []
     let ngoString = sessionStorage.getItem("loggedInNgo");
     console.log(ngoString);
-    
+
     if (ngoString === null) {
       this.router.navigate(['/ngo/home'])
     }
     let ngo: NGO = JSON.parse(ngoString);
-    this.course.ngo_id=ngo.ngoId;
+    this.course.ngo_id = ngo.ngoId;
   }
 
   add(event: MatChipInputEvent): void {
@@ -51,10 +52,30 @@ export class CreateCourseComponent implements OnInit {
   }
 
   public createCourse() {
+    if (this.course.courseTitle === undefined || this.course.courseTitle === "") {
+      this.errorMessage = "Course Title cannot be empty";
+      return;
+    }
+    if (this.course.description === undefined || this.course.description === "") {
+      this.errorMessage = "Course Description cannot be empty";
+      return;
+    }
+    if (this.course.description.length < 30) {
+      this.errorMessage = "Course Description has to be more than 30 characters";
+      return;
+    }
+    if (this.course.jobOffered && this.course.vacancy === undefined || this.course.vacancy === 0) {
+      this.errorMessage = "Enter Vacancy if job is offerred";
+      return;
+    }
+    if (this.course.courseMode === "Offline" && this.course.location === undefined || this.course.location === "") {
+      this.errorMessage = "Enter location if course is offline";
+      return;
+    }
     console.log(typeof (this.course.jobOffered));
     this.ngoService.createCourse(this.course).subscribe(course => {
       console.log(course);
-
+      this.errorMessage = "Course Created"
     })
   }
 
