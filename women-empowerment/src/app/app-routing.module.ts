@@ -19,7 +19,6 @@ import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomo
 import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'AboutAdmin', pathMatch: 'full' },
   {
     path: 'AboutAdmin',
     component: AdminAboutUsComponent,
@@ -62,6 +61,7 @@ const routes: Routes = [
   },
   { path: 'stepHome', component: StepHomeComponent },
   { path: 'userLoginAndRegister', component: UserLoginAndRegisterComponent },
+  { path: 'faq/Admin', component: FaqComponent },
   { path: 'faq', component: FaqComponent },
 ];
 
