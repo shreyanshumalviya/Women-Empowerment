@@ -11,16 +11,13 @@ import { FaqComponent } from './home/faq/faq.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
 import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
-<<<<<<< HEAD
 import { RegistrationComponent } from './sukanya/registration/registration.component';
-=======
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
 import { ListUsersComponent } from './ngo/list-users/list-users.component';
 import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
 import { ListCoursesComponent } from './ngo/list-courses/list-courses.component';
 import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
 import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
->>>>>>> 3705a9ba63a83b976c977271241f5929e841597d
 
 const routes: Routes = [
   {
