@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-
 import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
 import { NgoLoginComponent } from './ngo/ngo-login/ngo-login.component';
 import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component';
@@ -12,8 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminAboutUsComponent } from './Admin/admin-aboutUs/admin-about-us.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { AdminNgoComponent } from './Admin/admin-ngo/admin-ngo.component';
 import { AdminSukayaYojanaComponent } from './Admin/admin-sukaya-yojana/admin-sukaya-yojana.component';
@@ -26,9 +23,18 @@ import { FaqComponent } from './home/faq/faq.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { NgoDisplayTableComponent } from './Admin/ngo-display-table/ngo-display-table.component';
+import { AdminLandingPComponent } from './Admin/admin-landing-p/admin-landing-p.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 @NgModule({
   declarations: [
@@ -45,9 +51,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     AdminSukayaYojanaComponent,
     AdminStepComponent,
     AdminAccomodationsComponent,
+    NgoDisplayTableComponent,
+    AdminLandingPComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -61,6 +70,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatCardModule,
     MatIconModule,
+    MatSlideToggleModule,
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -69,8 +79,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     BrowserAnimationsModule,
     MatButtonModule,
     FormsModule,
+    MatToolbarModule,
     MatInputModule,
     AppRoutingModule,
+    MatTableModule,
+    NgImageSliderModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

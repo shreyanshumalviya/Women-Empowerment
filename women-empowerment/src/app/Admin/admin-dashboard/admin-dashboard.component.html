@@ -1,15 +1,22 @@
 <div>
-  <div class="topnav">
-    <ul>
-      <li><a [routerLink]="['/AboutAdmin']">Home</a></li>
-      <li><a [routerLink]="['./adminNgoLink']">NGO</a></li>
-      <li><a [routerLink]="['./adminStepLink']">STEP</a></li>
-      <li><a [routerLink]="['./adminSukayaYojanaLink']">Sukaya Yojana</a></li>
-      <li><a [routerLink]="['./adminAccomodationsLink']">Accomodations</a></li>
-    </ul>
-    <div class="text">Welcome, {{ username }}</div>
-  </div>
-  <div>
-    <router-outlet></router-outlet>
-  </div>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="menu-spacer"></span>
+      <div class="topnav">
+        <div>
+          <a mat-button [routerLink]="['./adminLandPage']">Home</a>
+          <a mat-button [routerLink]="['./adminNgoLink']">NGO</a>
+          <a mat-button [routerLink]="['./adminStepLink']">STEP</a>
+          <a mat-button [routerLink]="['./adminSukayaYojanaLink']"
+            >Sukaya Yojana</a
+          >
+          <a mat-button [routerLink]="['./adminAccomodationsLink']"
+            >Accomodations</a
+          >
+        </div>
+        <div id="right" class="text">Welcome, {{ username }}</div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
 </div>

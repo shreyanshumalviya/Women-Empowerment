@@ -10,15 +10,19 @@ import { Admin } from './admin';
 export class AdminLoginComponent implements OnInit {
   admin: Admin = new Admin();
   errorMessage = ' ';
+  showLoginPassword: boolean = false;
   ngOnInit(): void {}
   constructor(private router: Router) {}
 
   login(): void {
     if (this.admin.adminname == 'Nidhish' && this.admin.password == '123456') {
       sessionStorage.setItem('un', this.admin.adminname);
-      this.router.navigate(['/adminDashboardLink']);
+      this.router.navigate(['/adminDashboardLink/adminLandPage']);
     } else {
-      this.errorMessage = 'Username or password is invalid';
+      this.errorMessage = 'Username or Password is invalid';
     }
+  }
+  toggleLoginPasswordVisibility(): void {
+    this.showLoginPassword = !this.showLoginPassword;
   }
 }

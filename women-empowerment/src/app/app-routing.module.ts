@@ -11,6 +11,8 @@ import { FaqComponent } from './home/faq/faq.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
 import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
+import { NgoDisplayTableComponent } from './Admin/ngo-display-table/ngo-display-table.component';
+import { AdminLandingPComponent } from './Admin/admin-landing-p/admin-landing-p.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'AboutAdmin', pathMatch: 'full' },
@@ -41,6 +43,10 @@ const routes: Routes = [
         component: AdminAccomodationsComponent,
       },
 
+      {
+        path: 'adminLandPage',
+        component: AdminLandingPComponent,
+      },
     ],
   },
   { path: 'stepHome', component: StepHomeComponent },
@@ -52,4 +58,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

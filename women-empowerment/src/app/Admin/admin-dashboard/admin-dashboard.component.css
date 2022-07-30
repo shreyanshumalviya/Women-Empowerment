@@ -1,29 +1,21 @@
+.user-body-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: #c75252;
+}
+#right {
+  position: absolute;
+  padding: 15px;
+  top: 0;
+  right: 0;
+  color: #fafafa;
+}
 .topnav {
-  overflow: hidden;
-  background-color: rgb(74, 74, 74);
-  width: 80%;
-  margin: auto;
-}
-
-.topnav ul {
-  list-style-type: none;
-}
-
-.topnav a {
-  text-align: center;
-  float: left;
-  color: #f2f2f2;
-  padding: 24px;
-  font-size: 17px;
-  text-decoration: none;
-}
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 .text {
-  color: #f2f2f2;
-  padding: 20px;
-  font-size: 24px;
   text-align: end;
 }
