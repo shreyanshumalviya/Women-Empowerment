@@ -1,0 +1,93 @@
+<div class="user-body-container" style="padding: 1em;">
+    <mat-card class="user-body">
+        <div class="div" *ngIf="errorMessage!==''|| errorMessage!==null || errorMessage!==undefined " style="color: red;">
+            {{errorMessage}}
+        </div>
+        <div class="login-form">
+            <h2>Create Course</h2>
+            <hr class="headig-underline" />
+            <form action="" class="form-style" (ngSubmit)="createAccomodation()">
+                <mat-form-field appearance="standard">
+                    <mat-label>Accomodation Name</mat-label>
+                    <input matInput type="email" name="email" [(ngModel)]="accomodation.name" />
+                </mat-form-field>
+                <mat-label>About Accomodation</mat-label>
+                <span class="fields-row">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Total Rooms</mat-label>
+                        <input matInput type="number" maxlength="3" name="totalRooms" [(ngModel)]="accomodation.totalRoom" />
+
+                    </mat-form-field>
+                    <span class="form-field-space"></span>
+                    <mat-form-field appearance="standard">
+                        <mat-label>Each Room Capacity</mat-label>
+                        <input matInput type="number" maxlength="2" name="capacity" [(ngModel)]="accomodation.capacity" />
+
+                    </mat-form-field>
+
+                </span>
+                <div class="div" style="align-self:flex-end; ">
+                    <mat-label>Day Care Center Available?</mat-label>
+                    <br/>
+                    <mat-radio-group aria-label="getMultipleChoiceAnswer()">
+                        <mat-radio-button type="boolean" value="true" ngDefaultControl name="dayCareCenter"
+                            [(ngModel)]="accomodation.dayCareCentre">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </mat-radio-button>
+                        <mat-radio-button value="false" ngDefaultControl name="noDayCareCenter"
+                            [(ngModel)]="accomodation.dayCareCentre">No&nbsp; </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <span class="fields-row">
+                </span>
+                <mat-label>Location of Accomodation</mat-label>
+                
+                <mat-form-field appearance="standard">
+                    <mat-label>Address Line 1</mat-label>
+                    <input matInput type="text" name="address1" [(ngModel)]="accomodation.addressLine1" />
+
+                </mat-form-field>
+                
+                <mat-form-field appearance="standard">
+                    <mat-label>Address Line 2</mat-label>
+                    <input matInput type="text" name="address2" [(ngModel)]="accomodation.addressLine2" />
+
+                </mat-form-field>
+                
+                <span class="fields-row">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Landmark</mat-label>
+                        <input matInput type="text" name="landmark" [(ngModel)]="accomodation.landmark" />
+
+                    </mat-form-field>
+                    <span class="form-field-space"></span>
+                    <mat-form-field appearance="standard">
+                        <mat-label>Pincode</mat-label>
+                        <input matInput type="number" maxlength="6" name="number" [(ngModel)]="accomodation.pincode" />
+
+                    </mat-form-field>
+
+                </span>
+                <span class="fields-row">
+                    <mat-form-field appearance="standard">
+                        <mat-label>City</mat-label>
+                        <input matInput type="text" name="password" [(ngModel)]="accomodation.city" />
+
+                    </mat-form-field>
+                    <span class="form-field-space"></span>
+                    <mat-form-field appearance="standard">
+                        <mat-label>State</mat-label>
+                        <input matInput type="text" name="password" [(ngModel)]="accomodation.state" />
+
+                    </mat-form-field>
+
+                </span>
+
+
+                <button class="form-submit-button" mat-raised-button color="primary">
+                    Create Accomodation
+                </button>
+            </form>
+            
+        </div>
+    </mat-card>
+</div>

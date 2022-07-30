@@ -1,0 +1,16 @@
+
+.user-body-container {
+    width: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .user-body {
+    width: 60%;
+    height: 70%;
+    /* background-color: white; */
+    padding: 2rem 3rem;
+  }
+  

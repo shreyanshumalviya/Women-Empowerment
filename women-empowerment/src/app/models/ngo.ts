@@ -1,5 +1,5 @@
 export class NGO{
-    public id:string | undefined;
+    public ngoId:number | undefined;
     public name:string| undefined;
     public description:string| undefined;
     public contact:string| undefined;
@@ -7,8 +7,6 @@ export class NGO{
     public email:string| undefined;
     public password:string| undefined;
     public verified:boolean| undefined;
-    public approved_by:string| undefined;
-
     constructor(
     ){
     }

@@ -4,6 +4,7 @@
     <button mat-button>Accomodation</button>
     <button mat-button>Sukanya Samriddhi</button>
   </span>
+  <p>{{ "Welcome user: " + userDetails.userId }}</p>
   <span class="right-btns">
     <button mat-icon-button matTooltip="Home" (click)="toDashboardHome()">
       <mat-icon>home</mat-icon>
@@ -11,7 +12,7 @@
     <button mat-icon-button matTooltip="Profile" (click)="toProfilePage()">
       <mat-icon>account_circle</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="Logout">
+    <button mat-icon-button matTooltip="Logout" (click)="logoutUser()">
       <mat-icon>logout</mat-icon>
     </button>
   </span>

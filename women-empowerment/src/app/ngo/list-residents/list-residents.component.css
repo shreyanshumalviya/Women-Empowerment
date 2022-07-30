@@ -1,0 +1,13 @@
+.column-title {
+    color: var(--primary);
+}
+
+.table {
+    width: 90%;
+    margin: auto;
+}
+
+.fields-row {
+    display: flex;
+    justify-content: space-evenly;
+}

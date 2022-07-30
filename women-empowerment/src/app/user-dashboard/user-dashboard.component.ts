@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserProfileDetails } from '../user-profile-details';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -6,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-dashboard.component.css'],
 })
 export class UserDashboardComponent implements OnInit {
-  dashboardState: string = 'default';
+  dashboardState: string = 'profile';
   profileState: string = 'details';
+  userDetails: UserProfileDetails;
+  constructor(private route: Router) {}
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userDetails = JSON.parse(sessionStorage.getItem('userDetails'));
+  }
 
   toProfilePage(): void {
     this.dashboardState = 'profile';
@@ -31,5 +35,10 @@ export class UserDashboardComponent implements OnInit {
 
   toFamilyDetails(): void {
     this.profileState = 'family';
+  }
+
+  logoutUser(): void {
+    this.route.navigate(['userLoginAndRegister']);
+    sessionStorage.removeItem('userDetails');
   }
 }
