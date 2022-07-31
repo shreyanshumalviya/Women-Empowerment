@@ -1,31 +1,40 @@
-<div class="title">
-  <h1>Admin Dashboard</h1>
-</div>
-<div>
-  <div class="Para">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <p>Admin Dashboard includes sections : NGOs, Trainees.</p>
+<div class="user-body-container">
+  <mat-card class="user-body">
+    <div class="title">
+      <h2>ADMIN HOME PAGE</h2>
+    </div>
+    <hr class="headig-underline" />
+    <div>
+      <div class="Para">
+        <p>Admin needs to login with valid credentials in the section.</p>
         <p>
-          Admin needs to login with valid credentials in NGOs and Trainnes
-          section.
+          Admin Dashboard includes sections : NGO's, Accomodation, Sukanya
+          Yojana, STEP.
         </p>
+
         <p>
-          On Successful login admin will be able to see the list of ngo or
-          trainees.
+          On Successful login admin will be able to see the list of all these
+          sections.
         </p>
         <p>
           Admin will be able to add new record, update the existing record or
           delete a record.
         </p>
-      </li>
-    </ul>
-  </div>
-  <div class="btn">
-    <button [routerLink]="'/adminLoginLink'">Login</button>
-    <button [routerLink]="['/adminRegisterLink']">Register</button>
-  </div>
-  <div>
-    <router-outlet></router-outlet>
-  </div>
+      </div>
+      <div class="btn">
+        <button
+          [routerLink]="'/adminLoginLink'"
+          mat-raised-button
+          color="primary"
+          class="form-submit-button"
+          type="submit"
+        >
+          Login
+        </button>
+      </div>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-card>
 </div>

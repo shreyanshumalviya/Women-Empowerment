@@ -9,9 +9,12 @@ import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-a
 import { RouterModule, Routes, Router, Route } from '@angular/router';
 import { FaqComponent } from './home/faq/faq.component';
 import { StepHomeComponent } from './step-home/step-home.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
 import { NgoHomeComponent } from './ngo/ngo-home/ngo-home.component';
 import { RegistrationComponent } from './sukanya/registration/registration.component';
+import { NgoDisplayTableComponent } from './Admin/ngo-display-table/ngo-display-table.component';
+import { AdminLandingPComponent } from './Admin/admin-landing-p/admin-landing-p.component';
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
 import { ListUsersComponent } from './ngo/list-users/list-users.component';
 import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
@@ -19,6 +22,7 @@ import { ListCoursesComponent } from './ngo/list-courses/list-courses.component'
 import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
 import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
 import { StepCoursesComponent } from './step-courses/step-courses.component';
+import { LegislationComponent } from './home/legislation/legislation.component';
 
 const routes: Routes = [
   {
@@ -59,6 +63,10 @@ const routes: Routes = [
         component: AdminAccomodationsComponent,
       },
 
+      {
+        path: 'adminLandPage',
+        component: AdminLandingPComponent,
+      },
     ],
   },
   { path: 'stepHome', component: StepHomeComponent },
@@ -66,11 +74,13 @@ const routes: Routes = [
   { path: 'faq/Admin', component: FaqComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'sukanya-registration', component: RegistrationComponent },
+  {path:'legislation',component:LegislationComponent},
   { path: 'step-courses', component: StepCoursesComponent },
+  { path: 'userDashboard', component: UserDashboardComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
