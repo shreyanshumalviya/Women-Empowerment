@@ -24,6 +24,7 @@ import { CreateAccomodationComponent } from './ngo/create-accomodation/create-ac
 import { StepCoursesComponent } from './step-courses/step-courses.component';
 import { LegislationComponent } from './home/legislation/legislation.component';
 import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.component';
+import { WelcomeComponent } from './ngo/welcome/welcome.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
       { path: "enrolled_users/:courseId", component: ListUsersComponent },
       { path: "residing_users/:accomodationId", component: ListResidentsComponent },
       { path: "courses", component: ListCoursesComponent },
+      { path: "welcome", component: WelcomeComponent },
       { path: "accomodations", component: ListAccomodationsComponent }
     ],
     component: NgoConatinerComponent,

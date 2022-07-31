@@ -66,6 +66,7 @@ import { AddFamilyDetailsComponent } from './user-dashboard/add-family-details/a
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.component';
+import { WelcomeComponent } from './ngo/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.compone
     UpdateUserPasswordComponent,
     AddFamilyDetailsComponent,
     NgoConatinerComponent,
+    WelcomeComponent,
   ],
   imports: [
     HttpClientModule,

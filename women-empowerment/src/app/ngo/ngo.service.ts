@@ -7,6 +7,7 @@ import { Course } from '../models/course';
 import { EnrolledUsers } from '../models/enrolled-users';
 import { Enrollment } from '../models/enrollment';
 import { NGO } from '../models/ngo';
+import { NgoStatus } from '../models/ngo-status';
 import { ResidingUser } from '../models/residing-user';
 
 @Injectable({
@@ -101,5 +102,7 @@ export class NgoService {
 
   }
 
-
+  getNgoStatus(ngoId:number):Observable<NgoStatus>{
+    return this.httpClient.get<NgoStatus>("http://localhost:9090/ngo/status/"+ngoId);
+  }
 }
