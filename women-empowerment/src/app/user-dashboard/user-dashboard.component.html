@@ -1,8 +1,8 @@
 <mat-toolbar color="primary" class="navigation-bar">
   <span class="left-btns">
-    <button mat-button  [routerLink]="'/step-courses'">STEP</button>
+    <button mat-button (click)="goToStep()">STEP</button>
     <button mat-button>Accomodation</button>
-    <button mat-button>Sukanya Samriddhi</button>
+    <button mat-button (click)="goToSukanya()">Sukanya Samriddhi</button>
   </span>
   <p>{{ "Welcome user: " + userDetails.userId }}</p>
   <span class="right-btns">
@@ -41,6 +41,12 @@
 
       <app-add-family-details *ngSwitchCase="'family'"></app-add-family-details>
     </mat-card>
+  </div>
+  <div *ngSwitchCase="'step-courses'">
+    <app-step-courses></app-step-courses>
+  </div>
+  <div *ngSwitchCase="'sukanya'">
+    <app-registration></app-registration>
   </div>
   <div class="dashboard-default" *ngSwitchDefault>
     <mat-card><h3>Application Status</h3></mat-card>
