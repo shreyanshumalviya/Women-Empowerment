@@ -4,7 +4,7 @@ import { Accomodation_status } from 'src/app/models/accomodation-status';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Accommodation } from 'src/app/models/accomodation';
 import { Router } from '@angular/router';
-import{}
+import { UserProfileDetails } from 'src/app/user-profile-details';
 import { AccomodationStatusService } from 'src/app/accomodation_status_service.serviceservice';
 
 @Component({
@@ -13,9 +13,9 @@ import { AccomodationStatusService } from 'src/app/accomodation_status_service.s
   styleUrls: ['./accomodation-status.component.css']
 })
 export class AccomodationStatusComponent implements OnInit {
-
+  user: UserProfileDetails;
   accomodationstatus:Accommodation[];
-  constructor(private accomodationservice:AccomodationStatusService) { 
+  constructor(private accomodationservice:AccomodationStatusService,private router:Router) { 
      this.accomodationservice.getaccomodation().subscribe(accomodationstatus=>{
       this.accomodationstatus=accomodationstatus;
       console.log(accomodationstatus);
@@ -24,12 +24,18 @@ export class AccomodationStatusComponent implements OnInit {
     
     
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {this.user = JSON.parse(sessionStorage.getItem('userDetails'));
+
+  if(sessionStorage.getItem('userDetails')===null || sessionStorage.getItem('userDetails')===undefined){
+
+    this.router.navigateByUrl('userLoginAndRegister');
+
+  }}
     
   register(accomodationId :number)
   {
-    this.accomodationservice.register(accomodationId);
-    
+    console.log("registering");
+    this.accomodationservice.register(accomodationId,this.user.userId).subscribe(a=>{});  
   }
 
   }
