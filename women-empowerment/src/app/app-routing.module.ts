@@ -27,6 +27,8 @@ import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component'
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TermsComponent } from './home/terms/terms.component';
 import { ContactUsComponent } from './home/contact-us/contact-us.component';
+import{PrivacyComponent} from './home/privacy/privacy.component';
+
 
 const routes: Routes = [
 
@@ -86,6 +88,8 @@ const routes: Routes = [
   {path:'legislation',component:LegislationComponent},
   { path: 'step-courses', component: StepCoursesComponent },
   { path: 'userDashboard', component: UserDashboardComponent },
+  {path:'privacy',component:PrivacyComponent},
+  
 ];
 
 @NgModule({
