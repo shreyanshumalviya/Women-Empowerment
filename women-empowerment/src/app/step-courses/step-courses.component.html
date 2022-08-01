@@ -25,9 +25,10 @@
           <div class="card-details">
               <h4><b>{{course.courseTitle}}</b></h4>
               <p>
-                  {{course.description}}
+                {{course.description}}<br>
+                {{course.startDate}}
               </p>
-              <button class="card-button">Register</button>
+              <button class="card-button" mat-button (click)="register(course.courseId)">Register</button>
           </div>
       </div>
       <!-- copy element ends here -->
