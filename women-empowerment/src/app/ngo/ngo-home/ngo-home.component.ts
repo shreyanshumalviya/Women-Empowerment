@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ngo-home',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class NgoHomeComponent implements OnInit {
   logging: boolean = true
   text: string = "Register"
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("loggedInNgo")!=undefined||sessionStorage.getItem("loggedInNgo")!=null){
+    this.router.navigateByUrl('/ngo/welcome'); 
+  }
   }
   public switchComponent(): void {
     console.log("button clicked");
