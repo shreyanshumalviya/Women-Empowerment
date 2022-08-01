@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DocumentService } from 'src/app/document.service';
 import { NGO } from 'src/app/models/ngo';
+import { NgoDocument } from 'src/app/models/ngo-document';
 import { NgoService } from '../ngo.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { NgoService } from '../ngo.service';
   styleUrls: ['./ngo-login.component.css']
 })
 export class NgoLoginComponent implements OnInit {
-
+  selectedFiles: any[] = [{ name: "Select File" }]
   errorMessage: string = ""
   showLoginPassword: Boolean = false;
   isLoginForm: Boolean = true;
@@ -17,14 +19,20 @@ export class NgoLoginComponent implements OnInit {
   regngo: NGO = new NGO();
   showRegisterPassword: Boolean = false;
   confirmPassword: string = "";
+  ngoDocument: NgoDocument = new NgoDocument();
   showRegisterConfirmPassword: Boolean = false;
 
-  constructor(private ngoService: NgoService, private router: Router) { }
+  constructor(private ngoService: NgoService, private documentService: DocumentService, private router: Router) { }
 
   ngOnInit(): void {
-    if(sessionStorage.getItem("loggedInNgo")!=undefined||sessionStorage.getItem("loggedInNgo")!=null){
-      this.router.navigateByUrl('/ngo/welcome'); 
+    if (sessionStorage.getItem("loggedInNgo") != undefined || sessionStorage.getItem("loggedInNgo") != null) {
+      this.router.navigateByUrl('/ngo/welcome');
     }
+  }
+  selectFile(event) {
+    console.log(event.target.files);
+
+    this.selectedFiles = event.target.files;
   }
 
   public login(): void {
@@ -69,11 +77,12 @@ export class NgoLoginComponent implements OnInit {
   }
 
 
-  public register(): void {
+  public register(a: string): void {
+    if (a !== "sub") return;
     console.log("register");
     console.log(this.regngo.name);
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  
+
     if (this.regngo.name === undefined || this.regngo.name === "") {
       this.errorMessage = "Enter NGO name";
       return;
@@ -98,6 +107,8 @@ export class NgoLoginComponent implements OnInit {
       this.errorMessage = "Passwords do not match";
       return;
     }
+
+
     this.ngoService.registerNGO(this.regngo).subscribe(ngo => {
       console.log(JSON.stringify(ngo));
       this.showRegisterPage();
@@ -108,6 +119,24 @@ export class NgoLoginComponent implements OnInit {
 
       }
       this.ngo = new NGO();
+
+      const file: File = this.selectedFiles[0];
+      console.log(file);;
+
+
+      this.documentService.uploadFile(file).subscribe(fileName => {
+        console.log(fileName);
+        this.ngoDocument.certificateLink = fileName;
+        this.ngoDocument.certificateNo = "asdfa";
+        this.ngoDocument.ngoId = ngo.ngoId;
+
+        // hit api to upload NgoDoc
+        this.ngoService.uploadDoc(this.ngoDocument).subscribe(ngoDoc=>{
+          console.log(ngoDoc);
+          
+        });
+
+      })
     });
   }
 }

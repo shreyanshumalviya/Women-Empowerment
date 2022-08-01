@@ -36,7 +36,7 @@
             <h2>Register</h2>
             <hr class="headig-underline" />
             <div class="register-form">
-                <form action="" class="form-style" (ngSubmit)="register()">
+                <form action="" class="form-style" >
                     <div class="div" *ngIf="errorMessage!==''|| errorMessage!==null || errorMessage!==undefined " style="color: red;">
                         {{errorMessage}}
                     </div>
@@ -93,7 +93,19 @@
                         </mat-form-field>
                     </span>
 
-                    <button class="form-submit-button" mat-raised-button color="primary">
+                    <mat-form-field class="columns">
+                        <mat-label *ngIf="selectedFiles; else newFile">{{selectedFiles[0].name}}</mat-label>
+                        <ng-template #newFile>
+                            <mat-label>Choose file</mat-label>
+                        </ng-template>
+                        <input matInput disabled>
+                        <button mat-icon-button matSuffix (click)="fileInput.click()">
+                            <mat-icon>attach_file</mat-icon>
+                        </button>
+                        <input hidden (change)="selectFile($event)" #fileInput type="file" id="file">
+                    </mat-form-field>
+                    
+                    <button class="form-submit-button" mat-raised-button color="primary" (click)="register('sub')">
                         Register
                     </button>
                 </form>
