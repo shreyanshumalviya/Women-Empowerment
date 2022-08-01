@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="navigation-bar">
+    <span class="left-btns">
+      <button mat-button [routerLink]="'/ngo/welcome'">Welcome</button>
+      <button mat-button [routerLink]="'/ngo/create_accomodation'">New Accomodation</button>
+      <button mat-button [routerLink]="'/ngo/accomodations'">List Accomodation</button>
+      <button mat-button [routerLink]="'/ngo/create_course'">New Course</button>
+      <button mat-button [routerLink]="'/ngo/courses'">List Couses</button>
+    </span>
+    <span class="right-btns">
+      <button mat-icon-button matTooltip="Logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </span>
+  </mat-toolbar>
+  <router-outlet></router-outlet>

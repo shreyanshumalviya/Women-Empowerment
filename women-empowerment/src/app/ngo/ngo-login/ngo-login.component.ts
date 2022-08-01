@@ -22,6 +22,9 @@ export class NgoLoginComponent implements OnInit {
   constructor(private ngoService: NgoService, private router: Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("loggedInNgo")!=undefined||sessionStorage.getItem("loggedInNgo")!=null){
+      this.router.navigateByUrl('/ngo/welcome'); 
+    }
   }
 
   public login(): void {
@@ -45,7 +48,7 @@ export class NgoLoginComponent implements OnInit {
       }
       sessionStorage.setItem("loggedInNgo", JSON.stringify(ngo));
       this.errorMessage = ""
-      this.router.navigate(["/ngo/courses"]);
+      this.router.navigate(["/ngo/welcome"]);
     });
   }
 

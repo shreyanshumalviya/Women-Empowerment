@@ -6,30 +6,30 @@
     <!-- Position Column -->
     <ng-container matColumnDef="srNo">
       <th mat-header-cell *matHeaderCellDef class="column-title"> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.srNo}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.user.userId}} </td>
     </ng-container>
   
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef class="column-title"> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.first_name}} {{element.last_name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.user.firstName}} {{element.user.middleName}} {{element.lastName}} </td>
     </ng-container>
   
     <!-- Weight Column -->
     <ng-container matColumnDef="date_of_registration">
       <th mat-header-cell *matHeaderCellDef class="column-title"> Registered On </th>
-      <td mat-cell *matCellDef="let element"> {{element.date_of_registration}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.registrationDate}} </td>
     </ng-container>
   
     <!-- Symbol Column -->
     <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef class="column-title"> Email </th>
-        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.user.email}} </td>
       </ng-container>
       <!-- Symbol Column -->
       <ng-container matColumnDef="contact">
         <th mat-header-cell *matHeaderCellDef class="column-title"> Contact </th>
-        <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.user.contactNo}} </td>
       </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

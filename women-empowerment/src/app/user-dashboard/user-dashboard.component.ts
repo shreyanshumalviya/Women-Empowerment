@@ -41,4 +41,12 @@ export class UserDashboardComponent implements OnInit {
     this.route.navigate(['userLoginAndRegister']);
     sessionStorage.removeItem('userDetails');
   }
+
+  goToStep():void{
+    this.dashboardState='step-courses';
+  }
+
+  goToSukanya(){
+    this.dashboardState='sukanya';
+  }
 }
