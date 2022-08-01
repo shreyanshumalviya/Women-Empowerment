@@ -30,7 +30,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { AdminNgoComponent } from './Admin/admin-ngo/admin-ngo.component';
 import { AdminSukayaYojanaComponent } from './Admin/admin-sukaya-yojana/admin-sukaya-yojana.component';
-import { AdminStepComponent } from './Admin/admin-step/admin-step.component';
 import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-accomodations.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
@@ -49,7 +48,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { StepCoursesComponent } from './step-courses/step-courses.component';
-import { MatExpansionModule } from "@angular/material/expansion";
+import { MatExpansionModule } from '@angular/material/expansion';
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
 import { ListUsersComponent } from './ngo/list-users/list-users.component';
 import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
@@ -64,6 +63,9 @@ import { UpdateUserPasswordComponent } from './user-dashboard/update-user-passwo
 import { AddFamilyDetailsComponent } from './user-dashboard/add-family-details/add-family-details.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomCarouselComponent } from './custom-carousel/custom-carousel.component';
+import { AdminUserComponent } from './Admin/admin-user/admin-user.component';
+import { HomeLPComponent } from './home-lp/home-lp.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +82,6 @@ import { HttpClientModule } from '@angular/common/http';
     AdminDashboardComponent,
     AdminNgoComponent,
     AdminSukayaYojanaComponent,
-    AdminStepComponent,
     AdminAccomodationsComponent,
     NgoDisplayTableComponent,
     AdminLandingPComponent,
@@ -95,6 +96,9 @@ import { HttpClientModule } from '@angular/common/http';
     UpdateUserDetailsComponent,
     UpdateUserPasswordComponent,
     AddFamilyDetailsComponent,
+    CustomCarouselComponent,
+    AdminUserComponent,
+    HomeLPComponent,
   ],
   imports: [
     HttpClientModule,
@@ -129,4 +133,4 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -3,7 +3,6 @@ import { AdminAboutUsComponent } from './Admin/admin-aboutUs/admin-about-us.comp
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { AdminNgoComponent } from './Admin/admin-ngo/admin-ngo.component';
-import { AdminStepComponent } from './Admin/admin-step/admin-step.component';
 import { AdminSukayaYojanaComponent } from './Admin/admin-sukaya-yojana/admin-sukaya-yojana.component';
 import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-accomodations.component';
 import { RouterModule, Routes, Router, Route } from '@angular/router';
@@ -22,23 +21,33 @@ import { ListCoursesComponent } from './ngo/list-courses/list-courses.component'
 import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
 import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
 import { LegislationComponent } from './home/legislation/legislation.component';
+import { AdminUserComponent } from './Admin/admin-user/admin-user.component';
+import { HomeLPComponent } from './home-lp/home-lp.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/homelandingpage',
+    pathMatch: 'full',
+  },
   {
     path: 'AboutAdmin',
     component: AdminAboutUsComponent,
   },
   {
     children: [
-      { path: "create_course", component: CreateCourseComponent },
-      { path: "create_accomodation", component: CreateAccomodationComponent },
-      { path: "enrolled_users/:courseId", component: ListUsersComponent },
-      { path: "residing_users/:accomodationId", component: ListResidentsComponent },
-      { path: "home", component: NgoHomeComponent },
-      { path: "courses", component: ListCoursesComponent },
-      { path: "accomodations", component: ListAccomodationsComponent }
+      { path: 'create_course', component: CreateCourseComponent },
+      { path: 'create_accomodation', component: CreateAccomodationComponent },
+      { path: 'enrolled_users/:courseId', component: ListUsersComponent },
+      {
+        path: 'residing_users/:accomodationId',
+        component: ListResidentsComponent,
+      },
+      { path: 'home', component: NgoHomeComponent },
+      { path: 'courses', component: ListCoursesComponent },
+      { path: 'accomodations', component: ListAccomodationsComponent },
     ],
-    path: 'ngo'
+    path: 'ngo',
   },
   { path: 'adminLoginLink', component: AdminLoginComponent },
   {
@@ -50,8 +59,8 @@ const routes: Routes = [
         component: AdminNgoComponent,
       },
       {
-        path: 'adminStepLink',
-        component: AdminStepComponent,
+        path: 'adminUserLink',
+        component: AdminUserComponent,
       },
       {
         path: 'adminSukayaYojanaLink',
@@ -72,7 +81,8 @@ const routes: Routes = [
   { path: 'userLoginAndRegister', component: UserLoginAndRegisterComponent },
   { path: 'faq/Admin', component: FaqComponent },
   { path: 'faq', component: FaqComponent },
-  {path:'legislation',component:LegislationComponent},
+  { path: 'homelandingpage', component: HomeLPComponent },
+  { path: 'legislation', component: LegislationComponent },
   { path: 'step-courses', component: StepCoursesComponent },
   { path: 'userDashboard', component: UserDashboardComponent },
 ];

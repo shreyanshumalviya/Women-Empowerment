@@ -1,0 +1,41 @@
+<div
+  class="wrapper"
+  [style.height.px]="height ? height : null"
+  [style.margin-bottom]="height ? '.25rem' : null"
+  (touchstart)="posIni = $event.changedTouches[0].pageX"
+  (touchend)="move($event.changedTouches[0].pageX)"
+>
+  <div
+    class="inner"
+    [ngClass]="height ? 'fixed-height' : null"
+    *ngFor="let img of images; let i = index; let first = first"
+    [@animImageSlider]="slideControl[i]"
+  >
+    <img #slide (load)="first && onLoad(slide)" [src]="img" />
+  </div>
+  <button type="button" class="btn-prev" (click)="change('right')">
+    <span class="prev-icon"></span>
+  </button>
+  <button type="button" class="btn-next" (click)="change('left')">
+    <span class="next-icon"></span>
+  </button>
+</div>
+<div #thumbail class="wrapper-thumbail">
+  <div
+    class="thumbail"
+    [@animationThumbail]="{
+      value: thumbailAnimation,
+      params: { margin: thumbailMargin + 'px' }
+    }"
+  >
+    <img
+      *ngFor="let img of images; let i = index"
+      [style.width.px]="thumbailWidth"
+      [style.margin-right.px]="thumbailMarginRigth"
+      [style.opacity]="i == counter ? 1 : 0.7"
+      (load)="onLoadThumbail()"
+      (click)="setIndex(i)"
+      [src]="img"
+    />
+  </div>
+</div>
