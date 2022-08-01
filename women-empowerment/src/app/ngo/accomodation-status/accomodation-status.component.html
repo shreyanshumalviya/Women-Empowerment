@@ -21,7 +21,20 @@
         <div class="card" *ngFor="let accomodation of accomodationstatus ">
             <!-- <img src="assets/Images/agriculture-image.jpg" alt="agriculture-image"> -->
             <div class="card-details">
+                <h4><b>{{accomodation.accomodationId}}</b></h4>
                 <h4><b>{{accomodation.name}}</b></h4>
+                <h4><b>{{accomodation.ngo_id}}</b></h4>
+                <h4><b>{{accomodation.state}}</b></h4>
+                <h4><b>{{accomodation.city}}</b></h4>
+                <h4><b>{{accomodation.addressLine1}}</b></h4>
+                <h4><b>{{accomodation.addressLine2}}</b></h4>
+                <h4><b>{{accomodation.pincode}}</b></h4>
+                <h4><b>{{accomodation.landmark}}</b></h4>
+                <!-- <h4><b>{{accomodation.totalRoom}}</b></h4>
+                <h4><b>{{accomodation.roomAvailable}}</b></h4>
+                <h4><b>{{accomodation.capacity}}</b></h4>
+                <h4><b>{{accomodation.dayCareCentre}}</b></h4> -->
+                
                 <p>
                     {{accomodation.state}}
                 </p>
@@ -33,4 +46,6 @@
     </div>
   
 </div>
+
+
     
