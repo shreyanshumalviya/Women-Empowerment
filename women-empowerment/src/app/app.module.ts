@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 // import { MatButtonModule } from '@angular/material/button';
 import { MainNavComponent } from './main-nav/main-nav.component';
@@ -68,6 +69,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.component';
 import { WelcomeComponent } from './ngo/welcome/welcome.component';
 
+import { AboutUsComponent } from './about-us/about-us.component';
+import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -99,6 +105,9 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
     UpdateUserDetailsComponent,
     UpdateUserPasswordComponent,
     AddFamilyDetailsComponent,
+    AboutUsComponent,
+    AccomodationStatusComponent,
+    
     NgoConatinerComponent,
     WelcomeComponent,
   ],
@@ -131,6 +140,7 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
     MatTooltipModule,
     MatDividerModule,
     MatSnackBarModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
