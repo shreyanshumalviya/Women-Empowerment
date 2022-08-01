@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" class="navigation-bar">
   <span class="left-btns">
     <button mat-button (click)="goToStep()">STEP</button>
-    <button mat-button>Accomodation</button>
+    <button mat-button (click)="goToAccomodation()">Accomodation</button>
     <button mat-button (click)="goToSukanya()">Sukanya Samriddhi</button>
   </span>
   <p>{{ "Welcome user: " + userDetails.userId }}</p>
@@ -47,6 +47,9 @@
   </div>
   <div *ngSwitchCase="'sukanya'">
     <app-registration></app-registration>
+  </div>
+  <div *ngSwitchCase="'accomodation'">
+    <app-accomodation-status></app-accomodation-status>
   </div>
   <div class="dashboard-default" *ngSwitchDefault>
     <mat-card><h3>Application Status</h3></mat-card>
