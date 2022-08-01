@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Steps Courses</h2>
 
-  <div class="checkbox-container">
+  <!-- <div class="checkbox-container">
       <div class="form-check">
           <input class="form-check-input" type="checkbox" value="agriculture" onchange="filter()"
               name="agriculture" id="agriculture">
@@ -16,7 +16,7 @@
               fishing
           </label>
       </div>
-  </div>
+  </div> -->
 
   <div class="courses-container" >
       <!-- copy this element to repeat course items -->
@@ -25,8 +25,12 @@
           <div class="card-details">
               <h4><b>{{course.courseTitle}}</b></h4>
               <p>
-                {{course.description}}<br>
-                {{course.startDate}}
+                Description: {{course.description}}<br>
+                start Date:{{course.startDate}}<br>
+                Mode of Course:{{course.courseMode}}<br>
+                Duration:{{course.durationMonth}}<br>
+                Vacancies:{{course.vacancy}}<br>
+                Location :{{course.location}}<br>
               </p>
               <button class="card-button" mat-button (click)="register(course.courseId)">Register</button>
           </div>
