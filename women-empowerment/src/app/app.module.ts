@@ -48,6 +48,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { RegistrationComponent } from './sukanya/registration/registration.component';
 import { StepCoursesComponent } from './step-courses/step-courses.component';
 import { MatExpansionModule } from "@angular/material/expansion";
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
@@ -87,6 +88,7 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     AdminSukayaYojanaComponent,
     AdminStepComponent,
     AdminAccomodationsComponent,
+    RegistrationComponent,
     NgoDisplayTableComponent,
     AdminLandingPComponent,
     StepCoursesComponent,
