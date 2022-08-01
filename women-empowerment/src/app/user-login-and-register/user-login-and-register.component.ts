@@ -22,7 +22,6 @@ export class UserLoginAndRegisterComponent implements OnInit {
   userId: UserId = new UserId();
   userProfile: UserRegisterDetails = new UserRegisterDetails();
   confirmPassword: string;
-
   constructor(
     private userService: UserServiceService,
     private route: Router,
