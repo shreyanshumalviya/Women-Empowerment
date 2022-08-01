@@ -26,6 +26,7 @@ import { NgoLoginComponent } from './ngo/ngo-login/ngo-login.component';
 import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TermsComponent } from './home/terms/terms.component';
+import { ContactUsComponent } from './home/contact-us/contact-us.component';
 
 const routes: Routes = [
 
@@ -77,6 +78,7 @@ const routes: Routes = [
       },
     ],
   },
+  {path:'contactUs',component:ContactUsComponent},
   { path: 'stepHome', component: StepHomeComponent },
   { path: 'userLoginAndRegister', component: UserLoginAndRegisterComponent },
   { path: 'faq/Admin', component: FaqComponent },
