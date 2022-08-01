@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EnrolledUsers } from 'src/app/models/enrolled-users';
-import { Enrollment } from 'src/app/models/enrollment';
 import { NgoService } from '../ngo.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { NgoService } from '../ngo.service';
   styleUrls: ['./list-users.component.css']
 })
 export class ListUsersComponent implements OnInit {
-  enrolledUsers: Enrollment[]
+  enrolledUsers: EnrolledUsers[]
   displayedColumns = ["srNo", "name", "date_of_registration", "email", "contact"]
   constructor(private activatedRoute: ActivatedRoute, private ngoService: NgoService) {
 
@@ -21,9 +20,7 @@ export class ListUsersComponent implements OnInit {
       console.log(s["courseId"])
       let courseId = s["courseId"];
 
-      this.ngoService.getEnrolledUsers(courseId).subscribe(enrollments => {
-        this.enrolledUsers = enrollments;
-      });
+      this.enrolledUsers = this.ngoService.getEnrolledUsers(courseId);
     });
 
   }

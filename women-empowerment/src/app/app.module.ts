@@ -24,7 +24,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './footer/footer.component';
 import { AdminAboutUsComponent } from './Admin/admin-aboutUs/admin-about-us.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
@@ -50,9 +49,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { RegistrationComponent } from './sukanya/registration/registration.component';
 import { StepCoursesComponent } from './step-courses/step-courses.component';
-import { MatExpansionModule } from '@angular/material/expansion';
+import { MatExpansionModule } from "@angular/material/expansion";
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
 import { ListUsersComponent } from './ngo/list-users/list-users.component';
 import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
@@ -62,6 +60,7 @@ import { CreateAccomodationComponent } from './ngo/create-accomodation/create-ac
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from "@angular/material/select";
 import { UpdateUserDetailsComponent } from './user-dashboard/update-user-details/update-user-details.component';
 import { UpdateUserPasswordComponent } from './user-dashboard/update-user-password/update-user-password.component';
 import { AddFamilyDetailsComponent } from './user-dashboard/add-family-details/add-family-details.component';
@@ -72,6 +71,7 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
 
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
+import { RegistrationComponent } from './sukanya/registration/registration.component';
 
 
 
@@ -85,10 +85,6 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     NgoRegisterComponent,
     StepHomeComponent,
     UserLoginAndRegisterComponent,
-    UserDashboardComponent,
-    UpdateUserDetailsComponent,
-    UpdateUserPasswordComponent,
-    AddFamilyDetailsComponent,
     AdminAboutUsComponent,
     AdminLoginComponent,
     AdminDashboardComponent,
@@ -96,7 +92,6 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     AdminSukayaYojanaComponent,
     AdminStepComponent,
     AdminAccomodationsComponent,
-    RegistrationComponent,
     NgoDisplayTableComponent,
     AdminLandingPComponent,
     StepCoursesComponent,
@@ -112,7 +107,7 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     AddFamilyDetailsComponent,
     AboutUsComponent,
     AccomodationStatusComponent,
-    
+    RegistrationComponent
     NgoConatinerComponent,
     WelcomeComponent,
   ],
@@ -121,7 +116,6 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     BrowserAnimationsModule,
     MatButtonModule,
     HomeModule,
-    MatFormFieldModule,
     LayoutModule,
     MatSidenavModule,
     MatListModule,
@@ -134,9 +128,6 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatDividerModule,
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
@@ -155,4 +146,4 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

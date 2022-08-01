@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -61,15 +60,17 @@ export class NgoService {
 
     return this.httpClient.post<Course>("http://localhost:9090/course/register", course);
   }
+  
   getEnrolledUsers(courseId: number): Observable<Enrollment[]> {
     
     return this.httpClient.get<Enrollment[]>(`http://localhost:9090/course/list-enrollments-for-course/${courseId}`);
   }  
+  
   public getResidingUser2(accomodationId: number): Observable<Accomodation_status[]> {
     
     return this.httpClient.get<Accomodation_status[]>(`http://localhost:9090/accomodation/list-resdents-for-accomodation/${accomodationId}`);
   }
-
+  
   getResidingUser(accomodationId: number): ResidingUser[] {
     let residingUsers: ResidingUser[] = [];
     let residingUser: ResidingUser = new ResidingUser();

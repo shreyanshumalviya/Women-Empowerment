@@ -56,7 +56,7 @@ export class NgoLoginComponent implements OnInit {
       }
       sessionStorage.setItem("loggedInNgo", JSON.stringify(ngo));
       this.errorMessage = ""
-      this.router.navigate(["/ngo/welcome"]);
+      this.router.navigate(["/ngo/courses"]);
     });
   }
 

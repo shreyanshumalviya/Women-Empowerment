@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from './models/course';
-import { Enrollment } from './models/enrollment';
 
 @Injectable({
   providedIn: 'root'
@@ -327,8 +326,5 @@ getCourses(): Observable<Course[]> {
     course.courseMode= element.mode[0];
   }); }
 
-  enrollForCourse(userId:number, courseId: number):Observable<Enrollment>{
-    return this.httpClient.get<Enrollment>(`http://localhost:9090/course/${courseId}/enroll/${userId}`);
-  }
   
 }
