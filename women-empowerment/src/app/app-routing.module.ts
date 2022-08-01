@@ -22,6 +22,8 @@ import { ListCoursesComponent } from './ngo/list-courses/list-courses.component'
 import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomodations.component';
 import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
 import { LegislationComponent } from './home/legislation/legislation.component';
+import { NgoLoginComponent } from './ngo/ngo-login/ngo-login.component';
+import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component';
 
 const routes: Routes = [
   {
@@ -40,6 +42,8 @@ const routes: Routes = [
     ],
     path: 'ngo'
   },
+  {path:"ngoLogin",component:NgoLoginComponent},
+  {path:"ngoRegister",component:NgoRegisterComponent},
   { path: 'adminLoginLink', component: AdminLoginComponent },
   {
     path: 'adminDashboardLink',
