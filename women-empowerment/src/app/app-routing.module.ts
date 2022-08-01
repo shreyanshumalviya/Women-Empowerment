@@ -28,6 +28,8 @@ import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component'
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TermsComponent } from './home/terms/terms.component';
 import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
+import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.component';
+import { WelcomeComponent } from './ngo/welcome/welcome.component';
 
 const routes: Routes = [
 
@@ -38,16 +40,18 @@ const routes: Routes = [
   },
   {path:'accomodationStatus',component:AccomodationStatusComponent},
   {path:'terms',component:TermsComponent},
+  { path: 'ngo/home', component: NgoHomeComponent },
   {
     children: [
       { path: "create_course", component: CreateCourseComponent },
       { path: "create_accomodation", component: CreateAccomodationComponent },
       { path: "enrolled_users/:courseId", component: ListUsersComponent },
       { path: "residing_users/:accomodationId", component: ListResidentsComponent },
-      { path: "home", component: NgoHomeComponent },
       { path: "courses", component: ListCoursesComponent },
+      { path: "welcome", component: WelcomeComponent },
       { path: "accomodations", component: ListAccomodationsComponent }
     ],
+    component: NgoConatinerComponent,
     path: 'ngo'
   },
   {path:"ngoLogin",component:NgoLoginComponent},

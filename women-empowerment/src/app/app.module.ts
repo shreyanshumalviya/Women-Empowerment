@@ -66,6 +66,8 @@ import { UpdateUserPasswordComponent } from './user-dashboard/update-user-passwo
 import { AddFamilyDetailsComponent } from './user-dashboard/add-family-details/add-family-details.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
+import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.component';
+import { WelcomeComponent } from './ngo/welcome/welcome.component';
 
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
@@ -106,6 +108,8 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     AboutUsComponent,
     AccomodationStatusComponent,
     
+    NgoConatinerComponent,
+    WelcomeComponent,
   ],
   imports: [
     HttpClientModule,
