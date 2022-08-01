@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 // import { MatButtonModule } from '@angular/material/button';
 import { MainNavComponent } from './main-nav/main-nav.component';
 // import { LayoutModule } from '@angular/cdk/layout';
@@ -22,7 +23,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './footer/footer.component';
 import { AdminAboutUsComponent } from './Admin/admin-aboutUs/admin-about-us.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
@@ -48,9 +48,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { RegistrationComponent } from './sukanya/registration/registration.component';
 import { StepCoursesComponent } from './step-courses/step-courses.component';
-import { MatExpansionModule } from '@angular/material/expansion';
+import { MatExpansionModule } from "@angular/material/expansion";
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
 import { ListUsersComponent } from './ngo/list-users/list-users.component';
 import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
@@ -65,8 +64,7 @@ import { UpdateUserPasswordComponent } from './user-dashboard/update-user-passwo
 import { AddFamilyDetailsComponent } from './user-dashboard/add-family-details/add-family-details.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
-import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.component';
-import { WelcomeComponent } from './ngo/welcome/welcome.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -78,10 +76,6 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
     NgoRegisterComponent,
     StepHomeComponent,
     UserLoginAndRegisterComponent,
-    UserDashboardComponent,
-    UpdateUserDetailsComponent,
-    UpdateUserPasswordComponent,
-    AddFamilyDetailsComponent,
     AdminAboutUsComponent,
     AdminLoginComponent,
     AdminDashboardComponent,
@@ -89,7 +83,6 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
     AdminSukayaYojanaComponent,
     AdminStepComponent,
     AdminAccomodationsComponent,
-    RegistrationComponent,
     NgoDisplayTableComponent,
     AdminLandingPComponent,
     StepCoursesComponent,
@@ -103,15 +96,13 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
     UpdateUserDetailsComponent,
     UpdateUserPasswordComponent,
     AddFamilyDetailsComponent,
-    NgoConatinerComponent,
-    WelcomeComponent,
+    AboutUsComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     HomeModule,
-    MatFormFieldModule,
     LayoutModule,
     MatSidenavModule,
     MatListModule,
@@ -124,9 +115,6 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatDividerModule,
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
@@ -139,9 +127,8 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
     MatTooltipModule,
     MatDividerModule,
     MatSnackBarModule,
-    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

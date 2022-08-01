@@ -1,13 +1,10 @@
-import { NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Accommodation } from '../models/accomodation';
 import { Course } from '../models/course';
 import { EnrolledUsers } from '../models/enrolled-users';
-import { Enrollment } from '../models/enrollment';
 import { NGO } from '../models/ngo';
-import { NgoStatus } from '../models/ngo-status';
 import { ResidingUser } from '../models/residing-user';
 
 @Injectable({
@@ -59,9 +56,25 @@ export class NgoService {
 
     return this.httpClient.post<Course>("http://localhost:9090/course/register", course);
   }
-  getEnrolledUsers(courseId: number): Observable<Enrollment[]> {
-    
-    return this.httpClient.get<Enrollment[]>(`http://localhost:9090/course/list-enrollments-for-course/${courseId}`);
+  getEnrolledUsers(courseId: number): EnrolledUsers[] {
+    let enrolledUsers: EnrolledUsers[] = [];
+    let enrolledUser: EnrolledUsers = new EnrolledUsers();
+    enrolledUser.srNo = 1;
+    enrolledUser.first_name = "Jonho";
+    enrolledUser.last_name = "Josh";
+    enrolledUser.email = "email@email.com";
+    enrolledUser.contact = "4312423412";
+    enrolledUsers.push(enrolledUser);
+
+    enrolledUser = new EnrolledUsers();
+    enrolledUser.srNo = 2;
+    enrolledUser.first_name = "yesha";
+    enrolledUser.last_name = "yash";
+    enrolledUser.email = "email@email.com";
+    enrolledUser.contact = "4312423412";
+    enrolledUsers.push(enrolledUser);
+
+    return enrolledUsers;
   }
 
   getResidingUser(accomodationId: number): ResidingUser[] {
@@ -102,7 +115,5 @@ export class NgoService {
 
   }
 
-  getNgoStatus(ngoId:number):Observable<NgoStatus>{
-    return this.httpClient.get<NgoStatus>("http://localhost:9090/ngo/status/"+ngoId);
-  }
+
 }

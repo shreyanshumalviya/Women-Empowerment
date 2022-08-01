@@ -1,19 +1,16 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  .row {
-    display: flex;
-  }
-  
-  /* Create two equal columns that sits next to each other */
-  .column {
-    flex: 50%;
-    padding: 10px;
-    height: 500px; /* Should be removed. Only for demonstration */
-  }
-
-
+.container .btn {
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 80px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: px;
+}
 
 .list-group-item{
     border: 1px gray solid;
@@ -94,8 +91,9 @@ h1 {
    height: 100%;
  }
  
+ 
  .text {
-   color: white;
+   color: rgb(4, 0, 0);
    font-size: 15px;
    position: relative;
    top: 45%;

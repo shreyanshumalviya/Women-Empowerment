@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FamilyMember } from './family-member';
 import { UpdatePasswordDetails } from './update-password-details';
 import { UserId } from './user-id';
 import { UserLogin } from './user-login';
@@ -54,20 +53,6 @@ export class UserServiceService {
   resetPassword(userId: UserId): Observable<boolean> {
     return this.httpClient.post<boolean>(
       'http://localhost:9090/users/forgotPassword',
-      userId
-    );
-  }
-
-  addFamilyMember(familyMember: FamilyMember): Observable<FamilyMember> {
-    return this.httpClient.post<FamilyMember>(
-      'http://localhost:9090/users/addFamilyMember',
-      familyMember
-    );
-  }
-
-  getFamilyMembers(userId: UserId): Observable<FamilyMember[]> {
-    return this.httpClient.post<FamilyMember[]>(
-      'http://localhost:9090/users/getFamilyDetails',
       userId
     );
   }
