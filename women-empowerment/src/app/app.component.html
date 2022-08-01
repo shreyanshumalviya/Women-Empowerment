@@ -29,6 +29,7 @@
       <a mat-button [routerLink]="'/ngo/home'"> NGO </a>
       <a mat-button [routerLink]="'/AboutAdmin'"> ADMIN </a>
       <a mat-button [routerLink]="'/faq'"> FAQ </a>
+      <a mat-button [routerLink]="'/userLoginAndRegister'"> User </a>
 
     </div>
   </mat-toolbar-row>
@@ -96,10 +97,14 @@
       <mat-icon>help</mat-icon>
       <span>FAQ</span>
     </button>
+    <button mat-button class="menu-button" routerLink="/faq">
+      <mat-icon>account_circle</mat-icon>
+      <span>User</span>
+    </button>
     <mat-divider></mat-divider>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div class="content mat-elevation-z8">
+    <div class=" mat-elevation-z8" style="margin-top: 1em;margin-inline: 1em;">
       <router-outlet></router-outlet>
 
     </div>

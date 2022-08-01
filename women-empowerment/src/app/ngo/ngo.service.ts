@@ -3,10 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Accommodation } from '../models/accomodation';
+import { Accomodation_status } from '../models/accomodation-status';
 import { Course } from '../models/course';
 import { EnrolledUsers } from '../models/enrolled-users';
 import { Enrollment } from '../models/enrollment';
 import { NGO } from '../models/ngo';
+import { NgoDocument } from '../models/ngo-document';
 import { NgoStatus } from '../models/ngo-status';
 import { ResidingUser } from '../models/residing-user';
 
@@ -62,6 +64,10 @@ export class NgoService {
   getEnrolledUsers(courseId: number): Observable<Enrollment[]> {
     
     return this.httpClient.get<Enrollment[]>(`http://localhost:9090/course/list-enrollments-for-course/${courseId}`);
+  }  
+  public getResidingUser2(accomodationId: number): Observable<Accomodation_status[]> {
+    
+    return this.httpClient.get<Accomodation_status[]>(`http://localhost:9090/accomodation/list-resdents-for-accomodation/${accomodationId}`);
   }
 
   getResidingUser(accomodationId: number): ResidingUser[] {
@@ -104,5 +110,9 @@ export class NgoService {
 
   getNgoStatus(ngoId:number):Observable<NgoStatus>{
     return this.httpClient.get<NgoStatus>("http://localhost:9090/ngo/status/"+ngoId);
+  }
+
+  uploadDoc(ngoDocument: NgoDocument):Observable<NgoDocument>{
+    return this.httpClient.post<NgoDocument>("http://localhost:9090/ngo/upload_doc", ngoDocument);
   }
 }
