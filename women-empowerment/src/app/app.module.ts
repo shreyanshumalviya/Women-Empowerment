@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './footer/footer.component';
 import { AdminAboutUsComponent } from './Admin/admin-aboutUs/admin-about-us.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
@@ -132,6 +133,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatTooltipModule,
     MatDividerModule,
     MatSnackBarModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
