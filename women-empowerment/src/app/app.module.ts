@@ -64,6 +64,7 @@ import { UpdateUserPasswordComponent } from './user-dashboard/update-user-passwo
 import { AddFamilyDetailsComponent } from './user-dashboard/add-family-details/add-family-details.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { HttpClientModule } from '@angular/common/http';
     UpdateUserDetailsComponent,
     UpdateUserPasswordComponent,
     AddFamilyDetailsComponent,
+    AboutUsComponent,
   ],
   imports: [
     HttpClientModule,

@@ -24,12 +24,17 @@ import { CreateAccomodationComponent } from './ngo/create-accomodation/create-ac
 import { LegislationComponent } from './home/legislation/legislation.component';
 import { NgoLoginComponent } from './ngo/ngo-login/ngo-login.component';
 import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { TermsComponent } from './home/terms/terms.component';
 
 const routes: Routes = [
+
+  {path:'AboutUs',component:AboutUsComponent},
   {
     path: 'AboutAdmin',
     component: AdminAboutUsComponent,
   },
+  {path:'terms',component:TermsComponent},
   {
     children: [
       { path: "create_course", component: CreateCourseComponent },
