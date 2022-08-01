@@ -17,7 +17,10 @@
               type="number"
               name="userId"
               [(ngModel)]="userLoginData.userId"
+              required
+              #userId="ngModel"
             />
+            <mat-error *ngIf="userId.invalid"> Required. Only digits</mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="standard">
@@ -27,7 +30,12 @@
               [type]="showLoginPassword ? 'text' : 'password'"
               name="password"
               [(ngModel)]="userLoginData.password"
+              required
+              minlength="8"
+              #password="ngModel"
             />
+
+            <mat-error *ngIf="password.invalid"> Minimum Length: 8</mat-error>
             <mat-icon matSuffix (click)="toggleLoginPasswordVisibility()">
               {{ showLoginPassword ? "visibility_off" : "visibility" }}
             </mat-icon>
@@ -38,6 +46,7 @@
             class="form-submit-button"
             mat-raised-button
             color="primary"
+            [disabled]="userLoginForm.invalid"
           >
             Login
           </button>
@@ -83,7 +92,11 @@
                 matInput
                 name="firstName"
                 [(ngModel)]="userProfile.firstName"
+                #fname="ngModel"
+                required
+                minlength="2"
               />
+              <mat-error *ngIf="fname.invalid">At least 2 charactes</mat-error>
             </mat-form-field>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
@@ -101,7 +114,11 @@
                 matInput
                 name="lastName"
                 [(ngModel)]="userProfile.lastName"
+                #lname="ngModel"
+                required
+                minlength="2"
               />
+              <mat-error *ngIf="lname.invalid">At least 2 charactes</mat-error>
             </mat-form-field>
           </span>
 
@@ -113,10 +130,13 @@
                 class="radio-btn-group"
                 name="gender"
                 [(ngModel)]="userProfile.gender"
+                #gender="ngModel"
+                required
               >
                 <mat-radio-button [value]="'MALE'"> Male </mat-radio-button>
                 <mat-radio-button [value]="'FEMALE'"> Female </mat-radio-button>
               </mat-radio-group>
+              <mat-error *ngIf="gender.invalid">Required</mat-error>
             </span>
 
             <span class="form-field-space"></span>
@@ -127,10 +147,13 @@
                 class="radio-btn-group"
                 name="disabled"
                 [(ngModel)]="userProfile.disabled"
+                #disability="ngModel"
+                required
               >
                 <mat-radio-button [value]="'YES'"> Yes </mat-radio-button>
                 <mat-radio-button [value]="'NO'"> No </mat-radio-button>
               </mat-radio-group>
+              <mat-error *ngIf="disability.invalid">Required</mat-error>
             </span>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
@@ -139,11 +162,15 @@
                 matInput
                 [matDatepicker]="picker"
                 name="dob"
+                readonly
                 [(ngModel)]="userProfile.dob"
+                #dob="ngModel"
+                required
               />
+              <mat-error *ngIf="dob.invalid">Required</mat-error>
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle
-                matSuffix
+                matPrefix
                 [for]="picker"
               ></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
@@ -152,16 +179,32 @@
           <span class="fields-row">
             <mat-form-field appearance="standard">
               <mat-label>Email</mat-label>
-              <input matInput name="email" [(ngModel)]="userProfile.email" />
+              <input
+                matInput
+                type="email"
+                name="email"
+                [(ngModel)]="userProfile.email"
+                #email="ngModel"
+                required
+              />
+              <mat-error *ngIf="email.invalid">Required. Valid Email</mat-error>
             </mat-form-field>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
               <mat-label>Contact Number</mat-label>
               <input
                 matInput
+                type="number"
                 name="contactNo"
                 [(ngModel)]="userProfile.contactNo"
+                #contactNo="ngModel"
+                minlength="10"
+                maxlength="10"
+                required
               />
+              <mat-error *ngIf="contactNo.invalid"
+                >At least 10 digits</mat-error
+              >
             </mat-form-field>
           </span>
           <span class="fields-row">
@@ -172,7 +215,13 @@
                 [type]="showRegisterPassword ? 'text' : 'password'"
                 name="password"
                 [(ngModel)]="userProfile.password"
+                #password="ngModel"
+                minlength="8"
+                required
               />
+              <mat-error *ngIf="password.invalid"
+                >At least 8 charactes</mat-error
+              >
               <mat-icon matSuffix (click)="toggleRegisterPasswordVisibility()">
                 {{ showRegisterPassword ? "visibility_off" : "visibility" }}
               </mat-icon>
@@ -185,6 +234,7 @@
                 [type]="showRegisterConfirmPassword ? 'text' : 'password'"
                 name="confirmPassword"
                 [(ngModel)]="confirmPassword"
+                required
               />
               <mat-icon
                 matSuffix
@@ -201,14 +251,33 @@
               <mat-label>AADHAAR Number</mat-label>
               <input
                 matInput
+                type="number"
                 name="aadhaarNo"
                 [(ngModel)]="userProfile.aadhaarNo"
+                #aadhaarNo="ngModel"
+                minlength="12"
+                maxlength="12"
+                required
               />
+              <mat-error *ngIf="aadhaarNo.invalid"
+                >12 Digits. Required</mat-error
+              >
             </mat-form-field>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
               <mat-label>PAN Number</mat-label>
-              <input matInput name="panNo" [(ngModel)]="userProfile.panNo" />
+              <input
+                matInput
+                name="panNo"
+                [(ngModel)]="userProfile.panNo"
+                #panNo="ngModel"
+                minlength="10"
+                maxlength="10"
+                required
+              />
+              <mat-error *ngIf="panNo.invalid"
+                >11 Characters. Required</mat-error
+              >
             </mat-form-field>
           </span>
           <span class="fields-row">
@@ -219,6 +288,8 @@
                 class="radio-btn-group"
                 name="jobStatus"
                 [(ngModel)]="userProfile.jobStatus"
+                #jobStatus="ngModel"
+                required
               >
                 <mat-radio-button [value]="'EMPLOYED'">
                   Employed
@@ -227,6 +298,7 @@
                   Unemployed
                 </mat-radio-button>
               </mat-radio-group>
+              <mat-error *ngIf="jobStatus.invalid">Required</mat-error>
             </span>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
@@ -235,12 +307,24 @@
                 matInput
                 name="jobTitle"
                 [(ngModel)]="userProfile.jobTitle"
+                #jobTitle="ngModel"
+                required
               />
+              <mat-error *ngIf="jobTitle.invalid">Required</mat-error>
             </mat-form-field>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
               <mat-label>Salary</mat-label>
-              <input matInput name="salary" [(ngModel)]="userProfile.salary" />
+              <input
+                matInput
+                type="number"
+                name="salary"
+                [(ngModel)]="userProfile.salary"
+                #salary="ngModel"
+                required
+              />
+              <mat-error *ngIf="salary.invalid">Required</mat-error>
+              <span matPrefix>₹&nbsp;</span>
             </mat-form-field>
           </span>
           <span class="radio-btn-group">
@@ -250,10 +334,13 @@
               class="radio-btn-group"
               name="residenceArea"
               [(ngModel)]="userProfile.residenceArea"
+              #area="ngModel"
+              required
             >
               <mat-radio-button [value]="'URBAN'"> Urban </mat-radio-button>
               <mat-radio-button [value]="'RURAL'"> Rural </mat-radio-button>
             </mat-radio-group>
+            <mat-error *ngIf="area.invalid">Required</mat-error>
           </span>
 
           <span class="radio-btn-group">
@@ -263,6 +350,8 @@
               class="radio-btn-group"
               name="maritalStatus"
               [(ngModel)]="userProfile.maritalStatus"
+              #maritalStatus="ngModel"
+              required
             >
               <mat-radio-button [value]="'MARRIED'"> Married </mat-radio-button>
               <mat-radio-button [value]="'UNMARRIED'">
@@ -273,9 +362,16 @@
                 Separated
               </mat-radio-button>
             </mat-radio-group>
+            <mat-error *ngIf="maritalStatus.invalid">Required</mat-error>
           </span>
 
-          <button class="form-submit-button" mat-raised-button color="primary">
+          <button
+            type="submit"
+            class="form-submit-button"
+            mat-raised-button
+            color="primary"
+            [disabled]="registerUserForm.invalid"
+          >
             Register
           </button>
         </form>
@@ -296,8 +392,7 @@
         <hr class="headig-underline" />
         <form
           class="form-style"
-          #userLoginForm="ngForm"
-          action=""
+          #userForgotPasswordForm="ngForm"
           (ngSubmit)="passwordReset()"
         >
           <mat-form-field appearance="standard">
@@ -307,7 +402,10 @@
               type="number"
               name="userId"
               [(ngModel)]="userId.userId"
+              required
+              #UserId="ngModel"
             />
+            <mat-error *ngIf="UserId.invalid"> Required. Only digits</mat-error>
           </mat-form-field>
           <br /><br /><br />
           <button
@@ -315,6 +413,7 @@
             class="form-submit-button"
             mat-raised-button
             color="primary"
+            [disabled]="userForgotPasswordForm.invalid"
           >
             Request Reset Password
           </button>
