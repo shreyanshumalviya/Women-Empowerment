@@ -1,0 +1,36 @@
+<!-- <mat-date-range-input [rangePicker] = "picker">  
+    <input matStartDate placeholder = "Start date">  
+    <input matEndDate placeholder = "End date">  
+  </mat-date-range-input>  
+  <mat-date-range-picker #picker> </mat-date-range-picker>   -->
+
+  <!-- <mat-form-field appearance = "fill">  
+    <mat-label> enter the start date and end date </mat-label>  
+    <mat-date-range-input [rangePicker] = "picker">  
+      <input matStartDate placeholder = "Start date">  
+      <input matEndDate placeholder = "End date">  
+    </mat-date-range-input>  
+    <mat-datepicker-toggle matSuffix [for] = "picker"> </mat-datepicker-toggle>  
+    <mat-date-range-picker #picker> </mat-date-range-picker>  
+  </mat-form-field>   -->
+
+  <div class="container">
+    <h2>Accomodation Status</h2>
+    <div class="courses-container" >
+        <!-- copy this element to repeat course items -->
+        <div class="card" *ngFor="let accomodation of accomodationstatus ">
+            <!-- <img src="assets/Images/agriculture-image.jpg" alt="agriculture-image"> -->
+            <div class="card-details">
+                <h4><b>{{accomodation.name}}</b></h4>
+                <p>
+                    {{accomodation.state}}
+                </p>
+                <button  (click)="register(accomodation.accomodationId)" class="card-button">Register</button>
+            </div>
+        </div>
+         
+  
+    </div>
+  
+</div>
+    

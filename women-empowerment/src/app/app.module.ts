@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 // import { MatButtonModule } from '@angular/material/button';
 import { MainNavComponent } from './main-nav/main-nav.component';
@@ -104,6 +105,7 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     AddFamilyDetailsComponent,
     AboutUsComponent,
     AccomodationStatusComponent,
+    
   ],
   imports: [
     HttpClientModule,
@@ -134,6 +136,7 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     MatTooltipModule,
     MatDividerModule,
     MatSnackBarModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

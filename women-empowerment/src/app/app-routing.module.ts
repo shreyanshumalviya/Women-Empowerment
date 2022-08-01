@@ -27,6 +27,7 @@ import { NgoLoginComponent } from './ngo/ngo-login/ngo-login.component';
 import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TermsComponent } from './home/terms/terms.component';
+import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
 
 const routes: Routes = [
 
@@ -35,6 +36,7 @@ const routes: Routes = [
     path: 'AboutAdmin',
     component: AdminAboutUsComponent,
   },
+  {path:'accomodationStatus',component:AccomodationStatusComponent},
   {path:'terms',component:TermsComponent},
   {
     children: [
