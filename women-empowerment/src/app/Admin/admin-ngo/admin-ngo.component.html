@@ -140,20 +140,14 @@
                 </ng-container>
 
                 <ng-container matColumnDef="actions">
-                  <th
-                    mat-header-cell
-                    *matHeaderCellDef
-                    style="font-size: 13px; font-weight: 800"
-                  >
-                    toggle
-                  </th>
+                  <th mat-header-cell *matHeaderCellDef></th>
                   <td
                     mat-cell
                     *matCellDef="let element"
                     style="background-color: rgb(212, 236, 228)"
                   >
                     <mat-slide-toggle
-                      [checked]="element.activate"
+                      [checked]="element.verified"
                       (change)="updateActiveStatus(element)"
                     ></mat-slide-toggle>
                   </td>

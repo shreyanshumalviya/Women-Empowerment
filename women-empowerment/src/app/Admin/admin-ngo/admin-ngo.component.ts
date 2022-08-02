@@ -46,12 +46,9 @@ export class AdminNgoComponent {
       return this.data.filter((i) => i.verified == validate).length;
     }
   }
-
   updateActiveStatus(element) {
-    // console.log(element.verified);
-    element.verified = !element.verified;
-    this.adminngoservice.UpdateNgoList().subscribe((updateUser) => {
-      element.validate = true;
+    this.adminngoservice.verify(element.ngoId).subscribe((response) => {
+      element.validate = response;
     });
   }
 }

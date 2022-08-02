@@ -1,5 +1,5 @@
 .step-body-container {
-  height: 100%;
+  height: auto;
   width: 100%;
   background-color: #eeeeee;
   display: flex;
