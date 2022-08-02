@@ -14,7 +14,11 @@ import { AccomodationStatusService } from 'src/app/accomodation_status_service.s
 })
 export class AccomodationStatusComponent implements OnInit {
   user: UserProfileDetails;
-  accomodationstatus:Accommodation[];
+
+  accomodationstatus:Accommodation[]=[];
+  displayedColumns: string[] = ["accomodationId", "name", "state", "addressLine1","addressLine2","landmark" ,"pincode","city","Button"]
+  
+  
   constructor(private accomodationservice:AccomodationStatusService,private router:Router) { 
      this.accomodationservice.getaccomodation().subscribe(accomodationstatus=>{
       this.accomodationstatus=accomodationstatus;
