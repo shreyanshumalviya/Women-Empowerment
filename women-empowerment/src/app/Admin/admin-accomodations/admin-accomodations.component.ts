@@ -25,9 +25,6 @@ export class AdminAccomodationsComponent implements OnInit {
     'roomAvailable',
     'capacity',
     'dayCareCentre',
-    'ngo',
-    'accomodationStatuses',
-    'accomodation',
   ];
 
   constructor(private adminaccomodationservice: AdminAccomodationService) {

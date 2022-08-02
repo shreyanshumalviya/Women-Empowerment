@@ -29,7 +29,13 @@
                 style="background-color: rgb(206, 238, 248); margin-top: 20px"
               >
                 <ng-container matColumnDef="accountId">
-                  <th mat-header-cell *matHeaderCellDef>Serial Id</th>
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Serial Id
+                  </th>
                   <td
                     mat-cell
                     *matCellDef="let element"
@@ -39,7 +45,13 @@
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="beneficiaryName">
-                  <th mat-header-cell *matHeaderCellDef>Beneficiary Name</th>
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Beneficiary Name
+                  </th>
                   <td
                     mat-cell
                     *matCellDef="let element"
@@ -49,7 +61,13 @@
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="dob">
-                  <th mat-header-cell *matHeaderCellDef>Date-Of-Birth</th>
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Date-Of-Birth
+                  </th>
                   <td
                     mat-cell
                     *matCellDef="let element"
@@ -59,7 +77,13 @@
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="adharNo">
-                  <th mat-header-cell *matHeaderCellDef>Aadhaar No</th>
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Aadhaar No
+                  </th>
                   <td
                     mat-cell
                     *matCellDef="let element"
@@ -69,7 +93,13 @@
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="registrationDate">
-                  <th mat-header-cell *matHeaderCellDef>Registration Date</th>
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Registration Date
+                  </th>
                   <td
                     mat-cell
                     *matCellDef="let element"
@@ -79,18 +109,37 @@
                   </td>
                 </ng-container>
 
-                <ng-container matColumnDef="sukanyaDoc">
-                  <th mat-header-cell *matHeaderCellDef>Sukanya Documents</th>
+                <ng-container matColumnDef="doc">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Documents
+                  </th>
                   <td
                     mat-cell
                     *matCellDef="let element"
                     style="background-color: rgb(212, 236, 228)"
                   >
-                    {{ element.sukanyaDoc }}
+                    <button
+                      (click)="Doc(element.accountId)"
+                      mat-button
+                      style="background-color: rgb(148, 234, 205)"
+                    >
+                      View
+                    </button>
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="user">
-                  <th mat-header-cell *matHeaderCellDef>Owner</th>
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Owner
+                  </th>
                   <td
                     mat-cell
                     *matCellDef="let element"
@@ -100,7 +149,13 @@
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="verified">
-                  <th mat-header-cell *matHeaderCellDef>Verification</th>
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Verification
+                  </th>
                   <td
                     mat-cell
                     *matCellDef="let element"
@@ -110,14 +165,18 @@
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="actions">
-                  <th mat-header-cell *matHeaderCellDef>toggle</th>
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  ></th>
                   <td
                     mat-cell
                     *matCellDef="let element"
                     style="background-color: rgb(212, 236, 228)"
                   >
                     <mat-slide-toggle
-                      [checked]="element.activate"
+                      [checked]="element.verified"
                       (change)="updateActiveStatus(element)"
                     ></mat-slide-toggle>
                   </td>
@@ -129,15 +188,6 @@
                   *matRowDef="let row; columns: columnsToDisplay"
                 ></tr>
               </table>
-              <mat-paginator
-                #paginator
-                [length]="data?.length"
-                [pageIndex]="0"
-                [pageSize]="10"
-                [pageSizeOptions]="[5, 10, 20]"
-                aria-label="Select page"
-              >
-              </mat-paginator>
             </div>
           </div>
         </mat-card>

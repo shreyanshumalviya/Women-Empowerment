@@ -35,8 +35,7 @@ import { AdminUserComponent } from './Admin/admin-user/admin-user.component';
 import { HomeLPComponent } from './home-lp/home-lp.component';
 
 const routes: Routes = [
-
-  {path:'AboutUs',component:AboutUsComponent},
+  { path: 'AboutUs', component: AboutUsComponent },
   {
     path: '',
     redirectTo: '/homelandingpage',
@@ -46,8 +45,8 @@ const routes: Routes = [
     path: 'AboutAdmin',
     component: AdminAboutUsComponent,
   },
-  {path:'accomodationStatus',component:AccomodationStatusComponent},
-  {path:'terms',component:TermsComponent},
+  { path: 'accomodationStatus', component: AccomodationStatusComponent },
+  { path: 'terms', component: TermsComponent },
   { path: 'ngo/home', component: NgoHomeComponent },
   {
     children: [
@@ -66,8 +65,8 @@ const routes: Routes = [
     component: NgoConatinerComponent,
     path: 'ngo',
   },
-  {path:"ngoLogin",component:NgoLoginComponent},
-  {path:"ngoRegister",component:NgoRegisterComponent},
+  { path: 'ngoLogin', component: NgoLoginComponent },
+  { path: 'ngoRegister', component: NgoRegisterComponent },
   { path: 'adminLoginLink', component: AdminLoginComponent },
   {
     path: 'adminDashboardLink',
@@ -89,9 +88,13 @@ const routes: Routes = [
         path: 'adminLandPage',
         component: AdminLandingPComponent,
       },
+      {
+        path: 'adminAccomodationsLink',
+        component: AdminAccomodationsComponent,
+      },
     ],
   },
-  {path:'contactUs',component:ContactUsComponent},
+  { path: 'contactUs', component: ContactUsComponent },
   { path: 'stepHome', component: StepHomeComponent },
   { path: 'userLoginAndRegister', component: UserLoginAndRegisterComponent },
   { path: 'faq/Admin', component: FaqComponent },
@@ -101,7 +104,7 @@ const routes: Routes = [
   { path: 'legislation', component: LegislationComponent },
   { path: 'step-courses', component: StepCoursesComponent },
   { path: 'userDashboard', component: UserDashboardComponent },
-  {path:'privacy',component:PrivacyComponent},
+  { path: 'privacy', component: PrivacyComponent },
 ];
 
 @NgModule({
