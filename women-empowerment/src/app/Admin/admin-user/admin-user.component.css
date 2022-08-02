@@ -1,12 +1,6 @@
 table {
   width: 100%;
 }
-.example-table-container {
-  position: relative;
-  height: 80%;
-  width: 100%;
-  overflow: auto;
-}
 .user-body-child2 {
   background-image: linear-gradient(
     rgba(126, 139, 234, 0.3),
@@ -21,10 +15,16 @@ table {
   line-height: 2;
 }
 .head {
-  margin-left: -80px;
+  margin-left: -20px;
   font-size: 22px;
   font-weight: 800;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+.example-table-container {
+  position: relative;
+  height: 80%;
+  width: 100%;
+  overflow: auto;
 }
 .mat-icon {
   font-size: 25px;

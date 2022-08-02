@@ -9,7 +9,7 @@
 
 .user-body {
   margin-top: 5%;
-  width: 90%;
+  width: 65%;
   height: 70%;
   padding: 2rem 3rem;
 }
@@ -28,10 +28,6 @@
 
 .form-submit-button {
   margin: 1rem 0;
-}
-
-.form-switch-button {
-  margin: 0 1rem;
 }
 
 .fields-row {

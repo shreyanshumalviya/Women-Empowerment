@@ -32,7 +32,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { AdminNgoComponent } from './Admin/admin-ngo/admin-ngo.component';
 import { AdminSukayaYojanaComponent } from './Admin/admin-sukaya-yojana/admin-sukaya-yojana.component';
-import { AdminStepComponent } from './Admin/admin-step/admin-step.component';
 import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-accomodations.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
@@ -74,6 +73,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
 
 
+import { CustomCarouselComponent } from './custom-carousel/custom-carousel.component';
+import { AdminUserComponent } from './Admin/admin-user/admin-user.component';
+import { HomeLPComponent } from './home-lp/home-lp.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +96,6 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     AdminDashboardComponent,
     AdminNgoComponent,
     AdminSukayaYojanaComponent,
-    AdminStepComponent,
     AdminAccomodationsComponent,
     RegistrationComponent,
     NgoDisplayTableComponent,
@@ -115,6 +116,9 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     
     NgoConatinerComponent,
     WelcomeComponent,
+    CustomCarouselComponent,
+    AdminUserComponent,
+    HomeLPComponent,
   ],
   imports: [
     HttpClientModule,

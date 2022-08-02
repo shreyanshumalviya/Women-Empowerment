@@ -3,10 +3,10 @@
     <mat-toolbar-row>
       <span class="menu-spacer"></span>
       <div class="topnav">
-        <div>
+        <div class="links">
           <a mat-button [routerLink]="['./adminLandPage']">Home</a>
+          <a mat-button [routerLink]="['./adminUserLink']">Users</a>
           <a mat-button [routerLink]="['./adminNgoLink']">NGO</a>
-          <a mat-button [routerLink]="['./adminStepLink']">STEP</a>
           <a mat-button [routerLink]="['./adminSukayaYojanaLink']"
             >Sukaya Yojana</a
           >
@@ -14,7 +14,7 @@
             >Accomodations</a
           >
         </div>
-        <div id="right" class="text">Welcome, {{ username }}</div>
+        <div class="text">Welcome, {{ username }}</div>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

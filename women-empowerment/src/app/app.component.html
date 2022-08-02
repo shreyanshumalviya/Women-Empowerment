@@ -1,7 +1,6 @@
 <!-- <app-main-nav></app-main-nav> -->
 
 <mat-toolbar color="#004a9f">
-
   <h6 style="font-size:3vw">MINISTRY OF WOMEN AND CHILD DEVELOPMENT </h6>
   <br/>
   <h6 style="font-size:2vw ;color: #3F72AF">EMPOWERED WOMEN LIVING WITH DIGNITY </h6>
@@ -14,14 +13,15 @@
     <button mat-icon-button>
       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
     </button>
-    
+
     <a class="navbar-brand" href="/">
       <div class="logo-image">
-            <img src="assets\a-new-dawn.png" class="img-fluid">
+        <img src="assets\a-new-dawn.png" class="img-fluid" />
       </div>
-</a>
+    </a>
     <span class="menu-spacer"></span>
     <div >
+      <span style="font-size:1vw; padding: 30px"><a mat-button [routerLink]="'/homelandingpage'"> Home</a></span>
       <span style="font-size:1vw; padding: 30px"> <a mat-button [routerLink]="'/userLoginAndRegister'" > USER </a></span>
       <span style="font-size:1vw; padding: 30px"><a mat-button [routerLink]="'/AboutUs'" > ABOUT US </a></span>
       <span style="font-size:1vw; padding: 30px"><a mat-button [routerLink]="'/legislation'"> LEGISLATION AND POLICY </a></span>
@@ -30,10 +30,9 @@
       <span style="font-size:1vw; padding: 30px"><a mat-button [routerLink]="'/AboutAdmin'"> ADMIN </a></span>
       <span style="font-size:1vw; padding: 30px"><a mat-button [routerLink]="'/faq'"> FAQ </a></span>
 
+
     </div>
   </mat-toolbar-row>
-
-  
 </mat-toolbar>
 
 <!-- <mat-sidenav-container>
@@ -59,12 +58,7 @@
 </mat-sidenav-container> -->
 <mat-sidenav-container>
   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-    <img
-      class="avatar mat-elevation-z8"
-      src="assets\a-new-dawn.png"
-    />
-
-   
+    <img class="avatar mat-elevation-z8" src="assets\a-new-dawn.png" />
 
     <mat-divider></mat-divider>
 
@@ -105,7 +99,6 @@
   <mat-sidenav-content>
     <div class="content mat-elevation-z8">
       <router-outlet></router-outlet>
-
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
