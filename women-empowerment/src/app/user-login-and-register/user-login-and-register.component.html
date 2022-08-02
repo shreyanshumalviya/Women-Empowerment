@@ -136,7 +136,6 @@
                 <mat-radio-button [value]="'MALE'"> Male </mat-radio-button>
                 <mat-radio-button [value]="'FEMALE'"> Female </mat-radio-button>
               </mat-radio-group>
-              <mat-error *ngIf="gender.invalid">Required</mat-error>
             </span>
 
             <span class="form-field-space"></span>
@@ -153,7 +152,6 @@
                 <mat-radio-button [value]="'YES'"> Yes </mat-radio-button>
                 <mat-radio-button [value]="'NO'"> No </mat-radio-button>
               </mat-radio-group>
-              <mat-error *ngIf="disability.invalid">Required</mat-error>
             </span>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
@@ -264,6 +262,17 @@
               >
             </mat-form-field>
             <span class="form-field-space"></span>
+            <span>
+              <input
+                type="file"
+                accept="image/*"
+                name="aadhaarDocument"
+                required
+                (change)="uploadAadhaar($event)"
+              />
+            </span>
+          </span>
+          <span class="fields-row">
             <mat-form-field appearance="standard">
               <mat-label>PAN Number</mat-label>
               <input
@@ -279,6 +288,15 @@
                 >11 Characters. Required</mat-error
               >
             </mat-form-field>
+            <span class="form-field-space"></span>
+            <span>
+              <input
+                type="file"
+                accept="image/*"
+                name="panDocument"
+                required
+                (change)="uploadPan($event)"
+            /></span>
           </span>
           <span class="fields-row">
             <span class="radio-btn-group">
@@ -298,7 +316,6 @@
                   Unemployed
                 </mat-radio-button>
               </mat-radio-group>
-              <mat-error *ngIf="jobStatus.invalid">Required</mat-error>
             </span>
             <span class="form-field-space"></span>
             <mat-form-field appearance="standard">
@@ -340,7 +357,6 @@
               <mat-radio-button [value]="'URBAN'"> Urban </mat-radio-button>
               <mat-radio-button [value]="'RURAL'"> Rural </mat-radio-button>
             </mat-radio-group>
-            <mat-error *ngIf="area.invalid">Required</mat-error>
           </span>
 
           <span class="radio-btn-group">
@@ -362,7 +378,6 @@
                 Separated
               </mat-radio-button>
             </mat-radio-group>
-            <mat-error *ngIf="maritalStatus.invalid">Required</mat-error>
           </span>
 
           <button
