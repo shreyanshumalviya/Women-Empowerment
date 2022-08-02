@@ -45,16 +45,19 @@ const routes: Routes = [
   { path: 'ngo/home', component: NgoHomeComponent },
   {
     children: [
-      { path: "create_course", component: CreateCourseComponent },
-      { path: "create_accomodation", component: CreateAccomodationComponent },
-      { path: "enrolled_users/:courseId", component: ListUsersComponent },
-      { path: "residing_users/:accomodationId", component: ListResidentsComponent },
-      { path: "courses", component: ListCoursesComponent },
-      { path: "welcome", component: WelcomeComponent },
-      { path: "accomodations", component: ListAccomodationsComponent }
+      { path: 'create_course', component: CreateCourseComponent },
+      { path: 'create_accomodation', component: CreateAccomodationComponent },
+      { path: 'enrolled_users/:courseId', component: ListUsersComponent },
+      {
+        path: 'residing_users/:accomodationId',
+        component: ListResidentsComponent,
+      },
+      { path: 'courses', component: ListCoursesComponent },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: 'accomodations', component: ListAccomodationsComponent },
     ],
     component: NgoConatinerComponent,
-    path: 'ngo'
+    path: 'ngo',
   },
   {path:"ngoLogin",component:NgoLoginComponent},
   {path:"ngoRegister",component:NgoRegisterComponent},
@@ -76,11 +79,6 @@ const routes: Routes = [
         component: AdminSukayaYojanaComponent,
       },
       {
-        path: 'adminAccomodationsLink',
-        component: AdminAccomodationsComponent,
-      },
-
-      {
         path: 'adminLandPage',
         component: AdminLandingPComponent,
       },
@@ -92,7 +90,7 @@ const routes: Routes = [
   { path: 'faq/Admin', component: FaqComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'sukanya-registration', component: RegistrationComponent },
-  {path:'legislation',component:LegislationComponent},
+  { path: 'legislation', component: LegislationComponent },
   { path: 'step-courses', component: StepCoursesComponent },
   { path: 'userDashboard', component: UserDashboardComponent },
   {path:'privacy',component:PrivacyComponent},

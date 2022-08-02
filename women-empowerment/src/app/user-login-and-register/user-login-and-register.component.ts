@@ -5,6 +5,7 @@ import { UserLogin } from '../user-login';
 import { UserRegisterDetails } from '../user-register-details';
 import { UserServiceService } from '../user-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserDocumentDetails } from '../user-document-details';
 
 @Component({
   selector: 'app-user-login-and-register',
@@ -22,6 +23,10 @@ export class UserLoginAndRegisterComponent implements OnInit {
   userId: UserId = new UserId();
   userProfile: UserRegisterDetails = new UserRegisterDetails();
   confirmPassword: string;
+  aadhaarDocument: File;
+  aadhaarResponse: string = '';
+  panDocument: File;
+  panResponse: string = '';
 
   constructor(
     private userService: UserServiceService,
@@ -73,7 +78,10 @@ export class UserLoginAndRegisterComponent implements OnInit {
   }
 
   registerUser(): void {
-    if (this.confirmPassword == this.userProfile.password)
+    if (this.confirmPassword == this.userProfile.password) {
+      this.userProfile.aadhaarLink = this.aadhaarResponse;
+      this.userProfile.panLink = this.panResponse;
+      console.log(this.userProfile);
       this.userService
         .registerUser(this.userProfile)
         .subscribe((registerSuccessfull) => {
@@ -82,7 +90,7 @@ export class UserLoginAndRegisterComponent implements OnInit {
             window.location.reload();
           }
         });
-    else {
+    } else {
       this.openSnackBar('Sign Up Error', 'Try Again');
     }
   }
@@ -98,5 +106,24 @@ export class UserLoginAndRegisterComponent implements OnInit {
     });
     this.openSnackBar(`Couldn't Reset Password`, 'Try Again');
     this.pageState = 'register';
+  }
+
+  uploadAadhaar(event) {
+    this.aadhaarDocument = event.target.files[0];
+    const formData = new FormData();
+    formData.append('file', this.aadhaarDocument);
+    this.userService
+      .uploadDocument(formData)
+      .subscribe((response) => (this.aadhaarResponse = response));
+  }
+
+  uploadPan(event) {
+    this.panDocument = event.target.files[0];
+    const formData = new FormData();
+    formData.append('file', this.panDocument);
+    this.userService.uploadDocument(formData).subscribe((response) => {
+      this.panResponse = response;
+      console.log(this.panResponse);
+    });
   }
 }

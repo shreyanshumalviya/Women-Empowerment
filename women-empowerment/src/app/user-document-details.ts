@@ -1,8 +1,8 @@
 export class UserDocumentDetails {
   documentId: number;
 
-  adharNo: string;
-  adharLink: string;
+  aadhaarNo: string;
+  aadhaarLink: string;
   panNo: string;
   panLink: string;
 }

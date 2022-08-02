@@ -24,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './footer/footer.component';
 import { AdminAboutUsComponent } from './Admin/admin-aboutUs/admin-about-us.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
@@ -51,7 +52,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RegistrationComponent } from './sukanya/registration/registration.component';
 import { StepCoursesComponent } from './step-courses/step-courses.component';
-import { MatExpansionModule } from "@angular/material/expansion";
+import { MatExpansionModule } from '@angular/material/expansion';
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
 import { ListUsersComponent } from './ngo/list-users/list-users.component';
 import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
@@ -84,6 +85,10 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     NgoRegisterComponent,
     StepHomeComponent,
     UserLoginAndRegisterComponent,
+    UserDashboardComponent,
+    UpdateUserDetailsComponent,
+    UpdateUserPasswordComponent,
+    AddFamilyDetailsComponent,
     AdminAboutUsComponent,
     AdminLoginComponent,
     AdminDashboardComponent,
@@ -116,6 +121,7 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     BrowserAnimationsModule,
     MatButtonModule,
     HomeModule,
+    MatFormFieldModule,
     LayoutModule,
     MatSidenavModule,
     MatListModule,
@@ -128,6 +134,9 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatDividerModule,
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
@@ -141,8 +150,9 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     MatDividerModule,
     MatSnackBarModule,
     MatDatepickerModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

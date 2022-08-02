@@ -9,7 +9,7 @@
 
 .user-body {
   width: 60%;
-  height: 70%;
+  height: 80%;
   /* background-color: white; */
   padding: 2rem 3rem;
 }
@@ -70,7 +70,13 @@ mat-radio-button {
 }
 
 .register-form {
-  height: 85%;
+  height: 100%;
   width: 100%;
+  margin: 1rem 0;
   overflow-y: auto;
+}
+
+.documents {
+  display: flex;
+  align-items: center;
 }

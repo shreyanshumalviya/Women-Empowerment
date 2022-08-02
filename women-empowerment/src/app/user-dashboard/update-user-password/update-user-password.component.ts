@@ -60,7 +60,7 @@ export class UpdateUserPasswordComponent implements OnInit {
           }
         });
     } else {
-      this.openSnackBar('Password Mismatch', 'Try Again');
+      this.openSnackBar('Credentials Mismatch', 'Try Again');
     }
   }
 }
