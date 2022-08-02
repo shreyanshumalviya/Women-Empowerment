@@ -1,0 +1,33 @@
+.row {
+  display: flex;
+  background-image: linear-gradient(
+    to right,
+    rgb(229, 240, 248),
+    rgb(165, 194, 231),
+    rgb(108, 142, 159)
+  );
+}
+.head {
+  text-align: center;
+  background-image: url(../../assets/images/wpp.jpg);
+  height: 400px;
+}
+.ht {
+  font-size: 70px;
+  font-style: italic;
+  font-family: "Courier New", Courier, monospace;
+}
+.column {
+  flex: 50%;
+}
+.image {
+  width: 100%;
+  height: 400px;
+}
+.para {
+  text-align: center;
+  margin-top: 25%;
+  padding: 30px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}

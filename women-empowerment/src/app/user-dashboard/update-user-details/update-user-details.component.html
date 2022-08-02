@@ -109,36 +109,6 @@
       </mat-form-field>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
-        <mat-label>AADHAAR Number</mat-label>
-        <input
-          matInput
-          type="number"
-          name="aadhaarNo"
-          [(ngModel)]="userDetails.aadhaarNo"
-          #aadhaarNo="ngModel"
-          minlength="12"
-          maxlength="12"
-          required
-        />
-        <mat-error *ngIf="aadhaarNo.invalid">12 Digits. Required</mat-error>
-      </mat-form-field>
-      <span class="form-field-space"></span>
-      <mat-form-field appearance="standard">
-        <mat-label>PAN Number</mat-label>
-        <input
-          matInput
-          name="panNo"
-          [(ngModel)]="userDetails.panNo"
-          #panNo="ngModel"
-          minlength="10"
-          maxlength="10"
-          required
-        />
-        <mat-error *ngIf="panNo.invalid">11 Characters. Required</mat-error>
-      </mat-form-field>
-    </span>
-    <span class="fields-row">
-      <mat-form-field appearance="standard">
         <mat-label>Email</mat-label>
         <input
           matInput
@@ -150,6 +120,7 @@
         />
         <mat-error *ngIf="email.invalid">Required. Valid Email</mat-error>
       </mat-form-field>
+
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
         <mat-label>Password (Required to request change in details)</mat-label>
@@ -168,7 +139,65 @@
         </mat-icon>
       </mat-form-field>
     </span>
-
+    <span class="fields-row">
+      <span>
+        <mat-form-field appearance="standard">
+          <mat-label>AADHAAR Number</mat-label>
+          <input
+            matInput
+            type="number"
+            name="aadhaarNo"
+            [(ngModel)]="userDetails.aadhaarNo"
+            #aadhaarNo="ngModel"
+            minlength="12"
+            maxlength="12"
+            required
+          />
+          <mat-error *ngIf="aadhaarNo.invalid">12 Digits. Required</mat-error>
+        </mat-form-field>
+        <span class="form-field-space"></span>
+        <span>
+          <input
+            type="file"
+            accept="image/*"
+            name="aadhaarDocument"
+            required
+            (change)="updateAadhaar($event)"
+          />
+        </span>
+        <span>
+          <button mat-button (click)="downloadFile('aadhaar')">AADHAAR</button>
+        </span>
+      </span>
+      <span class="form-field-space"></span>
+      <span>
+        <mat-form-field appearance="standard">
+          <mat-label>PAN Number</mat-label>
+          <input
+            matInput
+            name="panNo"
+            [(ngModel)]="userDetails.panNo"
+            #panNo="ngModel"
+            minlength="10"
+            maxlength="10"
+            required
+          />
+          <mat-error *ngIf="panNo.invalid">11 Characters. Required</mat-error>
+        </mat-form-field>
+        <span>
+          <input
+            type="file"
+            accept="image/*"
+            name="panDocument"
+            required
+            (change)="updatePan($event)"
+        /></span>
+        <span>
+          <button mat-button (click)="downloadFile('pan')">PAN</button>
+        </span>
+      </span>
+    </span>
+    <br />
     <span class="fields-row">
       <span class="radio-btn-group">
         <label id="example-radio-group-label">Job Status: </label>

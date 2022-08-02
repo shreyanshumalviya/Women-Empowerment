@@ -3,5 +3,5 @@ export class SukanyaRegistration{
     firstName:String;
     aadharNumber:String;
     dateOfBirth:Date;
-
+    userId:number;
 }

@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatDatepicker } from '@angular/material/datepicker';
+
 // import { MatButtonModule } from '@angular/material/button';
 import { MainNavComponent } from './main-nav/main-nav.component';
 // import { LayoutModule } from '@angular/cdk/layout';
@@ -30,7 +32,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { AdminNgoComponent } from './Admin/admin-ngo/admin-ngo.component';
 import { AdminSukayaYojanaComponent } from './Admin/admin-sukaya-yojana/admin-sukaya-yojana.component';
-import { AdminStepComponent } from './Admin/admin-step/admin-step.component';
 import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-accomodations.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
@@ -67,6 +68,17 @@ import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.component';
 import { WelcomeComponent } from './ngo/welcome/welcome.component';
+<<<<<<< HEAD
+=======
+
+import { AboutUsComponent } from './about-us/about-us.component';
+import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
+
+
+import { CustomCarouselComponent } from './custom-carousel/custom-carousel.component';
+import { AdminUserComponent } from './Admin/admin-user/admin-user.component';
+import { HomeLPComponent } from './home-lp/home-lp.component';
+>>>>>>> 3f6bca372cfc9646a1ba813d3a6b76c50ac1854f
 
 @NgModule({
   declarations: [
@@ -87,7 +99,6 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
     AdminDashboardComponent,
     AdminNgoComponent,
     AdminSukayaYojanaComponent,
-    AdminStepComponent,
     AdminAccomodationsComponent,
     RegistrationComponent,
     NgoDisplayTableComponent,
@@ -103,8 +114,19 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
     UpdateUserDetailsComponent,
     UpdateUserPasswordComponent,
     AddFamilyDetailsComponent,
+<<<<<<< HEAD
     NgoConatinerComponent,
     WelcomeComponent,
+=======
+    AboutUsComponent,
+    AccomodationStatusComponent,
+    
+    NgoConatinerComponent,
+    WelcomeComponent,
+    CustomCarouselComponent,
+    AdminUserComponent,
+    HomeLPComponent,
+>>>>>>> 3f6bca372cfc9646a1ba813d3a6b76c50ac1854f
   ],
   imports: [
     HttpClientModule,
@@ -139,6 +161,7 @@ import { WelcomeComponent } from './ngo/welcome/welcome.component';
     MatTooltipModule,
     MatDividerModule,
     MatSnackBarModule,
+    MatDatepickerModule,
     MatSelectModule,
   ],
   providers: [],

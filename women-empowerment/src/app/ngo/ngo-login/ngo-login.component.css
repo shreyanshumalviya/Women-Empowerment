@@ -46,7 +46,6 @@ h2{
 }
 
 .user-body-container {
-    height: 100%;
     width: 100%;
     background-color: #eeeeee;
     display: flex;
@@ -119,4 +118,8 @@ h2{
   .register-form {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .login-form{
+    
   }

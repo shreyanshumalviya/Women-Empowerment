@@ -1,0 +1,121 @@
+<!-- <mat-date-range-input [rangePicker] = "picker">  
+    <input matStartDate placeholder = "Start date">  
+    <input matEndDate placeholder = "End date">  
+  </mat-date-range-input>  
+  <mat-date-range-picker #picker> </mat-date-range-picker>   -->
+
+<!-- <mat-form-field appearance = "fill">  
+    <mat-label> enter the start date and end date </mat-label>  
+    <mat-date-range-input [rangePicker] = "picker">  
+      <input matStartDate placeholder = "Start date">  
+      <input matEndDate placeholder = "End date">  
+    </mat-date-range-input>  
+    <mat-datepicker-toggle matSuffix [for] = "picker"> </mat-datepicker-toggle>  
+    <mat-date-range-picker #picker> </mat-date-range-picker>  
+  </mat-form-field>   -->
+
+<!-- <div class="container">
+    <h2>Accomodation Status</h2>
+    <div class="courses-container" >
+        copy this element to repeat course items 
+        <div class="card" *ngFor="let accomodation of accomodationstatus ">
+            
+            <div class="card-details">
+                <h4><b>{{accomodation.accomodationId}}</b></h4>
+                <h4><b>{{accomodation.name}}</b></h4>
+                <h4><b>{{accomodation.ngo_id}}</b></h4>
+                <h4><b>{{accomodation.state}}</b></h4>
+                <h4><b>{{accomodation.city}}</b></h4>
+                <h4><b>{{accomodation.addressLine1}}</b></h4>
+                <h4><b>{{accomodation.addressLine2}}</b></h4>
+                <h4><b>{{accomodation.pincode}}</b></h4>
+                <h4><b>{{accomodation.landmark}}</b></h4>
+                <h4><b>{{accomodation.totalRoom}}</b></h4>
+                <h4><b>{{accomodation.roomAvailable}}</b></h4>
+                <h4><b>{{accomodation.capacity}}</b></h4>
+                <h4><b>{{accomodation.dayCareCentre}}</b></h4> -->
+
+<!-- <p>
+                    {{accomodation.state}}
+                </p>
+                <button  (click)="register(accomodation.accomodationId)" class="card-button">Register</button>
+            </div>
+        </div>
+         
+  
+    </div>
+  
+  </div>  -->
+
+
+
+
+
+  <h2>Accomodation Status</h2>
+
+
+  <table mat-table [dataSource]="accomodationstatus" class="mat-elevation-z8 table">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="accomodationId">
+      <th mat-header-cell *matHeaderCellDef class="column-title"> ACCO ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.accomodationId}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+    
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="column-title"> NAME </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="Contact">
+      <th mat-header-cell *matHeaderCellDef class="column-title"> CONTACT </th>
+      <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+    </ng-container> -->
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef class="column-title"> STATE </th>
+      <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="addressLine1">
+      <th mat-header-cell *matHeaderCellDef class="column-title"> STREET NAME </th>
+      <td mat-cell *matCellDef="let element"> {{element.addressLine1}} </td>
+    </ng-container>
+    <ng-container matColumnDef="addressLine2">
+      <th mat-header-cell *matHeaderCellDef class="column-title"> LOCALITY</th>
+      <td mat-cell *matCellDef="let element"> {{element.addressLine2}} </td>
+    </ng-container>
+    <ng-container matColumnDef="landmark">
+      <th mat-header-cell *matHeaderCellDef class="column-title">LANDMARK </th>
+      <td mat-cell *matCellDef="let element"> {{element.landmark}} </td>
+    </ng-container>
+    <ng-container matColumnDef="pincode">
+      <th mat-header-cell *matHeaderCellDef class="column-title"> PINCODE </th>
+      <td mat-cell *matCellDef="let element"> {{element.pincode}} </td>
+    </ng-container>
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef class="column-title"> CITY</th>
+      <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+
+    <ng-container  matColumnDef="Button">
+      <th mat-header-cell *matHeaderCellDef class="column-title"> Register as Tenant</th>
+      <button *matCellDef="let element" (click)="register(element.accomodationId)" class="card-button">Register</button>
+
+    </ng-container>
+    <!-- <p>
+  {{accomodation.state}}
+</p> -->
+    <br />
+    <button *matCellDef="let element" (click)="register(element.accomodationId)" class="card-button">Register</button>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
