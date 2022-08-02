@@ -23,14 +23,23 @@ import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomo
 import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
 import { StepCoursesComponent } from './step-courses/step-courses.component';
 import { LegislationComponent } from './home/legislation/legislation.component';
+import { NgoLoginComponent } from './ngo/ngo-login/ngo-login.component';
+import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { TermsComponent } from './home/terms/terms.component';
+import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
 import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.component';
 import { WelcomeComponent } from './ngo/welcome/welcome.component';
 
 const routes: Routes = [
+
+  {path:'AboutUs',component:AboutUsComponent},
   {
     path: 'AboutAdmin',
     component: AdminAboutUsComponent,
   },
+  {path:'accomodationStatus',component:AccomodationStatusComponent},
+  {path:'terms',component:TermsComponent},
   { path: 'ngo/home', component: NgoHomeComponent },
   {
     children: [
@@ -48,6 +57,8 @@ const routes: Routes = [
     component: NgoConatinerComponent,
     path: 'ngo',
   },
+  {path:"ngoLogin",component:NgoLoginComponent},
+  {path:"ngoRegister",component:NgoRegisterComponent},
   { path: 'adminLoginLink', component: AdminLoginComponent },
   {
     path: 'adminDashboardLink',

@@ -1,0 +1,48 @@
+.body-container h1 {
+    color: #000;
+    font-size: 160% !important;
+    font-weight: 600 !important;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.subpage-wrapper h1 {
+    font-size: 120% !important;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #686868;
+    font-size: 14px;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+.subpage-wrapper h1:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 2px;
+    background: #0042f9;
+}
