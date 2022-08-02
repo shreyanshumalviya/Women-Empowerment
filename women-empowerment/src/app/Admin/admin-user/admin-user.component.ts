@@ -13,57 +13,46 @@ import {
   AdminUserService,
   UserList,
 } from 'src/app/Services/admin-user.service';
+import { UserServiceService } from 'src/app/user-service.service';
 
 @Component({
   selector: 'app-admin-user',
   templateUrl: './admin-user.component.html',
   styleUrls: ['./admin-user.component.css'],
 })
-export class AdminUserComponent implements AfterViewInit {
+export class AdminUserComponent {
   data: UserList[] = [];
+  aadhaarLink: string;
+  panLink: string;
   isShown: boolean = false;
+  aadhaarLocation: string;
+  panLocation: string;
+  isChecked = true;
   columnsToDisplay = [
     'firstName',
     'middleName',
     'lastName',
     'email',
-    'password',
-    'contactNo',
     'aadhaarNo',
+    'aadhaarDoc',
     'panNo',
+    'panDoc',
     'dob',
-    'gender',
-    'jobStatus',
-    'jobTitle',
     'salary',
-    'residenceArea',
-    'maritalStatus',
-    'disabled',
     'verified',
     'actions',
   ];
-  dataSource!: MatTableDataSource<UserList>;
-  @ViewChild('paginator') paginator!: MatPaginator;
-  @ViewChild(MatSort) matSort!: MatSort;
 
-  constructor(private adminuserservice: AdminUserService) {
+  constructor(
+    private adminuserservice: AdminUserService,
+    private userService: UserServiceService
+  ) {
     this.adminuserservice.GetSukanyaList().subscribe((x) => {
       this.data = x;
       console.log(this.data);
     });
   }
-  ngAfterViewInit(): void {
-    this.adminuserservice.getUserData().subscribe((response: any) => {
-      this.dataSource = new MatTableDataSource(response);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.matSort;
-    });
-  }
 
-  newColor = false;
-  toggleColor() {
-    this.newColor = !this.newColor;
-  }
   public getRowsValue(validate) {
     if (validate === null) {
       return this.data.length;
@@ -73,16 +62,42 @@ export class AdminUserComponent implements AfterViewInit {
   }
 
   updateActiveStatus(element) {
-    element.verified = !element.verified;
-    this.adminuserservice.UpdateUserList().subscribe((updateUser) => {
-      element.validate = true;
+    this.adminuserservice.verify(element.userId).subscribe((response) => {
+      element.validate = response;
     });
   }
-  filterData($event: any) {
-    this.dataSource.filter = $event.target.value;
+  PanDoc(userId) {
+    this.userService.getUserDetails(userId).subscribe((response) => {
+      this.panLink = response.document.panLink;
+      const link = document.createElement('a');
+
+      this.adminuserservice.downloadDocument(this.panLink).subscribe((res) => {
+        this.panLocation = res;
+        link.setAttribute('target', '_blank');
+        link.setAttribute('href', this.panLocation);
+        link.setAttribute('download', 'panUploaded.jpg');
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      });
+    });
   }
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  AadhaarDoc(userId) {
+    this.userService.getUserDetails(userId).subscribe((response) => {
+      this.aadhaarLink = response.document.adharLink;
+
+      const link = document.createElement('a');
+      this.adminuserservice
+        .downloadDocument(this.aadhaarLink)
+        .subscribe((res) => {
+          this.aadhaarLocation = res;
+          link.setAttribute('target', '_blank');
+          link.setAttribute('href', this.aadhaarLocation);
+          link.setAttribute('download', 'aadhaarUploaded.jpg');
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+        });
+    });
   }
 }

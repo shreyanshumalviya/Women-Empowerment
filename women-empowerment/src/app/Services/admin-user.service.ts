@@ -35,7 +35,22 @@ export class AdminUserService {
   UpdateUserList(): Observable<UserList[]> {
     return this.httpClient.get<UserList[]>(this.apiUrl);
   }
+
+  verify(userId): Observable<boolean> {
+    return this.httpClient.put<boolean>(
+      'http://localhost:9090/adminuser/verify/' + userId,
+      null
+    );
+  }
+
   getUserData() {
     return this.httpClient.get('http://localhost:9090/adminuser/viewall');
+  }
+  downloadDocument(link: string): Observable<string> {
+    return this.httpClient.post(
+      'http://localhost:9090/adminuser/downloadFile',
+      link,
+      { responseType: 'text' }
+    );
   }
 }
