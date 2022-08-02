@@ -1,19 +1,43 @@
-
-<span class = "field-row">
-<div class="container">
-    <h2>{{ngo.name}}</h2>
-    <p>{{ngo.description}}</p>
-    <p>{{ngo.email}} {{ngo.contact}}</p>
-    <p>{{ngo.address}}</p>
-</div>
-<div class="container">
-    <img src="../../../assets/ngo/women-empowerment-4.jpg">
-</div>
+<span class="field-row">
+    <div class="container">
+        <h2>{{ngo.name}}</h2>
+        <p>{{ngo.description}}</p>
+        <p>{{ngo.email}} {{ngo.contact}}</p>
+        <p>{{ngo.address}}</p>
+    </div>
+    <div class="container">
+        <img src="../../../assets/ngo/women-empowerment-4.jpg">
+    </div>
 </span>
-courses: {{ngoStatus.courses}}<br>
-learners: {{ngoStatus.learners}}<br>
-accomodations: {{ngoStatus.accomodations}}<br>
-residents: {{ngoStatus.residents}}<br>
-dayCareCenters: {{ngoStatus.dayCareCenters}}<br>
-nextCourseStarts: {{ngoStatus.nextCourseStarts || "no course Created yet"}}<br>
-courseFinished: {{ngoStatus.courseFinished}}<br>
+
+<span class="status-cards">
+    <mat-card class="mat-card">
+        <mat-card-title>{{ngoStatus.courses}}</mat-card-title>
+        Courses
+    </mat-card>
+
+    <mat-card>
+        <mat-card-title>{{ngoStatus.learners}}</mat-card-title>
+        Learners
+    </mat-card>
+    <mat-card>
+        <mat-card-title>{{ngoStatus.nextCourseStarts || "no course Created yet"}}</mat-card-title>
+        Next Course Starts
+    </mat-card>
+    <mat-card>
+        <mat-card-title>{{ngoStatus.courseFinished}}</mat-card-title>
+        Course Finished
+    </mat-card>
+    <mat-card>
+        <mat-card-title>{{ngoStatus.accomodations}}</mat-card-title>
+        Accomodations
+    </mat-card>
+    <mat-card>
+        <mat-card-title>{{ngoStatus.residents}}</mat-card-title>
+        Residents
+    </mat-card>
+    <mat-card>
+        <mat-card-title>{{ngoStatus.dayCareCenters}}</mat-card-title>
+        Day Care Centers
+    </mat-card>
+</span>

@@ -24,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './footer/footer.component';
 import { AdminAboutUsComponent } from './Admin/admin-aboutUs/admin-about-us.component';
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
@@ -31,7 +32,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { AdminNgoComponent } from './Admin/admin-ngo/admin-ngo.component';
 import { AdminSukayaYojanaComponent } from './Admin/admin-sukaya-yojana/admin-sukaya-yojana.component';
-import { AdminStepComponent } from './Admin/admin-step/admin-step.component';
 import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-accomodations.component';
 import { StepHomeComponent } from './step-home/step-home.component';
 import { UserLoginAndRegisterComponent } from './user-login-and-register/user-login-and-register.component';
@@ -51,7 +51,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RegistrationComponent } from './sukanya/registration/registration.component';
 import { StepCoursesComponent } from './step-courses/step-courses.component';
-import { MatExpansionModule } from "@angular/material/expansion";
+import { MatExpansionModule } from '@angular/material/expansion';
 import { CreateCourseComponent } from './ngo/create-course/create-course.component';
 import { ListUsersComponent } from './ngo/list-users/list-users.component';
 import { ListResidentsComponent } from './ngo/list-residents/list-residents.component';
@@ -73,6 +73,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
 
 
+import { CustomCarouselComponent } from './custom-carousel/custom-carousel.component';
+import { AdminUserComponent } from './Admin/admin-user/admin-user.component';
+import { HomeLPComponent } from './home-lp/home-lp.component';
 
 @NgModule({
   declarations: [
@@ -84,12 +87,15 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     NgoRegisterComponent,
     StepHomeComponent,
     UserLoginAndRegisterComponent,
+    UserDashboardComponent,
+    UpdateUserDetailsComponent,
+    UpdateUserPasswordComponent,
+    AddFamilyDetailsComponent,
     AdminAboutUsComponent,
     AdminLoginComponent,
     AdminDashboardComponent,
     AdminNgoComponent,
     AdminSukayaYojanaComponent,
-    AdminStepComponent,
     AdminAccomodationsComponent,
     RegistrationComponent,
     NgoDisplayTableComponent,
@@ -110,12 +116,16 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     
     NgoConatinerComponent,
     WelcomeComponent,
+    CustomCarouselComponent,
+    AdminUserComponent,
+    HomeLPComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     HomeModule,
+    MatFormFieldModule,
     LayoutModule,
     MatSidenavModule,
     MatListModule,
@@ -128,6 +138,9 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatDividerModule,
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
@@ -141,8 +154,9 @@ import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodat
     MatDividerModule,
     MatSnackBarModule,
     MatDatepickerModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

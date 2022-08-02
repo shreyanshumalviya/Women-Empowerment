@@ -10,10 +10,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { AdminNgoService, NgoList } from 'src/app/Services/admin-ngo.service';
-import {
-  NgoDisplayTableDataSource,
-  NgoDisplayTableItem,
-} from '../ngo-display-table/ngo-display-table-datasource';
 
 @Component({
   selector: 'app-admin-ngo',
@@ -50,12 +46,9 @@ export class AdminNgoComponent {
       return this.data.filter((i) => i.verified == validate).length;
     }
   }
-
   updateActiveStatus(element) {
-    // console.log(element.verified);
-    element.verified = !element.verified;
-    this.adminngoservice.UpdateNgoList().subscribe((updateUser) => {
-      element.validate = true;
+    this.adminngoservice.verify(element.ngoId).subscribe((response) => {
+      element.validate = response;
     });
   }
 }

@@ -8,7 +8,15 @@
     <span class="fields-row">
       <mat-form-field appearance="standard">
         <mat-label>First Name</mat-label>
-        <input matInput name="firstName" [(ngModel)]="userDetails.firstName" />
+        <input
+          matInput
+          name="firstName"
+          [(ngModel)]="userDetails.firstName"
+          #fname="ngModel"
+          required
+          minlength="2"
+        />
+        <mat-error *ngIf="fname.invalid">At least 2 charactes</mat-error>
       </mat-form-field>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
@@ -22,7 +30,15 @@
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
         <mat-label>Last Name</mat-label>
-        <input matInput name="lastName" [(ngModel)]="userDetails.lastName" />
+        <input
+          matInput
+          name="lastName"
+          [(ngModel)]="userDetails.lastName"
+          #lname="ngModel"
+          required
+          minlength="2"
+        />
+        <mat-error *ngIf="lname.invalid">At least 2 charactes</mat-error>
       </mat-form-field>
     </span>
 
@@ -34,10 +50,13 @@
           class="radio-btn-group"
           name="gender"
           [(ngModel)]="userDetails.gender"
+          #gender="ngModel"
+          required
         >
           <mat-radio-button [value]="'MALE'"> Male </mat-radio-button>
           <mat-radio-button [value]="'FEMALE'"> Female </mat-radio-button>
         </mat-radio-group>
+        <mat-error *ngIf="gender.invalid">Required</mat-error>
       </span>
       <span class="form-field-space"></span>
       <span class="radio-btn-group">
@@ -45,10 +64,15 @@
         <mat-radio-group
           aria-labelledby="example-radio-group-label"
           class="radio-btn-group"
+          name="disabled"
+          [(ngModel)]="userDetails.disabled"
+          #disability="ngModel"
+          required
         >
           <mat-radio-button [value]="'YES'"> Yes </mat-radio-button>
           <mat-radio-button [value]="'NO'"> No </mat-radio-button>
         </mat-radio-group>
+        <mat-error *ngIf="disability.invalid">Required</mat-error>
       </span>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
@@ -58,9 +82,12 @@
           [matDatepicker]="picker"
           name="dob"
           [(ngModel)]="userDetails.dob"
+          #dob="ngModel"
+          required
         />
+        <mat-error *ngIf="dob.invalid">Required</mat-error>
         <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </span>
@@ -68,24 +95,32 @@
     <span class="fields-row">
       <mat-form-field appearance="standard">
         <mat-label>Contact Number</mat-label>
-        <input matInput name="contactNo" [(ngModel)]="userDetails.contactNo" />
+        <input
+          matInput
+          type="number"
+          name="contactNo"
+          [(ngModel)]="userDetails.contactNo"
+          #contactNo="ngModel"
+          minlength="10"
+          maxlength="10"
+          required
+        />
+        <mat-error *ngIf="contactNo.invalid">At least 10 digits</mat-error>
       </mat-form-field>
       <span class="form-field-space"></span>
-      <mat-form-field appearance="standard">
-        <mat-label>AADHAAR Number</mat-label>
-        <input matInput name="aadhaarNo" [(ngModel)]="userDetails.aadhaarNo" />
-      </mat-form-field>
-      <span class="form-field-space"></span>
-      <mat-form-field appearance="standard">
-        <mat-label>PAN Number</mat-label>
-        <input matInput name="panNo" [(ngModel)]="userDetails.panNo" />
-      </mat-form-field>
-    </span>
-    <span class="fields-row">
       <mat-form-field appearance="standard">
         <mat-label>Email</mat-label>
-        <input matInput name="email" [(ngModel)]="userDetails.email" />
+        <input
+          matInput
+          type="email"
+          name="email"
+          [(ngModel)]="userDetails.email"
+          #email="ngModel"
+          required
+        />
+        <mat-error *ngIf="email.invalid">Required. Valid Email</mat-error>
       </mat-form-field>
+
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
         <mat-label>Password (Required to request change in details)</mat-label>
@@ -94,13 +129,75 @@
           [type]="showRegisterPassword ? 'text' : 'password'"
           name="password"
           [(ngModel)]="userLoginDetails.password"
+          #password="ngModel"
+          minlength="8"
+          required
         />
+        <mat-error *ngIf="password.invalid">At least 8 charactes</mat-error>
         <mat-icon matSuffix (click)="toggleRegisterPasswordVisibility()">
           {{ showRegisterPassword ? "visibility_off" : "visibility" }}
         </mat-icon>
       </mat-form-field>
     </span>
-
+    <span class="fields-row">
+      <span>
+        <mat-form-field appearance="standard">
+          <mat-label>AADHAAR Number</mat-label>
+          <input
+            matInput
+            type="number"
+            name="aadhaarNo"
+            [(ngModel)]="userDetails.aadhaarNo"
+            #aadhaarNo="ngModel"
+            minlength="12"
+            maxlength="12"
+            required
+          />
+          <mat-error *ngIf="aadhaarNo.invalid">12 Digits. Required</mat-error>
+        </mat-form-field>
+        <span class="form-field-space"></span>
+        <span>
+          <input
+            type="file"
+            accept="image/*"
+            name="aadhaarDocument"
+            required
+            (change)="updateAadhaar($event)"
+          />
+        </span>
+        <span>
+          <button mat-button (click)="downloadFile('aadhaar')">AADHAAR</button>
+        </span>
+      </span>
+      <span class="form-field-space"></span>
+      <span>
+        <mat-form-field appearance="standard">
+          <mat-label>PAN Number</mat-label>
+          <input
+            matInput
+            name="panNo"
+            [(ngModel)]="userDetails.panNo"
+            #panNo="ngModel"
+            minlength="10"
+            maxlength="10"
+            required
+          />
+          <mat-error *ngIf="panNo.invalid">11 Characters. Required</mat-error>
+        </mat-form-field>
+        <span>
+          <input
+            type="file"
+            accept="image/*"
+            name="panDocument"
+            required
+            (change)="updatePan($event)"
+        /></span>
+        <span>
+          <button mat-button (click)="downloadFile('pan')">PAN</button>
+        </span>
+      </span>
+    </span>
+    <br />
     <span class="fields-row">
       <span class="radio-btn-group">
         <label id="example-radio-group-label">Job Status: </label>
@@ -109,22 +206,41 @@
           class="radio-btn-group"
           name="jobStatus"
           [(ngModel)]="userDetails.jobStatus"
+          #jobStatus="ngModel"
+          required
         >
           <mat-radio-button [value]="'EMPLOYED'"> Employed </mat-radio-button>
           <mat-radio-button [value]="'UNEMPLOYED'">
             Unemployed
           </mat-radio-button>
         </mat-radio-group>
+        <mat-error *ngIf="jobStatus.invalid">Required</mat-error>
       </span>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
         <mat-label>Job Title</mat-label>
-        <input matInput name="jobTitle" [(ngModel)]="userDetails.jobTitle" />
+        <input
+          matInput
+          name="jobTitle"
+          [(ngModel)]="userDetails.jobTitle"
+          #jobTitle="ngModel"
+          required
+        />
+        <mat-error *ngIf="jobTitle.invalid">Required</mat-error>
       </mat-form-field>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
         <mat-label>Salary</mat-label>
-        <input matInput name="salary" [(ngModel)]="userDetails.salary" />
+        <input
+          matInput
+          type="number"
+          name="salary"
+          [(ngModel)]="userDetails.salary"
+          #salary="ngModel"
+          required
+        />
+        <mat-error *ngIf="salary.invalid">Required</mat-error>
+        <span matPrefix>₹&nbsp;</span>
       </mat-form-field>
     </span>
 
@@ -136,10 +252,13 @@
           class="radio-btn-group"
           name="residenceArea"
           [(ngModel)]="userDetails.residenceArea"
+          #area="ngModel"
+          required
         >
           <mat-radio-button [value]="'URBAN'"> Urban </mat-radio-button>
           <mat-radio-button [value]="'RURAL'"> Rural </mat-radio-button>
         </mat-radio-group>
+        <mat-error *ngIf="area.invalid">Required</mat-error>
       </span>
       <span class="form-field-space"></span>
       <span class="radio-btn-group">
@@ -149,15 +268,23 @@
           class="radio-btn-group"
           name="maritalStatus"
           [(ngModel)]="userDetails.maritalStatus"
+          #maritalStatus="ngModel"
+          required
         >
           <mat-radio-button [value]="'MARRIED'"> Married </mat-radio-button>
           <mat-radio-button [value]="'UNMARRIED'"> Unmarried </mat-radio-button>
           <mat-radio-button [value]="'WIDOWED'"> Widowed </mat-radio-button>
           <mat-radio-button [value]="'SEPARATED'"> Separated </mat-radio-button>
         </mat-radio-group>
+        <mat-error *ngIf="maritalStatus.invalid">Required</mat-error>
       </span>
     </span>
-    <button class="update-detail-button" mat-raised-button color="primary">
+    <button
+      class="update-detail-button"
+      mat-raised-button
+      color="primary"
+      [disabled]="updateUserForm.invalid"
+    >
       Update
     </button>
   </form>

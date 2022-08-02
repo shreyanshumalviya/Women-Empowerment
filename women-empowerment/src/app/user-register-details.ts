@@ -19,7 +19,8 @@ export class UserRegisterDetails {
   maritalStatus: MaritalStatus;
   disabled: Disability;
 
-  document: UserDocumentDetails;
+  aadhaarLink: string;
+  panLink: string;
 }
 
 enum Gender {
