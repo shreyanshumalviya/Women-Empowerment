@@ -12,6 +12,8 @@ import {
 export class AdminSukayaYojanaComponent implements OnInit {
   data: SukanyaList[] = [];
   isShown: boolean = false;
+  DocLink: string;
+  DocLocation: string;
   columnsToDisplay = [
     'accountId',
     'beneficiaryName',
@@ -19,7 +21,7 @@ export class AdminSukayaYojanaComponent implements OnInit {
     'adharNo',
     'registrationDate',
     'user',
-    'sukanyaDoc',
+    'doc',
     'verified',
     'actions',
   ];
@@ -43,12 +45,27 @@ export class AdminSukayaYojanaComponent implements OnInit {
       return this.data.filter((i) => i.verified == validate).length;
     }
   }
-
   updateActiveStatus(element) {
-    // console.log(element.verified);
-    element.verified = !element.verified;
-    this.adminsukanyaservice.UpdateNgoList().subscribe((updateUser) => {
-      element.validate = true;
+    this.adminsukanyaservice.verify(element.accountId).subscribe((response) => {
+      element.validate = response;
+    });
+  }
+  Doc(accountId) {
+    this.adminsukanyaservice.getUserData(accountId).subscribe((response) => {
+      this.DocLink = response.aadhaarLink;
+
+      const link = document.createElement('a');
+      this.adminsukanyaservice
+        .downloadDocument(this.DocLink)
+        .subscribe((res) => {
+          this.DocLocation = res;
+          link.setAttribute('target', '_blank');
+          link.setAttribute('href', this.DocLocation);
+          link.setAttribute('download', 'DocUploaded.jpg');
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+        });
     });
   }
 }

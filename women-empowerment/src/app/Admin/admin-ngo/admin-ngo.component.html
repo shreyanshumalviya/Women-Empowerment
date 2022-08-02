@@ -90,22 +90,7 @@
                     {{ element.address }}
                   </td>
                 </ng-container>
-                <ng-container matColumnDef="description">
-                  <th
-                    mat-header-cell
-                    *matHeaderCellDef
-                    style="font-size: 13px; font-weight: 800"
-                  >
-                    Description
-                  </th>
-                  <td
-                    mat-cell
-                    *matCellDef="let element"
-                    style="background-color: rgb(212, 236, 228)"
-                  >
-                    {{ element.description }}
-                  </td>
-                </ng-container>
+
                 <ng-container matColumnDef="contact">
                   <th
                     mat-header-cell
@@ -120,6 +105,28 @@
                     style="background-color: rgb(212, 236, 228)"
                   >
                     {{ element.contact }}
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="doc">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Documents
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    <button
+                      (click)="Doc(element.ngoId)"
+                      mat-button
+                      style="background-color: rgb(148, 234, 205)"
+                    >
+                      View
+                    </button>
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="verified">

@@ -24,11 +24,13 @@ export class AdminNgoComponent {
     'name',
     'email',
     'address',
-    'description',
     'contact',
+    'doc',
     'verified',
     'actions',
   ];
+  DocLink: string;
+  DocLocation: string;
   constructor(private adminngoservice: AdminNgoService) {
     this.adminngoservice.GetNgoList().subscribe((x) => {
       this.data = x;
@@ -49,6 +51,25 @@ export class AdminNgoComponent {
   updateActiveStatus(element) {
     this.adminngoservice.verify(element.ngoId).subscribe((response) => {
       element.validate = response;
+    });
+  }
+
+  Doc(ngoId) {
+    console.log(ngoId, 'shreyanshu');
+
+    this.adminngoservice.getUserData(ngoId).subscribe((response) => {
+      this.DocLink = response.certificateLink;
+
+      const link = document.createElement('a');
+      this.adminngoservice.downloadDocument(this.DocLink).subscribe((res) => {
+        this.DocLocation = res;
+        link.setAttribute('target', '_blank');
+        link.setAttribute('href', this.DocLocation);
+        link.setAttribute('download', 'DocUploaded.jpg');
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      });
     });
   }
 }

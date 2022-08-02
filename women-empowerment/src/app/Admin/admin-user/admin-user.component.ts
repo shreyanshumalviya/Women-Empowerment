@@ -14,6 +14,7 @@ import {
   UserList,
 } from 'src/app/Services/admin-user.service';
 import { UserServiceService } from 'src/app/user-service.service';
+import { UserId } from 'src/app/user-id';
 
 @Component({
   selector: 'app-admin-user',
@@ -27,7 +28,6 @@ export class AdminUserComponent {
   isShown: boolean = false;
   aadhaarLocation: string;
   panLocation: string;
-  isChecked = true;
   columnsToDisplay = [
     'firstName',
     'middleName',
@@ -67,7 +67,9 @@ export class AdminUserComponent {
     });
   }
   PanDoc(userId) {
-    this.userService.getUserDetails(userId).subscribe((response) => {
+    let _userId: UserId = new UserId();
+    _userId.userId = userId;
+    this.userService.getUserDetails(_userId).subscribe((response) => {
       this.panLink = response.document.panLink;
       const link = document.createElement('a');
 
@@ -83,7 +85,9 @@ export class AdminUserComponent {
     });
   }
   AadhaarDoc(userId) {
-    this.userService.getUserDetails(userId).subscribe((response) => {
+    let _userId: UserId = new UserId();
+    _userId.userId = userId;
+    this.userService.getUserDetails(_userId).subscribe((response) => {
       this.aadhaarLink = response.document.aadhaarLink;
 
       const link = document.createElement('a');
