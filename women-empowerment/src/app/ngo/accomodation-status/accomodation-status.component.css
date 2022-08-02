@@ -33,7 +33,7 @@ mat-card-title{
   justify-content: space-evenly;
 }
 .card-button {
-  background-color: #4122a8;
+  background-color: #112D4E;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -45,4 +45,17 @@ mat-card-title{
 
 button:hover {
   opacity:1;
+}
+.column-title {
+  color: var(--primary);
+}
+
+.table {
+  width: 90%;
+  margin: auto;
+}
+
+.fields-row {
+  display: flex;
+  justify-content: space-evenly;
 }
