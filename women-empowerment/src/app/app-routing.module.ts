@@ -30,6 +30,8 @@ import { TermsComponent } from './home/terms/terms.component';
 import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
 import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.component';
 import { WelcomeComponent } from './ngo/welcome/welcome.component';
+import { PrivacyComponent } from './home/privacy/privacy.component';
+import { ContactUsComponent } from './home/contact-us/contact-us.component';
 
 const routes: Routes = [
 
@@ -84,6 +86,7 @@ const routes: Routes = [
       },
     ],
   },
+  {path:'contactUs',component:ContactUsComponent},
   { path: 'stepHome', component: StepHomeComponent },
   { path: 'userLoginAndRegister', component: UserLoginAndRegisterComponent },
   { path: 'faq/Admin', component: FaqComponent },
@@ -92,6 +95,7 @@ const routes: Routes = [
   {path:'legislation',component:LegislationComponent},
   { path: 'step-courses', component: StepCoursesComponent },
   { path: 'userDashboard', component: UserDashboardComponent },
+  {path:'privacy',component:PrivacyComponent},
 ];
 
 @NgModule({

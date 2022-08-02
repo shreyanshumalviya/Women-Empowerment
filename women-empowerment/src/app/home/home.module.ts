@@ -6,6 +6,7 @@ import { LegislationComponent } from './legislation/legislation.component';
 import { ServiceComponent } from './service/service.component';
 import { TermsComponent } from './terms/terms.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PrivacyComponent } from './privacy/privacy.component';
     LegislationComponent,
     ServiceComponent,
     TermsComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    ContactUsComponent
   ],
   imports: [
     CommonModule,
