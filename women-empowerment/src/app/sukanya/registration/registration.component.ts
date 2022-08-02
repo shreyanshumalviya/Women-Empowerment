@@ -47,11 +47,11 @@ export class RegistrationComponent implements OnInit {
       this.errorMessage="Please Date of Birth";
       return ;
     }
-    if(this.sukanyaRegistration.aadharNumber===undefined || this.sukanyaRegistration.aadharNumber==="" ||this.sukanyaRegistration.aadharNumber.length<12){
+    if(this.sukanyaRegistration.aadharNumber===undefined || this.sukanyaRegistration.aadharNumber==="" ||this.sukanyaRegistration.aadharNumber.length<12 ||this.sukanyaRegistration.aadharNumber.length>12){
       this.errorMessage="Please Enter Valid Aadhar Number";
       return ;
     }
-
+this.errorMessage="";
     this.sukanyaRegistration.userId= this.user.userId;
     console.log("Submit");
     this.sukanyaService.register(this.sukanyaRegistration)
@@ -67,6 +67,7 @@ export class RegistrationComponent implements OnInit {
         // hit api to upload NgoDoc
         this.sukanyaService.addSukanyaDoc(this.sukanyaDoc).subscribe(ngoDoc=>{
           console.log(ngoDoc);
+          this.errorMessage="Registration Successfull";
           
         });
 

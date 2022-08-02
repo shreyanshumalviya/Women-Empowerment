@@ -29,15 +29,24 @@
             </div> -->
             
             <!-- Date Of Birth -->
-            <div class="form-element">
+            <!-- <div class="form-element">
                 <label for="dob">Date Of Birth</label><br>
                 <input type="date" [min]="minDate" [max]="maxDate" [(ngModel)]="sukanyaRegistration.dateOfBirth" id="dob" name="dob">
-            </div> 
+            </div>  -->
+            <!-- Date Of Birth -->
+            <div class="form-element">
+                <label for="dob">Date Of Birth</label><br>
+                <!-- <input type="date" [min]="minDate" [max]="maxDate" [(ngModel)]="sukanyaRegistration.dateOfBirth" id="dob" name="dob"> -->
+
+                <input type="date" [(ngModel)]="sukanyaRegistration.dateOfBirth" id="dob" name="dob"
+                    value="2017-10-12"
+                    min="2012-08-03" max="2022-08-03">
+            </div>
 
             <!-- Aadhar Number -->
             <div class="form-element">
                 <label for="aadhar">Aadhar Number</label>
-                <input type="number" maxlength="12" [(ngModel)]="sukanyaRegistration.aadharNumber" id="aadhar" name="aadhar" pattern="[0-9]{12}" placeholder="Aadhar Number">
+                <input type="text" maxlength="12" [(ngModel)]="sukanyaRegistration.aadharNumber" id="aadhar" name="aadhar" pattern="[0-9]{12}" placeholder="Aadhar Number">
             </div>
 
             <!-- Upload Proof (Girl Child) -->
