@@ -84,7 +84,7 @@ export class AdminUserComponent {
   }
   AadhaarDoc(userId) {
     this.userService.getUserDetails(userId).subscribe((response) => {
-      this.aadhaarLink = response.document.adharLink;
+      this.aadhaarLink = response.document.aadhaarLink;
 
       const link = document.createElement('a');
       this.adminuserservice

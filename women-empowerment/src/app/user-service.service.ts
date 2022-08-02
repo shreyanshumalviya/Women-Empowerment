@@ -33,7 +33,7 @@ export class UserServiceService {
   getUserDetails(userId: UserId): Observable<UserProfileDetails> {
     return this.httpClient.post<UserProfileDetails>(
       'http://localhost:9090/users/userDetails',
-      userId
+      {"userId":userId}
     );
   }
 
