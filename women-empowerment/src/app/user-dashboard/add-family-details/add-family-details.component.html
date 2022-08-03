@@ -81,6 +81,7 @@
             [(ngModel)]="familyMember.dob"
             #dob="ngModel"
             required
+            [max]="maxDate"
           />
           <mat-error *ngIf="dob.invalid">Required</mat-error>
           <mat-hint>MM/DD/YYYY</mat-hint>
@@ -131,7 +132,7 @@
         class="update-detail-button"
         mat-raised-button
         color="primary"
-        [disabled]="addFamilyMemberForm"
+        [disabled]="addFamilyMemberForm.invalid"
       >
         Add
       </button>
@@ -186,7 +187,6 @@
             name="gender"
             [(ngModel)]="familyMember.gender"
             #gender="ngModel"
-            required
           >
             <mat-radio-button [value]="'MALE'"> Male </mat-radio-button>
             <mat-radio-button [value]="'FEMALE'"> Female </mat-radio-button>
@@ -254,7 +254,7 @@
         class="update-detail-button"
         mat-raised-button
         color="primary"
-        [disabled]="addFamilyMemberForm"
+        [disabled]="addFamilyMemberForm.invalid"
       >
         Update
       </button>

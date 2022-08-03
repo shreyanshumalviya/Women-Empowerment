@@ -84,6 +84,7 @@
           [(ngModel)]="userDetails.dob"
           #dob="ngModel"
           required
+          [max]="maxDate"
         />
         <mat-error *ngIf="dob.invalid">Required</mat-error>
         <mat-hint>MM/DD/YYYY</mat-hint>
@@ -180,9 +181,9 @@
             #panNo="ngModel"
             minlength="10"
             maxlength="10"
-            required
+            [pattern]="panPattern"
           />
-          <mat-error *ngIf="panNo.invalid">11 Characters. Required</mat-error>
+          <mat-error *ngIf="panNo.invalid">10 Characters</mat-error>
         </mat-form-field>
         <span>
           <input
@@ -224,9 +225,7 @@
           name="jobTitle"
           [(ngModel)]="userDetails.jobTitle"
           #jobTitle="ngModel"
-          required
         />
-        <mat-error *ngIf="jobTitle.invalid">Required</mat-error>
       </mat-form-field>
       <span class="form-field-space"></span>
       <mat-form-field appearance="standard">
@@ -237,9 +236,7 @@
           name="salary"
           [(ngModel)]="userDetails.salary"
           #salary="ngModel"
-          required
         />
-        <mat-error *ngIf="salary.invalid">Required</mat-error>
         <span matPrefix>₹&nbsp;</span>
       </mat-form-field>
     </span>

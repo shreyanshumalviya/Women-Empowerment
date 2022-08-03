@@ -1,5 +1,5 @@
 .user-body-container {
-  height: 100%;
+  height: auto;
   width: 100%;
   background-color: #eeeeee;
   display: flex;
@@ -8,10 +8,11 @@
 }
 
 .user-body {
-  width: 60%;
-  height: 80%;
+  width: 70%;
+  height: auto;
   /* background-color: white; */
   padding: 2rem 3rem;
+  margin: 2rem 0;
 }
 
 .form-style {
@@ -70,10 +71,9 @@ mat-radio-button {
 }
 
 .register-form {
-  height: 100%;
+  height: auto;
   width: 100%;
   margin: 1rem 0;
-  overflow-y: auto;
 }
 
 .documents {
