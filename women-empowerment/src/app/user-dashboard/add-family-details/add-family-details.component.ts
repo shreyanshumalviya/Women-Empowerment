@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FamilyMember } from 'src/app/family-member';
 import { UserId } from 'src/app/user-id';
 import { UserServiceService } from 'src/app/user-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface Relation {
   value: string;
@@ -27,7 +28,12 @@ export class AddFamilyDetailsComponent implements OnInit {
   familyMember: FamilyMember = new FamilyMember();
   userId: UserId = new UserId();
   familyMembers: FamilyMember[] = [];
-  constructor(private userService: UserServiceService) {}
+  maxDate: Date = new Date();
+
+  constructor(
+    private userService: UserServiceService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.userId.userId = JSON.parse(
@@ -46,12 +52,18 @@ export class AddFamilyDetailsComponent implements OnInit {
     this.familyMember = member;
   }
 
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+  }
+
   addFamilyMember() {
     this.familyMember.userId = this.userId.userId;
+    this.openSnackBar('Request Sent', 'WAIT');
     this.userService
       .addFamilyMember(this.familyMember)
       .subscribe((response) => {
         console.log(response);
+        this.openSnackBar('Member Added', 'DISMISS');
         location.reload();
       });
   }

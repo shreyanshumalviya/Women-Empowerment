@@ -25,6 +25,8 @@ export class UpdateUserDetailsComponent implements OnInit {
   updateAadhaarDoc: UpdateDocument = new UpdateDocument();
   aadhaarLocation: string;
   panLocation: string;
+  maxDate: Date = new Date();
+  panPattern = '^[A-Z]{5}[0-9]{4}[A-Z]{1}$';
 
   constructor(
     private userService: UserServiceService,
@@ -46,21 +48,19 @@ export class UpdateUserDetailsComponent implements OnInit {
   }
 
   updateUserProfileDetails(): void {
-    // console.log(this.userDetails);
-    this.openSnackBar(`Request Sent`, 'DISMISS');
     this.userLoginDetails.userId = this.userDetails.userId;
     this.userService.loginUser(this.userLoginDetails).subscribe((response) => {
       this.isValidUser = response;
-      console.log(this.isValidUser);
       if (this.isValidUser) {
-        console.log(this.isValidUser);
         this.userDetails.document.aadhaarLink = this.aadhaarResponse;
         this.userDetails.document.panLink = this.panResponse;
+        this.openSnackBar('Request Sent', 'DISMISS');
         this.userService
           .updateUserDetails(this.userDetails)
           .subscribe((response) => {
             this.userDetails = response;
             sessionStorage.setItem('userDetails', JSON.stringify(response));
+            this.openSnackBar('Updated', 'DISMISS');
             window.location.reload();
           });
       } else {
@@ -104,6 +104,7 @@ export class UpdateUserDetailsComponent implements OnInit {
       this.userService
         .downloadDocument(this.userDetails.document.aadhaarLink)
         .subscribe((res) => {
+          this.openSnackBar('Request Sent', 'DISMISS');
           this.aadhaarLocation = res;
           link.setAttribute('target', '_blank');
           link.setAttribute('href', this.aadhaarLocation);
@@ -117,6 +118,7 @@ export class UpdateUserDetailsComponent implements OnInit {
       this.userService
         .downloadDocument(this.userDetails.document.panLink)
         .subscribe((res) => {
+          this.openSnackBar('Request Sent', 'DISMISS');
           this.panLocation = res;
           link.setAttribute('target', '_blank');
           link.setAttribute('href', this.panLocation);

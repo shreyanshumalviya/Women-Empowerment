@@ -21,9 +21,9 @@ export class UserDashboardComponent implements OnInit {
     this.dashboardState = 'profile';
   }
 
-  toDashboardHome(): void {
-    this.dashboardState = '';
-  }
+  // toDashboardHome(): void {
+  //   this.dashboardState = '';
+  // }
 
   toUpdateDetails(): void {
     this.profileState = 'details';
@@ -42,12 +42,12 @@ export class UserDashboardComponent implements OnInit {
     sessionStorage.removeItem('userDetails');
   }
 
-  goToStep():void{
-    this.dashboardState='step-courses';
+  goToStep(): void {
+    this.dashboardState = 'step-courses';
   }
 
-  goToSukanya(){
-    this.dashboardState='sukanya';
+  goToSukanya() {
+    this.dashboardState = 'sukanya';
   }
   goToAccomodation(){
     this.dashboardState='accomodation';

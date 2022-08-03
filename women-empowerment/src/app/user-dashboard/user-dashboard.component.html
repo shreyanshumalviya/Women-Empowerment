@@ -4,11 +4,24 @@
     <button mat-button (click)="goToAccomodation()">Accomodation</button>
     <button mat-button (click)="goToSukanya()">Sukanya Samriddhi</button>
   </span>
-  <p>{{ "Welcome user: " + userDetails.userId }}</p>
+  <p class="user-greeting">
+    <span class="user-greeting" *ngIf="userDetails.verified; else unverified"
+      ><span>{{ "User: " + userDetails.userId }}</span
+      ><mat-icon matTooltip="Verified">verified</mat-icon></span
+    >
+    <ng-template class="user-greeting" #unverified>
+      <span>{{ "User: " + userDetails.userId }}</span>
+      <mat-icon
+        [ngStyle]="{ color: 'red' }"
+        matTooltip="Unverified. Update Documents"
+        >error</mat-icon
+      >
+    </ng-template>
+  </p>
   <span class="right-btns">
-    <button mat-icon-button matTooltip="Home" (click)="toDashboardHome()">
+    <!-- <button mat-icon-button matTooltip="Home" (click)="toDashboardHome()">
       <mat-icon>home</mat-icon>
-    </button>
+    </button> -->
     <button mat-icon-button matTooltip="Profile" (click)="toProfilePage()">
       <mat-icon>account_circle</mat-icon>
     </button>
@@ -46,7 +59,7 @@
     <app-step-courses></app-step-courses>
   </div>
   <div *ngSwitchCase="'sukanya'">
-    <app-registration></app-registration>
+    <app-registration class="full-height"></app-registration>
   </div>
   <div *ngSwitchCase="'accomodation'">
     <app-accomodation-status></app-accomodation-status>
