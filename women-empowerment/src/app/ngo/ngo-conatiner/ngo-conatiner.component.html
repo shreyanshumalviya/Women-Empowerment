@@ -6,6 +6,20 @@
       <button mat-button [routerLink]="'/ngo/create_course'">New Course</button>
       <button mat-button [routerLink]="'/ngo/courses'">List Couses</button>
     </span>
+    <p class="user-greeting">
+      <span class="user-greeting" *ngIf="ngo.verified; else unverified"
+        ><span>{{ ngo.name+"  " }}&nbsp;</span
+        ><mat-icon matTooltip="Verified">verified</mat-icon></span
+      >
+      <ng-template class="user-greeting" #unverified>
+        <span>{{ ngo.name +"  "}}&nbsp;</span>
+        <mat-icon
+          [ngStyle]="{ color: 'red' }"
+          matTooltip="Unverified. Update Documents"
+          >error</mat-icon
+        >
+      </ng-template>
+    </p>
     <span class="right-btns">
       <button mat-icon-button matTooltip="Logout" (click)="logout()">
         <mat-icon>logout</mat-icon>
