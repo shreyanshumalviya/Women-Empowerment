@@ -18,7 +18,7 @@
   font-family: "Courier New", Courier, monospace;
 }
 .column {
-  flex: 50%;
+  flex: 46%;
 }
 .image {
   width: 100%;
@@ -30,4 +30,8 @@
   padding: 30px;
   font-size: 22px;
   letter-spacing: 2px;
+}
+
+.right-margin {
+  margin-right: 1.2rem;
 }
