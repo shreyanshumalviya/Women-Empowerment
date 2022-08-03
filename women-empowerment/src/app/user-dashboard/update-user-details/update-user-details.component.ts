@@ -98,7 +98,8 @@ export class UpdateUserDetailsComponent implements OnInit {
     });
   }
 
-  downloadFile(documentType: string) {
+  downloadFile(event: Event, documentType: string) {
+    event.preventDefault()
     if (documentType == 'aadhaar') {
       const link = document.createElement('a');
       this.userService

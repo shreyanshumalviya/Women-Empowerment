@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { DocumentService } from 'src/app/document.service';
 import { SukanyaDoc } from 'src/app/models/sukanya-doc';
@@ -20,7 +21,7 @@ export class RegistrationComponent implements OnInit {
   errorMessage="";
   user:UserProfileDetails;
 
-  constructor(private sukanyaService:SukanyaService, private documentService: DocumentService, private router:Router) { }
+  constructor(private sukanyaService:SukanyaService, private documentService: DocumentService, private router:Router, private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.minDate.setFullYear(this.minDate.getFullYear() - 10);
@@ -67,7 +68,7 @@ export class RegistrationComponent implements OnInit {
         // hit api to upload NgoDoc
         this.sukanyaService.addSukanyaDoc(this.sukanyaDoc).subscribe(ngoDoc=>{
           console.log(ngoDoc);
-          
+          this.snackBar.open("Registered", "Ok", {duration:3000})
         });
 
       })

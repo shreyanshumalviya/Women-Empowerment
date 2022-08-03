@@ -167,7 +167,7 @@
           />
         </span>
         <span>
-          <button mat-button (click)="downloadFile('aadhaar')">AADHAAR</button>
+          <button mat-button (click)="downloadFile($event,'aadhaar')">AADHAAR</button>
         </span>
       </span>
       <span class="form-field-space"></span>
@@ -194,7 +194,7 @@
             (change)="updatePan($event)"
         /></span>
         <span>
-          <button mat-button (click)="downloadFile('pan')">PAN</button>
+          <button mat-button (click)="downloadFile($event, 'pan')">PAN</button>
         </span>
       </span>
     </span>
