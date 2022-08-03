@@ -1,6 +1,6 @@
 <div class="user-body-container" style="padding: 1em;">
     <mat-card class="user-body">
-        <div class="div" *ngIf="errorMessage!==''|| errorMessage!==null || errorMessage!==undefined " style="color: red;">
+        <div id="message" class="div" *ngIf="errorMessage!==''|| errorMessage!==null || errorMessage!==undefined " style="color: red;">
             {{errorMessage}}
         </div>
         <div class="login-form">

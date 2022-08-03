@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { find } from 'rxjs';
 import { Accommodation } from 'src/app/models/accomodation';
 import { NGO } from 'src/app/models/ngo';
 import { NgoService } from '../ngo.service';
@@ -13,7 +15,7 @@ export class CreateAccomodationComponent implements OnInit {
   errorMessage: string = '';
   accomodation: Accommodation = new Accommodation();
   minDate = new Date();
-  constructor(private ngoService: NgoService, private router: Router) {}
+  constructor(private ngoService: NgoService, private router: Router, private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     let ngoString = sessionStorage.getItem('loggedInNgo');
@@ -27,6 +29,12 @@ export class CreateAccomodationComponent implements OnInit {
   }
 
   public createAccomodation() {
+   this.validateData();
+   this.snackBar.open(this.errorMessage,"Ok", {duration:3000})
+  }
+
+  public validateData(){
+    this.scroll();
     if (this.accomodation.name === undefined || this.accomodation.name === '') {
       this.errorMessage = 'Enter Accomodation Name';
       return;
@@ -91,5 +99,13 @@ export class CreateAccomodationComponent implements OnInit {
         console.log(JSON.stringify(accomodation));
         this.errorMessage = 'Accomodation Created';
       });
+  }
+
+  scroll() {
+    
+    let el = document.getElementById('message');
+    console.log(el);
+    
+    el.scrollIntoView({behavior: 'smooth'});
   }
 }

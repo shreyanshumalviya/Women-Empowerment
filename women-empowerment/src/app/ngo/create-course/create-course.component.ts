@@ -5,6 +5,7 @@ import { MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Router } from '@angular/router';
 import { NGO } from 'src/app/models/ngo';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-create-course',
   templateUrl: './create-course.component.html',
@@ -16,7 +17,7 @@ export class CreateCourseComponent implements OnInit {
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   course: Course = new Course();
   minDate = new Date();
-  constructor(private ngoService: NgoService, private router: Router) { }
+  constructor(private ngoService: NgoService, private router: Router, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.course.tags = []
@@ -52,6 +53,11 @@ export class CreateCourseComponent implements OnInit {
   }
 
   public createCourse() {
+   this.validateData();
+   this.snackBar.open(this.errorMessage,"Ok", {duration:3000})
+  }
+
+  public validateData(){
     if (this.course.courseTitle === undefined || this.course.courseTitle === "") {
       this.errorMessage = "Course Title cannot be empty";
       return;
@@ -78,5 +84,12 @@ export class CreateCourseComponent implements OnInit {
       this.errorMessage = "Course Created"
     })
   }
-
+  scroll() {
+    console.log("Asdfasd");
+    
+    let el = document.getElementById('message');
+    console.log(el);
+    
+    el.scrollIntoView({behavior: 'smooth'});
+  }
 }

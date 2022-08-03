@@ -6,6 +6,7 @@ import { Accommodation } from 'src/app/models/accomodation';
 import { Router } from '@angular/router';
 import { UserProfileDetails } from 'src/app/user-profile-details';
 import { AccomodationStatusService } from 'src/app/accomodation_status_service.serviceservice';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-accomodation-status',
@@ -19,7 +20,7 @@ export class AccomodationStatusComponent implements OnInit {
   displayedColumns: string[] = ["accomodationId", "name", "state", "addressLine1","addressLine2","landmark" ,"pincode","city","Button"]
   
   
-  constructor(private accomodationservice:AccomodationStatusService,private router:Router) { 
+  constructor(private accomodationservice:AccomodationStatusService,private router:Router, private snackBar:MatSnackBar) { 
      this.accomodationservice.getaccomodation().subscribe(accomodationstatus=>{
       this.accomodationstatus=accomodationstatus;
       console.log(accomodationstatus);
@@ -39,7 +40,9 @@ export class AccomodationStatusComponent implements OnInit {
   register(accomodationId :number)
   {
     console.log("registering");
-    this.accomodationservice.register(accomodationId,this.user.userId).subscribe(a=>{});  
+    this.accomodationservice.register(accomodationId,this.user.userId).subscribe(a=>{
+      this.snackBar.open("Registered for Accomodation", "Ok", {duration:3000});
+    });  
   }
 
   }

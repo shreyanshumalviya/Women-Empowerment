@@ -167,6 +167,7 @@
                     <button
                       (click)="PanDoc(element.userId)"
                       mat-button
+                      [disabled]="element.panNo === null || element.panNo === undefined"
                       style="background-color: rgb(148, 234, 205)"
                     >
                       View
