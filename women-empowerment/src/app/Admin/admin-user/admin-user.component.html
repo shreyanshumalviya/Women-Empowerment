@@ -1,0 +1,251 @@
+<div class="user-body-container">
+  <mat-card class="user-body">
+    <div class="split-child">
+      <mat-card class="user-body-child2">
+        <div class="split-child-child">
+          <div class="head">Total Users : {{ getRowsValue(null) }}</div>
+          <br />
+          <div class="subhead">
+            Users Verified : {{ getRowsValue(true) }} <br />
+            Users Not Verified : {{ getRowsValue(false) }}
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div class="split-parent">
+      <div class="split-child">
+        <mat-card class="user-body-child1">
+          <mat-card-title>View all registered Users here</mat-card-title>
+          <div class="example-table-container">
+            <div class="mat-elevation-z8">
+              <table
+                mat-table
+                [dataSource]="data"
+                class="mat-elevation-z8"
+                style="
+                  background-image: linear-gradient(
+                    rgba(126, 191, 234, 0.3),
+                    rgba(208, 235, 220, 0.3)
+                  );
+                  margin-top: 20px;
+                "
+              >
+                <ng-container matColumnDef="firstName">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    First Name
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    {{ element.firstName }}
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="middleName">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Middle Name
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    {{ element.middleName }}
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="lastName">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Last Name
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    {{ element.lastName }}
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="email">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Email
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    {{ element.email }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="aadhaarNo">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Aadhaar No.
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    {{ element.aadhaarNo }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="aadhaarDoc">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Aadhaar Doc.
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    <button
+                      (click)="AadhaarDoc(element.userId)"
+                      mat-button
+                      style="background-color: rgb(148, 234, 205)"
+                    >
+                      View
+                    </button>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="panNo">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Pan Card No.
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    {{ element.panNo }}
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="panDoc">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Pan Card Doc.
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    <button
+                      (click)="PanDoc(element.userId)"
+                      mat-button
+                      style="background-color: rgb(148, 234, 205)"
+                    >
+                      View
+                    </button>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="dob">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Date Of Birth
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    {{ element.dob }}
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="salary">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Salary
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    {{ element.salary }}
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="verified">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Verified
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    {{ element.verified }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    <mat-slide-toggle
+                      [checked]="element.verified"
+                      (change)="updateActiveStatus(element)"
+                    ></mat-slide-toggle>
+                  </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                <tr
+                  mat-row
+                  *matRowDef="let row; columns: columnsToDisplay"
+                ></tr>
+              </table>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+  <router-outlet></router-outlet>
+</div>

@@ -3,7 +3,6 @@ import { AdminAboutUsComponent } from './Admin/admin-aboutUs/admin-about-us.comp
 import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { AdminNgoComponent } from './Admin/admin-ngo/admin-ngo.component';
-import { AdminStepComponent } from './Admin/admin-step/admin-step.component';
 import { AdminSukayaYojanaComponent } from './Admin/admin-sukaya-yojana/admin-sukaya-yojana.component';
 import { AdminAccomodationsComponent } from './Admin/admin-accomodations/admin-accomodations.component';
 import { RouterModule, Routes, Router, Route } from '@angular/router';
@@ -23,14 +22,31 @@ import { ListAccomodationsComponent } from './ngo/list-accomodations/list-accomo
 import { CreateAccomodationComponent } from './ngo/create-accomodation/create-accomodation.component';
 import { StepCoursesComponent } from './step-courses/step-courses.component';
 import { LegislationComponent } from './home/legislation/legislation.component';
+import { NgoLoginComponent } from './ngo/ngo-login/ngo-login.component';
+import { NgoRegisterComponent } from './ngo/ngo-register/ngo-register.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { TermsComponent } from './home/terms/terms.component';
+import { AccomodationStatusComponent } from './ngo/accomodation-status/accomodation-status.component';
 import { NgoConatinerComponent } from './ngo/ngo-conatiner/ngo-conatiner.component';
 import { WelcomeComponent } from './ngo/welcome/welcome.component';
+import { PrivacyComponent } from './home/privacy/privacy.component';
+import { ContactUsComponent } from './home/contact-us/contact-us.component';
+import { AdminUserComponent } from './Admin/admin-user/admin-user.component';
+import { HomeLPComponent } from './home-lp/home-lp.component';
 
 const routes: Routes = [
+  { path: 'AboutUs', component: AboutUsComponent },
+  {
+    path: '',
+    redirectTo: '/homelandingpage',
+    pathMatch: 'full',
+  },
   {
     path: 'AboutAdmin',
     component: AdminAboutUsComponent,
   },
+  { path: 'accomodationStatus', component: AccomodationStatusComponent },
+  { path: 'terms', component: TermsComponent },
   { path: 'ngo/home', component: NgoHomeComponent },
   {
     children: [
@@ -44,10 +60,13 @@ const routes: Routes = [
       { path: 'courses', component: ListCoursesComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'accomodations', component: ListAccomodationsComponent },
+      { path: 'home', component: NgoHomeComponent },
     ],
     component: NgoConatinerComponent,
     path: 'ngo',
   },
+  { path: 'ngoLogin', component: NgoLoginComponent },
+  { path: 'ngoRegister', component: NgoRegisterComponent },
   { path: 'adminLoginLink', component: AdminLoginComponent },
   {
     path: 'adminDashboardLink',
@@ -58,8 +77,8 @@ const routes: Routes = [
         component: AdminNgoComponent,
       },
       {
-        path: 'adminStepLink',
-        component: AdminStepComponent,
+        path: 'adminUserLink',
+        component: AdminUserComponent,
       },
       {
         path: 'adminSukayaYojanaLink',
@@ -69,16 +88,23 @@ const routes: Routes = [
         path: 'adminLandPage',
         component: AdminLandingPComponent,
       },
+      {
+        path: 'adminAccomodationsLink',
+        component: AdminAccomodationsComponent,
+      },
     ],
   },
+  { path: 'contactUs', component: ContactUsComponent },
   { path: 'stepHome', component: StepHomeComponent },
   { path: 'userLoginAndRegister', component: UserLoginAndRegisterComponent },
   { path: 'faq/Admin', component: FaqComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'sukanya-registration', component: RegistrationComponent },
+  { path: 'homelandingpage', component: HomeLPComponent },
   { path: 'legislation', component: LegislationComponent },
   { path: 'step-courses', component: StepCoursesComponent },
   { path: 'userDashboard', component: UserDashboardComponent },
+  { path: 'privacy', component: PrivacyComponent },
 ];
 
 @NgModule({

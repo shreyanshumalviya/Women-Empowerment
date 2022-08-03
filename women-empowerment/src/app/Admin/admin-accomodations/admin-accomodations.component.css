@@ -1,0 +1,36 @@
+table {
+  width: 100%;
+}
+.example-table-container {
+  position: relative;
+  height: 80%;
+  width: 100%;
+  overflow: auto;
+}
+.user-body-child2 {
+  background-image: linear-gradient(
+    rgba(126, 139, 234, 0.3),
+    rgba(208, 235, 220, 0.3)
+  );
+}
+.head {
+  margin-left: -80px;
+  font-size: 22px;
+  font-weight: 800;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.split-child-child {
+  margin-left: 45%;
+}
+.subhead {
+  font-weight: 500;
+  line-height: 2;
+}
+.mat-icon {
+  font-size: 25px;
+  height: 25px;
+  width: 25px;
+}
+.test {
+  background-color: red;
+}

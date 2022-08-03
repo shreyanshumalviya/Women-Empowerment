@@ -3,16 +3,15 @@ mat-toolbar {
   color: white;
   text-align: center;
 
-  margin: 40;
-  padding: 30px;
+  margin: 100;
+  padding: 50px;
   display: inline-block;
 }
 .menu-spacer {
   color: white;
   text-align: center;
-  padding: 140px;
-  margin: 1150;
-  font-size: 90px;
+  padding: 50px;
+  margin: 80;
 }
 
 .logo-image {
@@ -37,8 +36,19 @@ mat-sidenav {
   text-align: center;
 }
 
+mat-sidenav {
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  background: #002b5c;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
 .content {
-  height: calc(100vh - 130px);
+  height: calc(100vh - 85px);
   border-radius: 10px;
   margin: 16px;
   margin-left: 32px;

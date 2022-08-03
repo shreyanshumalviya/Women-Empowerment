@@ -3,10 +3,14 @@
     <div class="split-child">
       <mat-card class="user-body-child2">
         <div class="split-child-child">
-          <p>2 admin-ngo works!</p>
-          Total rows: {{ getRowsValue(null) }} <br />
-          State Active (true): {{ getRowsValue(true) }} <br />
-          State Inactive (false): {{ getRowsValue(false) }}
+          <div class="head">
+            Total Ngo's Registered : {{ getRowsValue(null) }}
+          </div>
+          <br />
+          <div class="subhead">
+            Users Verified : {{ getRowsValue(true) }} <br />
+            Users Not Verified : {{ getRowsValue(false) }}
+          </div>
         </div>
       </mat-card>
     </div>
@@ -16,55 +20,141 @@
           <mat-card-title>View All registered NGO's here</mat-card-title>
           <div class="example-table-container">
             <div class="mat-elevation-z8">
-              <table mat-table [dataSource]="data" class="mat-elevation-z8">
+              <table
+                mat-table
+                [dataSource]="data"
+                class="mat-elevation-z8"
+                style="background-color: rgb(206, 238, 248); margin-top: 20px"
+              >
                 <ng-container matColumnDef="ngoId">
-                  <th mat-header-cell *matHeaderCellDef>Serial Id</th>
-                  <td mat-cell *matCellDef="let element">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Serial Id
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
                     {{ element.ngoId }}
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="name">
-                  <th mat-header-cell *matHeaderCellDef>NGO Name</th>
-                  <td mat-cell *matCellDef="let element">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    NGO Name
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
                     {{ element.name }}
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="email">
-                  <th mat-header-cell *matHeaderCellDef>E-Mail</th>
-                  <td mat-cell *matCellDef="let element">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    E-Mail
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
                     {{ element.email }}
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="address">
-                  <th mat-header-cell *matHeaderCellDef>Address</th>
-                  <td mat-cell *matCellDef="let element">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Address
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
                     {{ element.address }}
                   </td>
                 </ng-container>
-                <ng-container matColumnDef="description">
-                  <th mat-header-cell *matHeaderCellDef>Description</th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.description }}
-                  </td>
-                </ng-container>
+
                 <ng-container matColumnDef="contact">
-                  <th mat-header-cell *matHeaderCellDef>Contact</th>
-                  <td mat-cell *matCellDef="let element">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Contact
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
                     {{ element.contact }}
                   </td>
                 </ng-container>
+                <ng-container matColumnDef="doc">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Documents
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
+                    <button
+                      (click)="Doc(element.ngoId)"
+                      mat-button
+                      style="background-color: rgb(148, 234, 205)"
+                    >
+                      View
+                    </button>
+                  </td>
+                </ng-container>
                 <ng-container matColumnDef="verified">
-                  <th mat-header-cell *matHeaderCellDef>Verification</th>
-                  <td mat-cell *matCellDef="let element">
+                  <th
+                    mat-header-cell
+                    *matHeaderCellDef
+                    style="font-size: 13px; font-weight: 800"
+                  >
+                    Verification
+                  </th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
                     {{ element.verified }}
                   </td>
                 </ng-container>
 
                 <ng-container matColumnDef="actions">
-                  <th mat-header-cell *matHeaderCellDef>toggle</th>
-                  <td mat-cell *matCellDef="let element">
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td
+                    mat-cell
+                    *matCellDef="let element"
+                    style="background-color: rgb(212, 236, 228)"
+                  >
                     <mat-slide-toggle
-                      [checked]="element.activate"
+                      [checked]="element.verified"
                       (change)="updateActiveStatus(element)"
                     ></mat-slide-toggle>
                   </td>
@@ -76,15 +166,6 @@
                   *matRowDef="let row; columns: columnsToDisplay"
                 ></tr>
               </table>
-              <mat-paginator
-                #paginator
-                [length]="data?.length"
-                [pageIndex]="0"
-                [pageSize]="10"
-                [pageSizeOptions]="[5, 10, 20]"
-                aria-label="Select page"
-              >
-              </mat-paginator>
             </div>
           </div>
         </mat-card>

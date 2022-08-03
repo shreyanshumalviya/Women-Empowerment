@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminStepComponent } from './admin-step.component';
+import { PrivacyComponent } from './privacy.component';
 
-describe('AdminStepComponent', () => {
-  let component: AdminStepComponent;
-  let fixture: ComponentFixture<AdminStepComponent>;
+describe('PrivacyComponent', () => {
+  let component: PrivacyComponent;
+  let fixture: ComponentFixture<PrivacyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminStepComponent ]
+      declarations: [ PrivacyComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdminStepComponent);
+    fixture = TestBed.createComponent(PrivacyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

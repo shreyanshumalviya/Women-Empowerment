@@ -3,10 +3,10 @@
 <mat-toolbar color="#004a9f">
   <h6 style="font-size: 3vw">MINISTRY OF WOMEN AND CHILD DEVELOPMENT</h6>
   <br />
-  <h6 style="font-size: 2.7vw; color: #3f72af">
-    Empowered Women Living With Dignity
+  <h6 style="font-size: 2vw; color: #3f72af">
+    EMPOWERED WOMEN LIVING WITH DIGNITY
   </h6>
-
+  <br />
   <!-- <mat-toolbar-row>
     <span style="font-size: 35px; padding: 400px ;color: #3F72AF;"> Empowered Women Living With Dignity</span>
   </mat-toolbar-row> -->
@@ -23,13 +23,50 @@
     </a>
     <span class="menu-spacer"></span>
     <div>
-      <br /><br />
-      <a mat-button [routerLink]="'/AboutUs'"> About Us </a>
-      <a mat-button [routerLink]="'/legislation'"> Legislations and Policy </a>
-      <a mat-button [routerLink]="'/stepHome'"> STEP </a>
-      <a mat-button [routerLink]="'/ngo/home'"> NGO </a>
-      <a mat-button [routerLink]="'/AboutAdmin'"> ADMIN </a>
-      <a mat-button [routerLink]="'/faq'"> FAQ </a>
+      <span style="font-size: 1vw; padding: 30px"
+        ><a mat-raised-button color="primary" [routerLink]="'/homelandingpage'">
+          HOME</a
+        ></span
+      >
+      <span style="font-size: 1vw; padding: 30px">
+        <a
+          mat-raised-button
+          color="primary"
+          [routerLink]="'/userLoginAndRegister'"
+        >
+          USER
+        </a></span
+      >
+      <span style="font-size: 1vw; padding: 30px"
+        ><a mat-raised-button color="primary" [routerLink]="'/AboutUs'">
+          ABOUT US
+        </a></span
+      >
+      <span style="font-size: 1vw; padding: 30px"
+        ><a mat-raised-button color="primary" [routerLink]="'/legislation'">
+          LEGISLATION AND POLICY
+        </a></span
+      >
+      <span style="font-size: 1vw; padding: 30px"
+        ><a mat-raised-button color="primary" [routerLink]="'/stepHome'">
+          STEP
+        </a></span
+      >
+      <span style="font-size: 1vw; padding: 30px"
+        ><a mat-raised-button color="primary" [routerLink]="'/ngo/home'">
+          NGO
+        </a></span
+      >
+      <span style="font-size: 1vw; padding: 30px"
+        ><a mat-raised-button color="primary" [routerLink]="'/AboutAdmin'">
+          ADMIN
+        </a></span
+      >
+      <span style="font-size: 1vw; padding: 30px"
+        ><a mat-raised-button color="primary" [routerLink]="'/faq'">
+          FAQ
+        </a></span
+      >
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
@@ -61,17 +98,21 @@
 
     <mat-divider></mat-divider>
 
-    <button mat-button class="menu-button" routerLink="/home">
+    <button mat-button class="menu-button" routerLink="/homelandingpage">
       <mat-icon>home</mat-icon>
       <span>Home</span>
     </button>
-    <button mat-button class="menu-button" routerLink="/Aboutus">
+    <button mat-button class="menu-button" routerLink="/userLoginAndRegister">
+      <mat-icon>User</mat-icon>
+      <span>User</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/AboutUs">
       <mat-icon>info</mat-icon>
       <span>About Us</span>
     </button>
     <button mat-button class="menu-button" routerLink="/legislation">
       <mat-icon>business</mat-icon>
-      <span>Legislation and Policy</span>
+      <span>Legislations</span>
     </button>
     <button mat-button class="menu-button" routerLink="/stepHome">
       <mat-icon>view_module</mat-icon>
@@ -97,6 +138,7 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
 <app-footer></app-footer>
 
 <!-- <router-outlet></router-outlet> -->

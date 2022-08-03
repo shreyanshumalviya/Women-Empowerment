@@ -10,10 +10,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { AdminNgoService, NgoList } from 'src/app/Services/admin-ngo.service';
-import {
-  NgoDisplayTableDataSource,
-  NgoDisplayTableItem,
-} from '../ngo-display-table/ngo-display-table-datasource';
 
 @Component({
   selector: 'app-admin-ngo',
@@ -28,11 +24,13 @@ export class AdminNgoComponent {
     'name',
     'email',
     'address',
-    'description',
     'contact',
+    'doc',
     'verified',
     'actions',
   ];
+  DocLink: string;
+  DocLocation: string;
   constructor(private adminngoservice: AdminNgoService) {
     this.adminngoservice.GetNgoList().subscribe((x) => {
       this.data = x;
@@ -50,12 +48,28 @@ export class AdminNgoComponent {
       return this.data.filter((i) => i.verified == validate).length;
     }
   }
-
   updateActiveStatus(element) {
-    // console.log(element.verified);
-    element.verified = !element.verified;
-    this.adminngoservice.UpdateNgoList().subscribe((updateUser) => {
-      element.validate = true;
+    this.adminngoservice.verify(element.ngoId).subscribe((response) => {
+      element.validate = response;
+    });
+  }
+
+  Doc(ngoId) {
+    console.log(ngoId, 'shreyanshu');
+
+    this.adminngoservice.getUserData(ngoId).subscribe((response) => {
+      this.DocLink = response.certificateLink;
+
+      const link = document.createElement('a');
+      this.adminngoservice.downloadDocument(this.DocLink).subscribe((res) => {
+        this.DocLocation = res;
+        link.setAttribute('target', '_blank');
+        link.setAttribute('href', this.DocLocation);
+        link.setAttribute('download', 'DocUploaded.jpg');
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      });
     });
   }
 }

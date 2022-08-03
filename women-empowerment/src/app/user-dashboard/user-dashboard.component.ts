@@ -49,4 +49,8 @@ export class UserDashboardComponent implements OnInit {
   goToSukanya() {
     this.dashboardState = 'sukanya';
   }
+  goToAccomodation(){
+    this.dashboardState='accomodation';
+  }
+  
 }

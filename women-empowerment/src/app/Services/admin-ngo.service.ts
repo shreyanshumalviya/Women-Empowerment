@@ -24,7 +24,25 @@ export class AdminNgoService {
   GetNgoList(): Observable<NgoList[]> {
     return this.httpClient.get<NgoList[]>(this.apiUrl);
   }
+  verify(ngoId): Observable<boolean> {
+    return this.httpClient.put<boolean>(
+      'http://localhost:9090/adminngo/verify/' + ngoId,
+      null
+    );
+  }
   UpdateNgoList(): Observable<NgoList[]> {
     return this.httpClient.get<NgoList[]>(this.apiUrl);
+  }
+  getUserData(ngoId): Observable<any> {
+    return this.httpClient.get(
+      'http://localhost:9090/adminngo/viewNgoDoc/' + ngoId
+    );
+  }
+  downloadDocument(link: string): Observable<string> {
+    return this.httpClient.post(
+      'http://localhost:9090/adminngo/downloadFile',
+      link,
+      { responseType: 'text' }
+    );
   }
 }
