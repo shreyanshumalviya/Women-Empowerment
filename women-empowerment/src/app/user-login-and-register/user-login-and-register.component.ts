@@ -27,6 +27,8 @@ export class UserLoginAndRegisterComponent implements OnInit {
   aadhaarResponse: string = '';
   panDocument: File;
   panResponse: string = '';
+  maxDate: Date = new Date();
+  panPattern = '^[A-Z]{5}[0-9]{4}[A-Z]{1}$';
 
   constructor(
     private userService: UserServiceService,
@@ -88,6 +90,7 @@ export class UserLoginAndRegisterComponent implements OnInit {
           if (registerSuccessfull) {
             this.openSnackBar('Sign Up Successfull', 'DISMISS');
             window.location.reload();
+            this.openSnackBar('Sign Up Successfull', 'DISMISS');
           }
         });
     } else {
@@ -96,25 +99,26 @@ export class UserLoginAndRegisterComponent implements OnInit {
   }
 
   passwordReset() {
-    // console.log(this.userId.userId);
     this.openSnackBar(`Request Sent`, 'WAIT');
     this.userService.resetPassword(this.userId).subscribe((response) => {
       if (response) {
         this.openSnackBar('Password Reset', 'Check Email!');
         this.pageState = 'login';
+      } else {
+        this.openSnackBar(`Couldn't Reset Password`, 'Try Again');
+        this.pageState = 'register';
       }
     });
-    this.openSnackBar(`Couldn't Reset Password`, 'Try Again');
-    this.pageState = 'register';
   }
 
   uploadAadhaar(event) {
     this.aadhaarDocument = event.target.files[0];
     const formData = new FormData();
     formData.append('file', this.aadhaarDocument);
-    this.userService
-      .uploadDocument(formData)
-      .subscribe((response) => (this.aadhaarResponse = response));
+    this.userService.uploadDocument(formData).subscribe((response) => {
+      this.aadhaarResponse = response;
+      this.openSnackBar(`Uploaded`, 'DISMISS');
+    });
   }
 
   uploadPan(event) {
@@ -123,7 +127,7 @@ export class UserLoginAndRegisterComponent implements OnInit {
     formData.append('file', this.panDocument);
     this.userService.uploadDocument(formData).subscribe((response) => {
       this.panResponse = response;
-      console.log(this.panResponse);
+      this.openSnackBar(`Uploaded`, 'DISMISS');
     });
   }
 }
